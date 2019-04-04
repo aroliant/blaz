@@ -23,9 +23,18 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/dashboard.css",
+              "src/assets/plugins/charts-c3/plugin.css",
+              "src/assets/plugins/maps-google/plugin.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/require.min.js",
+              "src/assets/js/dashboard.js",
+              "src/assets/plugins/charts-c3/plugin.js",
+              "src/assets/plugins/maps-google/plugin.js",
+              "src/assets/plugins/input-mask/plugin.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -80,9 +89,18 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "src/assets/css/dashboard.css",
+              "src/assets/plugins/charts-c3/plugin.css",
+              "src/assets/plugins/maps-google/plugin.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/require.min.js",
+              "src/assets/js/dashboard.js",
+              "src/assets/plugins/charts-c3/plugin.js",
+              "src/assets/plugins/maps-google/plugin.js",
+              "src/assets/plugins/input-mask/plugin.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

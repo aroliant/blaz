@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.FlexDirectionRow {
+    flex-direction: row;
+}
+
+.FlexDirectionColumn {
+    flex-direction: column;
+}
