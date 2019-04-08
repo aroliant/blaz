@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ApplicationComponent } from './layouts/application/application.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AppsModule } from './pages/apps/apps.module';
 
 @NgModule({
   declarations: [
