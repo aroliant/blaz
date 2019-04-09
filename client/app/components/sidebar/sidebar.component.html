@@ -1,9 +1,43 @@
 <div class="Sidebar">
-  <a routerLink="/home" class="navbar-brand">Home</a>
+  <a routerLink="/home" class="mx-auto h4 mt-5">Blaz</a>
   <div class="py-5"></div>
-  <a href="" class="Sidebar__links">Servers</a>
-  <a href="" class="Sidebar__links">Manage</a>
-  <a href="" class="Sidebar__links">Account</a>
-  <a href="" class="Sidebar__links">Users</a>
-  <a href="" class="Sidebar__links">Teams</a>
+
+  <a class="Sidebar__links" data-toggle="collapse" href="#appsMenu" role="button" aria-expanded="false"
+    aria-controls="appsMenu">
+    Apps
+  </a>
+  <div class="collapse" id="appsMenu">
+    <a href="" class="ml-2 Sidebar__links" routerLink="/apps">View</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/apps">Create</a>
+  </div>
+
+  <a href="" class="Sidebar__links" data-toggle="collapse" href="#domainHostsMenu" role="button" aria-expanded="false"
+    aria-controls="domainHostsMenu">Domains & Hosts</a>
+  <div class="collapse" id="domainHostsMenu">
+    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Proxy Hosts</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Stream Hosts</a>
+  </div>
+
+  <a href="" class="Sidebar__links" routerLink="/firewall">Firewall</a>
+
+  <a href="" class="Sidebar__links" data-toggle="collapse" href="#manageMenu" role="button" aria-expanded="false"
+    aria-controls="manageMenu">Manage</a>
+  <div class="collapse" id="manageMenu">
+    <a href="" class="ml-2 Sidebar__links" routerLink="/manage/teams">Teams</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Projects</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Users</a>
+  </div>
+
+  <a href="" class="Sidebar__links"  data-toggle="collapse" href="#monitorMenu" role="button" aria-expanded="false"
+  aria-controls="monitorMenu">Monitoring</a>
+  <div class="collapse" id="monitorMenu">
+    <a href="" class="ml-2 Sidebar__links" routerLink="/monitoring/health">Audits</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Health</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Alerts</a>
+  </div>
+
+  <a href="" class="Sidebar__links" routerLink="/tools">Tools</a>
+  <a href="" class="Sidebar__links" routerLink="/settings">Settings</a>
+
+
 </div>
