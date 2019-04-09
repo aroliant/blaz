@@ -19,8 +19,8 @@ app.use(helmet());
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
 
-app.options("*",(req, res ) => {
-return res.send('')
+app.options("*", (req, res) => {
+    return res.send('')
 })
 
 // parse application/x-www-form-urlencoded
@@ -38,14 +38,14 @@ app.get('/', function (req, res) {
 app.use('/api/v1/', routes);
 
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
 
     console.log('The API Server is Listening on Port : ', PORT);
 
 });
 
 
-process.on('uncaughtException', function(err){
+process.on('uncaughtException', function (err) {
     console.log(err);
     process.exit(1);
 })
