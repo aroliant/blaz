@@ -7,7 +7,7 @@ const fileUpload = require('express-fileupload');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const routes = require('./server/routes/index.route');
+import routes from './server/routes'
 
 const app = express();
 
