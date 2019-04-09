@@ -4,12 +4,16 @@
       <div class="container">
         <div class="d-flex">
           <a class="header-brand" href="./index.html">
-            <img src="./demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">
+            Apps
           </a>
           <div class="d-flex order-lg-2 ml-auto">
-            <div class="nav-item d-none d-md-flex">
-              <a href="https://github.com/tabler/tabler" class="btn btn-sm btn-outline-primary" target="_blank">Source
-                code</a>
+            <div class="d-flex">
+              <form class="input-icon my-lg-0">
+                <input type="search" class="form-control header-search" placeholder="Search apps" tabindex="1">
+                <div class="input-icon-addon">
+                  <i class="fe fe-search"></i>
+                </div>
+              </form>
             </div>
             <div class="dropdown d-none d-md-flex">
               <a class="nav-link icon" data-toggle="dropdown">
@@ -84,17 +88,111 @@
         </div>
       </div>
     </div>
-    <div class="header py-2 my-3">
-      <div class="container">
-        <div class="d-flex">
-          <a class="header-brand" href="./index.html">
-          Apps
-          </a>
-        </div>
-      </div>
-    </div>
+
     <div class="my-3 my-md-5">
       <div class="container">
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="card card-body">
+              <h3>Create an app</h3>
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" name="example-text-input" placeholder="Text..">
+                </div>
+                <div class="form-group col-lg-6">
+                  <label class="form-label">Memory</label>
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <input type="range" class="form-control custom-range" step="5" min="0" max="50">
+                    </div>
+                    <div class="col-auto">
+                      <input type="number" class="form-control w-8" value="45">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-12">
+                  <label class="form-label">Select an App</label>
+                  <div class="row gutters-sm">
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-1">
+                      <label class="imagecheck mb-4">
+                        <input name="imagecheck" type="checkbox" value="1" class="imagecheck-input">
+                        <figure class="imagecheck-figure">
+                          <img src="http://via.placeholder.com/50" alt="}" class="imagecheck-image">
+                        </figure>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
         <div class="row row-cards row-deck">
           <div class="col-12">
             <div class="card">
@@ -104,10 +202,9 @@
                     <tr>
                       <th class="text-center w-1"><i class="icon-people"></i></th>
                       <th>App Name</th>
-                      <th>Usage</th>
-                      <th class="text-center">Payment</th>
-                      <th>Activity</th>
-                      <th class="text-center">Satisfaction</th>
+                      <th>IP Address</th>
+                      <th>Created</th>
+                      <th>Labels/Tags</th>
                       <th class="text-center"><i class="icon-settings"></i></th>
                     </tr>
                   </thead>
@@ -119,38 +216,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Elizabeth Martin</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Mar 19, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>42%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-yellow" role="progressbar" style="width: 42%" aria-valuenow="42"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-visa"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>4 minutes ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.42" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">42%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
@@ -176,38 +257,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Michelle Schultz</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Mar 2, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>0%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-red" role="progressbar" style="width: 0%" aria-valuenow="0"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-googlewallet"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>5 minutes ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.0" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">0%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
@@ -233,38 +298,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Crystal Austin</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Apr 7, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>96%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-green" role="progressbar" style="width: 96%" aria-valuenow="96"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-mastercard"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>a minute ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.96" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">96%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
@@ -290,38 +339,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Douglas Ray</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Jan 15, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>6%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-red" role="progressbar" style="width: 6%" aria-valuenow="6"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-shopify"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>a minute ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.06" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">6%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
@@ -347,38 +380,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Teresa Reyes</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Mar 4, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>36%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-red" role="progressbar" style="width: 36%" aria-valuenow="36"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-ebay"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>2 minutes ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.36" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">36%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
@@ -404,38 +421,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Emma Wade</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Mar 20, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>7%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-red" role="progressbar" style="width: 7%" aria-valuenow="7"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-paypal"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>a minute ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.07" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">7%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
@@ -461,38 +462,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Carol Henderson</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Feb 22, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>80%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-green" role="progressbar" style="width: 80%" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-visa"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>9 minutes ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.8" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">80%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
@@ -518,38 +503,22 @@
                         </div>
                       </td>
                       <td>
-                        <div>Christopher Harvey</div>
+                        <div>App Name</div>
                         <div class="small text-muted">
-                          Registered: Jan 22, 2018
+                          Version: 1.01
                         </div>
                       </td>
                       <td>
-                        <div class="clearfix">
-                          <div class="float-left">
-                            <strong>83%</strong>
-                          </div>
-                          <div class="float-right">
-                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-green" role="progressbar" style="width: 83%" aria-valuenow="83"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <div>192.168.100.101</div>
                       </td>
-                      <td class="text-center">
-                        <i class="payment payment-googlewallet"></i>
+                      <td>
+                        <div>3 days ago</div>
                       </td>
                       <td>
                         <div class="small text-muted">Last login</div>
                         <div>8 minutes ago</div>
                       </td>
-                      <td class="text-center">
-                        <div class="mx-auto chart-circle chart-circle-xs" data-value="0.83" data-thickness="3"
-                          data-color="blue">
-                          <div class="chart-circle-value">83%</div>
-                        </div>
-                      </td>
+
                       <td class="text-center">
                         <div class="item-action dropdown">
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
