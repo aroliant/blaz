@@ -20,7 +20,13 @@
     <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Stream Hosts</a>
   </div>
 
-  <a href="" class="Sidebar__links" routerLink="/firewall">Firewall</a>
+  <a href="" class="Sidebar__links" data-toggle="collapse" href="#firewallMenu" role="button" aria-expanded="false"
+  aria-controls="firewallMenu">Firewall</a>
+  <div class="collapse" id="firewallMenu">
+    <a href="" class="ml-2 Sidebar__links" routerLink="/firewalls">View</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/firewalls/firewall" >Create</a>
+  </div>
+
 
   <a href="" class="Sidebar__links" data-toggle="collapse" href="#manageMenu" role="button" aria-expanded="false"
     aria-controls="manageMenu">Manage</a>
