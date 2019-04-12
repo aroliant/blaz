@@ -1,0 +1,582 @@
+<div class="page">
+  <div class="page-main">
+    <div class="header py-4">
+      <div class="container">
+        <div class="d-flex">
+          <a class="header-brand" href="./index.html">
+            App Detail
+          </a>
+          <div class="d-flex order-lg-2 ml-auto">
+            <div class="d-flex">
+              <form class="input-icon my-lg-0">
+                <input type="search" class="form-control header-search" placeholder="Search apps" tabindex="1">
+                <div class="input-icon-addon">
+                  <i class="fe fe-search"></i>
+                </div>
+              </form>
+            </div>
+            <div class="dropdown d-none d-md-flex">
+              <a class="nav-link icon" data-toggle="dropdown">
+                <i class="fe fe-bell"></i>
+                <span class="nav-unread"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                <a href="#" class="dropdown-item d-flex">
+                  <span class="avatar mr-3 align-self-center"
+                    style="background-image: url(demo/faces/male/41.jpg)"></span>
+                  <div>
+                    <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
+                    <div class="small text-muted">10 minutes ago</div>
+                  </div>
+                </a>
+                <a href="#" class="dropdown-item d-flex">
+                  <span class="avatar mr-3 align-self-center"
+                    style="background-image: url(demo/faces/female/1.jpg)"></span>
+                  <div>
+                    <strong>Alice</strong> started new task: Tabler UI design.
+                    <div class="small text-muted">1 hour ago</div>
+                  </div>
+                </a>
+                <a href="#" class="dropdown-item d-flex">
+                  <span class="avatar mr-3 align-self-center"
+                    style="background-image: url(demo/faces/female/18.jpg)"></span>
+                  <div>
+                    <strong>Rose</strong> deployed new version of NodeJS REST Api V3
+                    <div class="small text-muted">2 hours ago</div>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+                <span class="ml-2 d-none d-lg-block">
+                  <span class="text-default">Jane Pearson</span>
+                  <small class="text-muted d-block mt-1">Administrator</small>
+                </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                <a class="dropdown-item" href="#">
+                  <i class="dropdown-icon fe fe-user"></i> Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="dropdown-icon fe fe-settings"></i> Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <span class="float-right"><span class="badge badge-primary">6</span></span>
+                  <i class="dropdown-icon fe fe-mail"></i> Inbox
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="dropdown-icon fe fe-send"></i> Message
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                  <i class="dropdown-icon fe fe-help-circle"></i> Need help?
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="dropdown-icon fe fe-log-out"></i> Sign out
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse"
+            data-target="#headerMenuCollapse">
+            <span class="header-toggler-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3 my-md-5">
+      <div class="container">
+        <div class="row row-cards row-deck">
+          <div class="col-12">
+            <div class="card card-body">
+              <div class="d-flex align-items-center mb-4">
+                <div class="avatar d-block mr-2" style="background-image: url(demo/faces/female/26.jpg)"></div>
+                <div class="d-flex flex-column">
+                  <h3 class="m-0">My App</h3>
+                </div>
+              </div>
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+                    aria-controls="overview" aria-selected="true">Overview</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="resources-tab" data-toggle="tab" href="#resources" role="tab"
+                    aria-controls="resources" aria-selected="false">Resources</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="deploy-tab" data-toggle="tab" href="#deploy" role="tab" aria-controls="deploy"
+                    aria-selected="false">Deploy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="metrics-tab" data-toggle="tab" href="#metrics" role="tab"
+                    aria-controls="metrics" aria-selected="false">Metrics</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab"
+                    aria-controls="activity" aria-selected="false">Activity</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="access-tab" data-toggle="tab" href="#access" role="tab" aria-controls="access"
+                    aria-selected="false">Access</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab"
+                    aria-controls="settings" aria-selected="false">Settings</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class=" my-3 ">
+                        <div class="d-flex justify-content-between mb-2">
+                          <div>Installed add-ons <span class="badge badge-pill badge-secondary ml-3">$0.00/month</span>
+                          </div>
+                          <a href="#">Configure Add-ons</a>
+                        </div>
+                        <div
+                          class="d-flex flex-grow align-items-center flex-column bg-light justify-content-center rounded p-3"
+                          style="min-height:100px;">
+                          <h6>There are no add-ons for this app</h6>
+                          <p>You can add add-ons to this app and they will show here. <a href="#">Learn more</a></p>
+                        </div>
+                      </div>
+
+                      <div class=" my-3 ">
+                        <div class="d-flex justify-content-between mb-2">
+                          <div>Dyno formation<span class="badge badge-pill badge-secondary ml-3">$0.00/month</span>
+                          </div>
+                          <a href="#">Configure Dynos</a>
+                        </div>
+                        <div class="d-flex flex-grow flex-column bg-white border justify-content-center rounded p-3"
+                          style="min-height:100px;">
+                          <h6>This app is using free dynos</h6>
+                          <p>This app is using free dynos</p>
+                        </div>
+                      </div>
+
+                      <div class=" my-3 ">
+                        <div class="d-flex justify-content-between mb-2">
+                          <div>Collaborator activity
+                          </div>
+                          <a href="#">Manage Access</a>
+                        </div>
+                        <div
+                          class="d-flex flex-grow align-items-center flex-column bg-light justify-content-center rounded p-3"
+                          style="min-height:100px;">
+                          <h6>There is no recent activity on this app</h6>
+                          <p>Collaborator activity will be shown when there are recent deploys</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="my-3">
+                        <div class="d-flex justify-content-between mb-2">
+                          <div>Latest activity
+                          </div>
+                          <a href="#">All Activity</a>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+                <div class="tab-pane fade" id="resources" role="tabpanel" aria-labelledby="resources-tab">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="my-3">
+                        <div class="d-flex align-items-center">
+                          <div>Free Dynos</div>
+                          <button class="btn btn-outline-primary ml-4 btn-sm">Change Dyno Type</button>
+                        </div>
+                        <div class="d-flex justify-content-between bg-white border rounded p-3 my-3">
+                          <div class="d-flex align-items-center">
+                            <div>web</div>
+                            <div>sh boot.sh</div>
+                          </div>
+
+                          <div class="d-flex align-items-center">
+                            <div class="custom-switches-stacked mr-3">
+                              <label class="custom-switch">
+                                <input type="radio" name="option" value="1" class="custom-switch-input" checked="">
+                                <span class="custom-switch-indicator"></span>
+                                <span class="custom-switch-description">$0.00</span>
+                              </label>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                          </div>
+                        </div>
+
+                        <div class="mt-5">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div>Add-ons</div>
+                            <button class="btn btn-primary btn-sm">Find more add-ons</button>
+                          </div>
+
+                          <div class="w-100">
+                            <div class="form-group">
+                              <label for=""></label>
+                              <input type="text" name="" id="" class="form-control"
+                                placeholder="Quickly add add-ons from elements" aria-describedby="helpId">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="d-flex flex-grow align-items-center flex-column bg-light justify-content-center rounded p-3"
+                          style="min-height:100px;">
+                          <h6>There is no recent activity on this app</h6>
+                          <p>You can add add-ons to this app and they will show here. <a href="#">Learn more</a></p>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <b>Estimated Monthly Cost</b>
+                          </div>
+                          <div>$0.00</div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="tab-pane fade" id="deploy" role="tabpanel" aria-labelledby="deploy-tab">
+                  <div class="row">
+                    <div class="col-lg-3 bg-light">
+                      <div class="my-3">
+                        <div class="text-primary">Add this app to a pipeline</div>
+                        <div>Create a new pipeline or choose an existing one and add this app to a stage in it.</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-9 bg-light">
+                      <div class="my-3">
+                        <div class="mb-2">Add this app to a stage in a pipeline to enable additional features</div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="d-flex">
+                              <img src="http://via.placeholder.com/80" class="rounded mr-2 img-fluid" alt="">
+                              <div>
+                                Pipelines let you connect multiple apps together and promote code between them.
+                                <a href="#">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <div class="d-flex">
+                              <img src="http://via.placeholder.com/80" class="rounded mr-2 img-fluid" alt="">
+                              <div>
+                                Pipelines connected to GitHub can enable review apps, and create apps for new pull
+                                requests.
+                                <a href="#">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <select name="beast" id="select-beast" class="form-control custom-select">
+                          <option value="1">Choose a pipeline</option>
+                          <option value="4">Sage Cattabriga-Alosa</option>
+                          <option value="3">Nikola Tesla</option>
+                        </select>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="row border-bottom">
+                    <div class="col-lg-3">
+                      <div class="my-3">
+                        <div class="text-primary">Deployment method</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-9">
+                      <div class="my-3">
+                        <div class="row">
+                          <div class="col-lg-6 p-2">
+                            <div class="d-flex border rounded p-2">
+                              <img src="http://via.placeholder.com/50" class="rounded mr-2 img-fluid" alt="">
+                              <div>
+                                Heroku Git
+                                <div class="small text-muted">Use Heroku CLI</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 p-2">
+                            <div class="d-flex p-2">
+                              <img src="http://via.placeholder.com/50" class="rounded mr-2 img-fluid" alt="">
+                              <div>
+                                GitHub
+                                <div class="small text-muted">Connect to Github</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 p-2">
+                            <div class="d-flex p-2">
+                              <img src="http://via.placeholder.com/50" class="rounded mr-2 img-fluid" alt="">
+                              <div>
+                                Container Registry
+                                <div class="small text-muted">Use Heroku CLI</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row border-bottom">
+                    <div class="col-lg-3">
+                      <div class="my-3">
+                        <div class="text-primary">Deploy using Heroku Git</div>
+                        <div>Use git in the command line or a GUI tool to deploy this app.</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-9">
+                      <div class="my-3">
+                        <div>Install the Heroku CLI</div>
+                        <div>Download and install the <a href="">Heroku CLI.</a></div>
+                        <div>If you haven't already, log in to your Heroku account and follow the prompts to create a
+                          new SSH public key.</div>
+
+                        <div class="p-3 bg-light rounded d-flex align-items-center p-2">
+                          $ heroku login
+                        </div>
+
+                        <div>Create a new Git repository</div>
+                        <div>Initialize a git repository in a new or existing directory</div>
+
+                        <div class="p-3 bg-light rounded d-flex flex-column p-2">
+                          <div>$ cd my-project/</div>
+                          <div>$ git init</div>
+                          <div>$ git init</div>
+                        </div>
+                        <hr>
+                        <div>Existing Git repository</div>
+                        <div>For existing repositories, simply add the heroku remote</div>
+                        <div class="p-3 bg-light rounded d-flex align-items-center p-2">
+                          $ heroku git:remote -a evening-journey-7528
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="metrics" role="tabpanel" aria-labelledby="metrics-tab">...</div>
+                <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="my-3">
+                        <div class="d-flex justify-content-between mb-2">
+                          <div>Latest activity
+                          </div>
+                          <a href="#">All Activity</a>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+                        <div class="d-flex flex-column border-bottom py-2 my-1">
+                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="access" role="tabpanel" aria-labelledby="access-tab">
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="my-3">
+                        <div class="d-flex justify-content-between mb-2">
+                          <div>Collaborators
+                          </div>
+                          <button class="btn btn-primary btn-sm" href="#">Add collaborator</button>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center my-3">
+                          <div class="d-flex">
+                            <img src="http://via.placeholder.com/30" class="rounded-circle mr-3" alt="">
+                            <div>narenramm@gmail.com</div>
+                          </div>
+
+
+                          <div>Owner</div>
+
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="my-3">
+                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
+                          <div>Name</div>
+
+                          <div class="d-flex align-items-center">
+                            <div class="form-group mb-0 mr-3">
+                              <input type="text" name="" id="" class="form-control" placeholder="App name"
+                                aria-describedby="helpId">
+                            </div>
+                            <a href="#" class="text-primary">Edit</a>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
+                          <div class="d-flex flex-column">
+                            <div>Config Vars</div>
+                            <div>Config vars change the way your app behaves. In addition to creating your own, some
+                              add-ons come with their own.</div>
+                          </div>
+                          <div class="d-flex">
+                            <button class="btn btn-outline-primary btn-sm">Reveal Config Vars</button>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
+                          <div class="d-flex flex-column">
+                            <div>Info</div>
+                          </div>
+                          <div class="d-flex">
+                            <div class="table-responsive">
+                              <table>
+                                <tr>
+                                  <td>Region</td>
+                                  <td>United States</td>
+                                </tr>
+                                <tr>
+                                  <td>Stack</td>
+                                  <td>cedar-14 <button class="btn btn-outline-primary btn-sm">Upgrade-Stack</button>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Framework</td>
+                                  <td>Angular</td>
+                                </tr>
+                                <tr>
+                                  <td>Slug Size</td>
+                                  <td>
+                                    <div class="text-muted">No Slug Detected</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Heroku Git URL</td>
+                                  <td>
+                                    <div class="bg-light rounded p-1">https://git.heroku.com/evening-journey-7528.git
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
+                          <div class="d-flex flex-column">
+                            <div>Buildpacks</div>
+                            <div>Buildpacks are scripts that are run when your app is deployed. They are used to install
+                              dependencies for your app and configure your environment.</div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="d-flex bg-light rounded p-2 align-items-center justify-content-end mb-4">
+                              <button class="btn btn-primary btn-sm">Add buildpack</button>
+                            </div>
+                            <div
+                              class="d-flex flex-grow align-items-center flex-column bg-light justify-content-center rounded p-3"
+                              style="min-height:100px;">
+                              <h6>There is no recent activity on this app</h6>
+                              <p>You can add add-ons to this app and they will show here. <a href="#">Learn more</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-start border-bottom py-5">
+                          <div class="d-flex flex-column">
+                            <div>Domains and certificates</div>
+                            <div>Add your custom domains here then <a href="#">point your DNS to Heroku.</a></div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="d-flex">
+                              Domain
+                              Your app can be found at <a href="#">https://evening-journey-7528.herokuapp.com/</a>
+                            </div>
+                            <hr>
+                            <div>
+                              SSL Upgrade to paid dynos to configure Heroku SSL
+                            </div>
+                            <div class="d-flex bg-light rounded p-2 align-items-center justify-content-end mb-4">
+                              <button class="btn btn-primary btn-sm">Add Domain</button>
+                            </div>
+                            <div
+                              class="d-flex flex-grow align-items-center flex-column bg-light justify-content-center rounded p-3"
+                              style="min-height:100px;">
+                              <h6>Custom domains will appear here</h6>
+                              <p>Custom domains allow you to access your app via one or more non-Heroku domain names
+                                (for example, www.yourcustomdomain.com)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
