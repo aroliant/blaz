@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import { FirewallComponent } from './firewall/firewall.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FirewallsComponent } from './list/firewalls.component';
+import { FirewallComponent } from './view/firewall.component';
 
 
 export const FirewallRoutes: Routes = [
   {
     path: '',
-    component: FirewallComponent  
+    children: [
+      {
+        path: "",
+        component: FirewallsComponent,
+      },
+      {
+        path: 'firewall',
+        component: FirewallComponent
+      }
+    ]
   }
 ];
 
@@ -16,6 +26,6 @@ export const FirewallRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(FirewallRoutes)
   ],
-  declarations: [FirewallComponent]
+  declarations: [FirewallsComponent, FirewallComponent]
 })
 export class FirewallModule { }

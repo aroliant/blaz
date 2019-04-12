@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'apps', loadChildren: './pages/apps/apps.module#AppsModule' },
       { path: 'hosts', loadChildren: './pages/hosts/hosts.module#HostsModule' },
-      { path: 'firewall', loadChildren: './pages/firewall/firewall.module#FirewallModule' },
+      { path: 'firewalls', loadChildren: './pages/firewall/firewall.module#FirewallModule' },
       { path: 'manage', loadChildren: './pages/manage/manage.module#ManageModule' },
       { path: 'monitoring', loadChildren: './pages/monitoring/monitoring.module#MonitoringModule' },
       { path: 'tools', loadChildren: './pages/tools/tools.module#ToolsModule' },
