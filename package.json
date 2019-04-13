@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "nodemon --exec babel-node app.js",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
+    "ng:build": "ng build",
+    "ng:test": "ng test",
+    "ng:lint": "ng lint",
     "e2e": "ng e2e",
     "db:migrate": "sequelize db:migrate",
-    "db:migrate:undo:all": "sequelize db:migrate:undo:all"
+    "db:migrate:undo:all": "sequelize db:migrate:undo:all",
+    "server:lint": "eslint server"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +29,9 @@
     "cors": "^2.8.5",
     "dockerode": "^2.5.8",
     "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "express-fileupload": "^1.1.4",
+    "figures": "^2.0.0",
     "fs-extra": "^7.0.1",
     "helmet": "^3.16.0",
     "jsonwebtoken": "^8.5.1",
@@ -63,6 +66,9 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "~4.5.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
