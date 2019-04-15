@@ -106,16 +106,16 @@
                     aria-controls="overview" aria-selected="true">Overview</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab"
+                    aria-controls="settings" aria-selected="false">HTTP Settings</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" id="resources-tab" data-toggle="tab" href="#resources" role="tab"
                     aria-controls="resources" aria-selected="false">App Configuration</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="deploy-tab" data-toggle="tab" href="#deploy" role="tab" aria-controls="deploy"
                     aria-selected="false">Deployment</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="metrics-tab" data-toggle="tab" href="#metrics" role="tab"
-                    aria-controls="metrics" aria-selected="false">Metrics</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab"
@@ -125,95 +125,110 @@
                   <a class="nav-link" id="access-tab" data-toggle="tab" href="#access" role="tab" aria-controls="access"
                     aria-selected="false">Access</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab"
-                    aria-controls="settings" aria-selected="false">HTTP Settings</a>
-                </li>
               </ul>
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
 
-                  <div class="row">
+                  <div class="row my-3">
                     <div class="col-lg-6">
-
-                      <div class=" my-3 ">
-                        <div class="d-flex flex-column mb-2">
-                          <div>App Description</div>
-                          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam at et unde veniam numquam
-                            autem, repudiandae libero minus sit molestiae aut ut doloremque fugit velit, ducimus, odit
-                            soluta perspiciatis doloribus.</div>
+                      <div class="card">
+                        <div class="card-header">
+                          <h3 class="card-title">CPU Usage</h3>
                         </div>
-                        <div class="table-responsive">
-                          <table class="table">
-                            <thead>
-                              <tr>
-                                <th>Created At</th>
-                                <th>Updated At</th>
-                                <th>Status</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>12/12/2019 10:26 AM</td>
-                                <td>12/12/2019 10:26 AM</td>
-                                <td>
-                                  <div>
-                                    <span class="status-icon bg-success"></span>Online
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>12/12/2019 10:26 AM</td>
-                                <td>12/12/2019 10:26 AM</td>
-                                <td>
-                                  <div>
-                                    <span class="status-icon bg-success"></span>Online
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                        <div class="card-body">
+                          <div id="chart-area-spline" style="height: 16rem"></div>
                         </div>
                       </div>
                     </div>
                     <div class="col-lg-6">
-                      <div class="my-3">
-                        <div class="d-flex justify-content-between mb-2">
-                          <div>Latest activity
-                          </div>
-                          <a href="#">All Activity</a>
+                      <div class="card">
+                        <div class="card-header">
+                          <h3 class="card-title">RAM Usage</h3>
                         </div>
-                        <div class="d-flex flex-column border-bottom py-2 my-1">
-                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
-                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        <div class="card-body">
+                          <div id="chart-area-spline" style="height: 16rem"></div>
                         </div>
-                        <div class="d-flex flex-column border-bottom py-2 my-1">
-                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
-                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="card">
+                        <div class="card-header">
+                          <h3 class="card-title">Disk I / O</h3>
                         </div>
-                        <div class="d-flex flex-column border-bottom py-2 my-1">
-                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
-                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        <div class="card-body">
+                          <div id="chart-area-spline" style="height: 16rem"></div>
                         </div>
-                        <div class="d-flex flex-column border-bottom py-2 my-1">
-                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
-                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="card">
+                        <div class="card-header">
+                          <h3 class="card-title">Network Usage</h3>
                         </div>
-                        <div class="d-flex flex-column border-bottom py-2 my-1">
-                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
-                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                        <div class="card-body">
+                          <div id="chart-area-spline" style="height: 16rem"></div>
                         </div>
-                        <div class="d-flex flex-column border-bottom py-2 my-1">
-                          <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
-                          <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
-                        </div>
-
                       </div>
                     </div>
                   </div>
 
+                  <div class="row my-3">
+                    <div class="col-lg-6">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Created At</th>
+                              <th>Updated At</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>12/12/2019 10:26 AM</td>
+                              <td>12/12/2019 10:26 AM</td>
 
+                            </tr>
+                            <tr>
+                              <td>12/12/2019 10:26 AM</td>
+                              <td>12/12/2019 10:26 AM</td>
 
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="d-flex justify-content-between mb-2">
+                        <div>Latest activity
+                        </div>
+                        <a href="#">All Activity</a>
+                      </div>
+                      <div class="d-flex flex-column border-bottom py-2 my-1">
+                        <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                        <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                      <div class="d-flex flex-column border-bottom py-2 my-1">
+                        <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                        <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                      <div class="d-flex flex-column border-bottom py-2 my-1">
+                        <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                        <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                      <div class="d-flex flex-column border-bottom py-2 my-1">
+                        <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                        <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                      <div class="d-flex flex-column border-bottom py-2 my-1">
+                        <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                        <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                      <div class="d-flex flex-column border-bottom py-2 my-1">
+                        <div><span class="font-weight-bold">narenramm@gmail.com:</span> Enable Loglex</div>
+                        <div class="small text-muted">Feb 20, 2019 at 8.14 PM . v4</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="tab-pane fade" id="resources" role="tabpanel" aria-labelledby="resources-tab">
                   <div class="row">
@@ -297,7 +312,26 @@
                             <i>Currently, this app does not have any custom port mapping.</i>
                           </div>
                           <div>
-                            <button class="btn btn-primary btn-sm">Add Port Mapping</button>
+                            <div>
+                              <div class="my-5 d-flex ">
+                                <div class="input-group mr-2 flex-fill">
+                                  <span class="input-group-prepend" id="basic-addon3">
+                                    <span class="input-group-text">Server Port</span>
+                                  </span>
+                                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                                    placeholder="5050">
+                                </div>
+                                <div class="input-group mr-2 flex-fill">
+                                  <span class="input-group-prepend" id="basic-addon3">
+                                    <span class="input-group-text">Container Port</span>
+                                  </span>
+                                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                                    placeholder="6060">
+                                </div>
+                              </div>
+                              <button class="btn btn-primary btn-sm">Add
+                                Port Mapping</button>
+                            </div>
                           </div>
                         </div>
 
@@ -343,19 +377,6 @@
                 </div>
                 <div class="tab-pane fade" id="deploy" role="tabpanel" aria-labelledby="deploy-tab">
                   <div class="d-flex my-5 flex-column">
-                    <div class="mb-2">
-                      <a href="#" data-toggle="collapse" href="#buildLogs" role="button" aria-expanded="false"
-                        aria-controls="buildLogs">
-                        <span class="font-weight-bold">Show Build Logs</span>
-                      </a>
-                    </div>
-                    <div class="collapse" id="buildLogs">
-                      <textarea class="border bg-light rounded p-2 w-100 text-left"
-                        rows="8">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</textarea>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="d-flex my-5 flex-column">
                     <div class="d-flex justify-content-between">
                       <div>
                         <span class="font-weight-bold">Version History</span>
@@ -394,6 +415,20 @@
                       </div>
                     </div>
                   </div>
+                  <div class="d-flex my-5 flex-column">
+                    <div class="mb-2">
+                      <a href="#" data-toggle="collapse" href="#buildLogs" role="button" aria-expanded="false"
+                        aria-controls="buildLogs">
+                        <span class="font-weight-bold">Show Build Logs</span>
+                      </a>
+                    </div>
+                    <div class="collapse" id="buildLogs">
+                      <textarea class="border bg-light rounded p-2 w-100 text-left"
+                        rows="8">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</textarea>
+                    </div>
+                  </div>
+                  <hr>
+
                   <div class="d-flex my-5 flex-column">
                     <div class="mb-2">
                       <a href="#" data-toggle="collapse" href="#appLogs" role="button" aria-expanded="true"
@@ -449,7 +484,6 @@
                   </div>
 
                 </div>
-                <div class="tab-pane fade" id="metrics" role="tabpanel" aria-labelledby="metrics-tab">...</div>
                 <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
                   <div class="row">
                     <div class="col-12">
@@ -493,23 +527,199 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="my-3">
-                        <div class="d-flex justify-content-between mb-2">
-                          <div>Collaborators
+
+
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="d-flex justify-content-between mb-2">
+                              <div>Collaborators
+                              </div>
+                              <button class="btn btn-primary btn-sm" href="#">Add Collaborator</button>
+                            </div>
+                            <div class="table-responsive">
+                              <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                                <thead>
+                                  <tr>
+                                    <th class="text-center w-1"><i class="icon-people"></i></th>
+                                    <th>Member</th>
+                                    <th>Access</th>
+                                    <th class="text-center"><i class="icon-settings"></i></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="text-center">
+                                      <div class="avatar d-block"
+                                        style="background-image: url(demo/faces/female/26.jpg)">
+                                        <span class="avatar-status bg-green"></span>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Jacob Samro</div>
+                                      <div class="small text-muted">
+                                        jacob@aroliant.com
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Administrator</div>
+                                    </td>
+                                    <td class="text-center">
+                                      <div class="item-action dropdown">
+                                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                            class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-tag"></i>
+                                            Action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                          <div class="dropdown-divider"></div>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-link"></i>
+                                            Separated link</a>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">
+                                      <div class="avatar d-block"
+                                        style="background-image: url(demo/faces/female/26.jpg)">
+                                        <span class="avatar-status bg-green"></span>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Jacob Samro</div>
+                                      <div class="small text-muted">
+                                        jacob@aroliant.com
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Administrator</div>
+                                    </td>
+                                    <td class="text-center">
+                                      <div class="item-action dropdown">
+                                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                            class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-tag"></i>
+                                            Action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                          <div class="dropdown-divider"></div>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-link"></i>
+                                            Separated link</a>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
-                          <button class="btn btn-primary btn-sm" href="#">Add collaborator</button>
+                          <div class="col-lg-6">
+                            <div class="d-flex justify-content-between mb-2">
+                              <div>Teams
+                              </div>
+                              <button class="btn btn-primary btn-sm" href="#">Add Team</button>
+                            </div>
+                            <div class="table-responsive">
+                              <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                                <thead>
+                                  <tr>
+                                    <th class="text-center w-1"><i class="icon-people"></i></th>
+                                    <th>Team</th>
+                                    <th>Members</th>
+                                    <th class="text-center"><i class="icon-settings"></i></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="text-center">
+                                      <div class="avatar d-block"
+                                        style="background-image: url(demo/faces/female/26.jpg)">
+                                        <span class="avatar-status bg-green"></span>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Aroliant</div>
+                                      <div class="small text-muted">
+                                        apps@aroliant.com
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>6</div>
+                                    </td>
+                                    <td class="text-center">
+                                      <div class="item-action dropdown">
+                                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                            class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-tag"></i>
+                                            Action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                          <div class="dropdown-divider"></div>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-link"></i>
+                                            Separated link</a>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">
+                                      <div class="avatar d-block"
+                                        style="background-image: url(demo/faces/female/26.jpg)">
+                                        <span class="avatar-status bg-green"></span>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Aroliant</div>
+                                      <div class="small text-muted">
+                                        apps@aroliant.com
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>15</div>
+                                    </td>
+                                    <td class="text-center">
+                                      <div class="item-action dropdown">
+                                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                            class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-tag"></i>
+                                            Action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                          <div class="dropdown-divider"></div>
+                                          <a href="javascript:void(0)" class="dropdown-item"><i
+                                              class="dropdown-icon fe fe-link"></i>
+                                            Separated link</a>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
                         </div>
 
-                        <div class="d-flex justify-content-between align-items-center my-3">
-                          <div class="d-flex">
-                            <img src="http://via.placeholder.com/30" class="rounded-circle mr-3" alt="">
-                            <div>narenramm@gmail.com</div>
-                          </div>
-
-
-                          <div>Owner</div>
-
-                          <div></div>
-                        </div>
                       </div>
                     </div>
                   </div>
