@@ -466,108 +466,75 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="my-3">
-                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
-                          <div>Name</div>
+                        <div class="d-flex">
+                          <div>Your app is internally available as srv-captain--wordpress-db to other Captain apps. In
+                            case of web-app, it is accessible via <a href="#">http://srv-captain--wordpress-db</a> from
+                            other apps.
+                          </div>
+                        </div>
+                        <div class="d-flex my-5">
+                          <label class="custom-control custom-checkbox mr-3">
+                            <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1"
+                              checked>
+                            <span class="custom-control-label">Do not expose as web-app</span>
+                          </label>
+                        </div>
+                        <div class="d-flex flex-column my-5">
+                          <div class="mb-2">Your app is available to public at:</div>
+                          <div class="d-flex"><button class="btn btn-primary btn-sm mr-3">Enable HTTPS</button> <a
+                              href="#">http://wordpress-db.server.demo.caprover.com</a></div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <div class="form-group mb-0 mr-3 flex-grow-1">
+                            <input type="text" name="" id="" class="form-control" placeholder="www.app.com"
+                              aria-describedby="helpId">
+                          </div>
+                          <button href="#" class="btn btn-primary btn-sm">Connect New Domain</button>
+                        </div>
+                        <div class="d-flex my-5 flex-column">
+                          <div class="collapse mb-3" id="editNginx">
+                            <textarea class="card card-body w-100" rows="15" cols="20">
 
-                          <div class="d-flex align-items-center">
-                            <div class="form-group mb-0 mr-3">
-                              <input type="text" name="" id="" class="form-control" placeholder="App name"
-                                aria-describedby="helpId">
-                            </div>
-                            <a href="#" class="text-primary">Edit</a>
+                            </textarea>
+                          </div>
+                          <div>
+                            <button class="btn btn-outline-secondary btn-sm" data-toggle="collapse" href="#editNginx"
+                              role="button" aria-expanded="false" aria-controls="editNginx">Edit Default Nginx
+                              Configurations</button>
+                          </div>
+
+                        </div>
+
+                        <div class="d-flex my-5">
+                          <div class="input-group">
+                            <span class="input-group-prepend" id="basic-addon3">
+                              <span class="input-group-text">Container HTTP Port</span>
+                            </span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                              value="80">
                           </div>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
-                          <div class="d-flex flex-column">
-                            <div>Config Vars</div>
-                            <div>Config vars change the way your app behaves. In addition to creating your own, some
-                              add-ons come with their own.</div>
-                          </div>
-                          <div class="d-flex">
-                            <button class="btn btn-outline-primary btn-sm">Reveal Config Vars</button>
-                          </div>
+
+                        <div class="d-flex my-5">
+                          <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="example-checkbox2"
+                              value="option2">
+                            <span class="custom-control-label">Force HTTPS by redirecting all HTTP traffic to
+                              HTTP</span>
+                          </label>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
-                          <div class="d-flex flex-column">
-                            <div>Info</div>
-                          </div>
-                          <div class="d-flex">
-                            <div class="table-responsive">
-                              <table>
-                                <tr>
-                                  <td>Region</td>
-                                  <td>United States</td>
-                                </tr>
-                                <tr>
-                                  <td>Stack</td>
-                                  <td>cedar-14 <button class="btn btn-outline-primary btn-sm">Upgrade-Stack</button>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Framework</td>
-                                  <td>Angular</td>
-                                </tr>
-                                <tr>
-                                  <td>Slug Size</td>
-                                  <td>
-                                    <div class="text-muted">No Slug Detected</div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Heroku Git URL</td>
-                                  <td>
-                                    <div class="bg-light rounded p-1">https://git.heroku.com/evening-journey-7528.git
-                                    </div>
-                                  </td>
-                                </tr>
-                              </table>
-                            </div>
-                          </div>
+
+                        <div class="d-flex my-5 align-items-center">
+                          <button class="btn btn-outline-secondary btn-sm mr-3" data-toggle="modal"
+                            data-target="#httpAuth">Edit HTTP Basic Auth</button>
+                          <div>Current State: <span class="font-weight-bold">Inactive</span></div>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center border-bottom py-5">
-                          <div class="d-flex flex-column">
-                            <div>Buildpacks</div>
-                            <div>Buildpacks are scripts that are run when your app is deployed. They are used to install
-                              dependencies for your app and configure your environment.</div>
-                          </div>
-                          <div class="d-flex flex-column">
-                            <div class="d-flex bg-light rounded p-2 align-items-center justify-content-end mb-4">
-                              <button class="btn btn-primary btn-sm">Add buildpack</button>
-                            </div>
-                            <div
-                              class="d-flex flex-grow align-items-center flex-column bg-light justify-content-center rounded p-3"
-                              style="min-height:100px;">
-                              <h6>There is no recent activity on this app</h6>
-                              <p>You can add add-ons to this app and they will show here. <a href="#">Learn more</a></p>
-                            </div>
-                          </div>
+
+                        <div class="d-flex my-5">
+                          <button class="btn btn-danger btn-sm mr-3">Delete App</button>
+                          <button class="btn btn-primary btn-sm">Save & Update</button>
                         </div>
-                        <div class="d-flex justify-content-between align-items-start border-bottom py-5">
-                          <div class="d-flex flex-column">
-                            <div>Domains and certificates</div>
-                            <div>Add your custom domains here then <a href="#">point your DNS to Heroku.</a></div>
-                          </div>
-                          <div class="d-flex flex-column">
-                            <div class="d-flex">
-                              Domain
-                              Your app can be found at <a href="#">https://evening-journey-7528.herokuapp.com/</a>
-                            </div>
-                            <hr>
-                            <div>
-                              SSL Upgrade to paid dynos to configure Heroku SSL
-                            </div>
-                            <div class="d-flex bg-light rounded p-2 align-items-center justify-content-end mb-4">
-                              <button class="btn btn-primary btn-sm">Add Domain</button>
-                            </div>
-                            <div
-                              class="d-flex flex-grow align-items-center flex-column bg-light justify-content-center rounded p-3"
-                              style="min-height:100px;">
-                              <h6>Custom domains will appear here</h6>
-                              <p>Custom domains allow you to access your app via one or more non-Heroku domain names
-                                (for example, www.yourcustomdomain.com)</p>
-                            </div>
-                          </div>
-                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -576,6 +543,43 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="httpAuth" tabindex="-1" role="dialog" aria-labelledby="httpAuthTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="httpAuthTitle">Edit HTTP Basic Auth</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-column">
+          <div class="mb-3">
+            HTTP Basic authentication is the simplest technique for enforcing access controls to web resources.
+          </div>
+          <div class="mb-3">
+            You can use this technique to restrict access to HTTP apps, specially those you create via One-Click app
+            generator such as phpMyAdmin and etc.
+          </div>
+          <div class="form-group mb-3 mr-3">
+            <input type="text" name="" id="" class="form-control" placeholder="username" aria-describedby="helpId">
+          </div>
+          <div class="form-group mb-3 mr-3">
+            <input type="text" name="" id="" class="form-control" placeholder="password" aria-describedby="helpId">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Ok</button>
       </div>
     </div>
   </div>
