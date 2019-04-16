@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ApplicationComponent } from './layouts/application/application.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HomeComponent,
     ApplicationComponent,
     SidebarComponent,
+    TopbarComponent,
   ],
   imports: [
     BrowserModule,
