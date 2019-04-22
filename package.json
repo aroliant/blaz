@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "nodemon --exec babel-node app.js",
+    "serve": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
