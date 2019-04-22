@@ -1,5 +1,7 @@
 import express from 'express';
 
+import routes from './server/routes';
+
 const _ = require('lodash');
 const fs = require('fs');
 const bodyParser = require('body-parser');
@@ -7,11 +9,9 @@ const fileUpload = require('express-fileupload');
 const helmet = require('helmet');
 const cors = require('cors');
 
-import routes from './server/routes'
-
 const app = express();
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 // secure apps by setting various HTTP headers
 app.use(helmet());

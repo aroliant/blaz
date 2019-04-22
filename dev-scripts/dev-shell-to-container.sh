@@ -7,4 +7,4 @@ if ! [ $(id -u) = 0 ]; then
 fi
 
 
-docker exec -it $(docker container ls --filter name=$1 | awk 'FNR == 2 {print $1}') /bin/sh
+docker exec -it $(docker container ls --filter name=$1 | awk 'FNR == 2 {print $1}') /bash

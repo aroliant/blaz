@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HostsComponent } from './hosts/hosts.component';
-import { DomainsComponent } from './domains/domains.component';
 
 
 export const HostsAndDomainsRoutes: Routes = [
@@ -13,10 +12,6 @@ export const HostsAndDomainsRoutes: Routes = [
         path: "",
         component: HostsComponent,
       },
-      {
-        path: 'domains',
-        component: DomainsComponent
-      }
     ]
   }
 ];
@@ -28,7 +23,6 @@ export const HostsAndDomainsRoutes: Routes = [
   ],
   declarations: [
     HostsComponent,
-    DomainsComponent
   ]
 })
-export class HostsModule { }
+export class HostsAndDomains { }

@@ -7,3 +7,11 @@
 .FlexDirectionColumn {
     flex-direction: column;
 }
+
+.TagInsideInput{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 5px;
+    margin-top: 7px;
+}

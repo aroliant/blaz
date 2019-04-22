@@ -5,7 +5,7 @@ echo "Updating APT Repo"
 sudo apt-get update
 
 echo "Configuring APT to use HTTPS"
-sudo apt-get install \
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -25,7 +25,7 @@ echo "Updating APT Index"
 sudo apt-get update
 
 echo "Install latest version of Docker CE"
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 echo "Enabeling Docker engine API"
 

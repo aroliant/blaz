@@ -1,24 +1,17 @@
 <div class="Sidebar">
-  <a routerLink="/home" class="mx-auto h4 mt-5">Blaz</a>
+  <a routerLink="/home" class="mx-auto h4 mt-5">
+  <img class="img-fluid p-3" src="../../../assets/images/blaz.png" alt="">
+  </a>
   <div class="py-5"></div>
 
-  <a class="Sidebar__links" data-toggle="collapse" href="#appsMenu" role="button" aria-expanded="false"
-    aria-controls="appsMenu">
+  <a class="Sidebar__links" routerLink="/apps">
     Apps
   </a>
-  <div class="collapse" id="appsMenu">
-    <a href="" class="ml-2 Sidebar__links" routerLink="/apps">View</a>
-    <a href="" class="ml-2 Sidebar__links" routerLink="/apps">Create</a>
-  </div>
 
-  <a href="" class="Sidebar__links" data-toggle="collapse" href="#domainHostsMenu" role="button" aria-expanded="false"
-    aria-controls="domainHostsMenu">Domains & Hosts</a>
-  <div class="collapse" id="domainHostsMenu">
-    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Proxy Hosts</a>
-    <a href="" class="ml-2 Sidebar__links" routerLink="/hosts">Stream Hosts</a>
-  </div>
+  <a href="" class="Sidebar__links" routerLink="/domains-n-hosts">Domains & Hosts</a>
 
-  <a href="" class="Sidebar__links" routerLink="/firewall">Firewall</a>
+  <a href="" class="Sidebar__links"  routerLink="/firewalls" >Firewall</a>
+
 
   <a href="" class="Sidebar__links" data-toggle="collapse" href="#manageMenu" role="button" aria-expanded="false"
     aria-controls="manageMenu">Manage</a>

@@ -1,0 +1,146 @@
+<div class="page">
+  <div class="page-main">
+    <div class="my-3 my-md-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-body">
+              <div class="d-flex align-items-center mb-4">
+                <div class="avatar d-block mr-2" style="background-image: url(demo/faces/female/26.jpg)"></div>
+                <div class="d-flex flex-column">
+                  <h3 class="m-0">Test Firewall</h3>
+                  <div>4 Rules</div>
+                </div>
+              </div>
+              <div>
+                <p>Firewall rules control what inbound and outbound traffic is allowed to enter or leave a Droplet.
+                </p>
+                <br>
+
+                <div>
+                  <h3>Rules</h3>
+                  <p>Set the Firewall rules for incoming traffic. Only the specified ports will accept inbound
+                    connections. All other traffic will be blocked.</p>
+
+                  <div class="table-responsive">
+                    <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                      <thead>
+                        <tr>
+                          <th>Type</th>
+                          <th>Protocol</th>
+                          <th>Port Range</th>
+                          <th>Sources</th>
+                          <th class="text-center"><i class="icon-settings"></i></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div>SSH</div>
+                          </td>
+                          <td>
+                            <div>TCP</div>
+                          </td>
+                          <td>
+                            <div>22</div>
+                          </td>
+                          <td>
+                            <div><span class="tag mr-2">All IPv4</span><span class="tag mr-2">All IPv6</span></div>
+                          </td>
+                          <td class="text-center">
+                            <div class="item-action dropdown">
+                              <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                  class="fe fe-more-vertical"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript:void(0)" class="dropdown-item"><i
+                                    class="dropdown-icon fe fe-tag"></i>
+                                  Edit Rule </a>
+                                <a href="javascript:void(0)" class="dropdown-item"><i
+                                    class="dropdown-icon fe fe-edit-2"></i>Delete Rule</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div>SSH</div>
+                          </td>
+                          <td>
+                            <div>TCP</div>
+                          </td>
+                          <td>
+                            <div>22</div>
+                          </td>
+                          <td>
+                            <div><span class="tag mr-2">All IPv4</span><span class="tag mr-2">All IPv6</span></div>
+                          </td>
+                          <td class="text-center">
+                            <div class="item-action dropdown">
+                              <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
+                                  class="fe fe-more-vertical"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript:void(0)" class="dropdown-item"><i
+                                    class="dropdown-icon fe fe-tag"></i>
+                                  Edit Rule </a>
+                                <a href="javascript:void(0)" class="dropdown-item"><i
+                                    class="dropdown-icon fe fe-edit-2"></i>Delete Rule</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div>SSH</div>
+                          </td>
+                          <td>
+                            <div><select class="custom-select">
+                                <option selected>All TCP</option>
+                                <option value="1">All TCP</option>
+                                <option value="2">All UDP</option>
+                                <option value="3">Custom</option>
+                              </select></div>
+                          </td>
+                          <td>
+                            <div>
+                              <div class="form-group m-0">
+                                <input type="number" class="form-control">
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div>
+                              <div class="form-group m-0 position-relative">
+                                <div class="TagInsideInput"><span class="tag mr-2 ">All IPv4</span><span
+                                    class="tag mr-2">All IPv6</span></div>
+                                <input type="text" class="form-control">
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div>
+                              <button class="btn btn-primary mr-2">Save</button>
+                              <button class="btn btn-light">Cancel</button>
+                            </div>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                      <tfoot>
+                        <select class="custom-select">
+                          <option selected>New Rule</option>
+                          <option value="1">All TCP</option>
+                          <option value="2">All UDP</option>
+                          <option value="3">Custom</option>
+                        </select>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
