@@ -1,9 +1,10 @@
 import express from 'express';
+import chalk from 'chalk';
+import { Logger } from './server/utils';
 
 import routes from './server/routes';
 
-const _ = require('lodash');
-const fs = require('fs');
+
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const helmet = require('helmet');
@@ -19,9 +20,9 @@ app.use(helmet());
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
 
-app.options("*", (req, res) => {
-    return res.send('')
-})
+app.options('*', (req, res) => {
+  return res.send('');
+});
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,23 +30,22 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 
 
-
-app.get('/', function (req, res) {
-    res.send("...")
+app.get('/', (req, res) => {
+  res.send('...');
 });
 
 
 app.use('/api/v1/', routes);
 
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
 
-    console.log('The API Server is Listening on Port : ', PORT);
+  Logger.log('The API Server is Listening on Port : ', chalk.bold.green(PORT));
 
 });
 
 
-process.on('uncaughtException', function (err) {
-    console.log(err);
-    process.exit(1);
-})
+process.on('uncaughtException', (err) => {
+  Logger.log(err);
+  process.exit(1);
+});
