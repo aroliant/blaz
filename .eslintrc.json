@@ -12,7 +12,8 @@
         "class-methods-use-this": 0,
         "import/export": 0,
         "no-useless-constructor": 0,
-        "no-empty-function": 0
+        "no-empty-function": 0,
+        "import/named": 0
     },
     "settings": {
         "import/resolver": {
