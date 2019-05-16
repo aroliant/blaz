@@ -1,65 +1,14 @@
-import express from 'express';
-import chalk from 'chalk';
 import { Logger } from './server/utils';
-
-import routes from './server/routes';
-
-
-const bodyParser = require('body-parser');
-const fileUpload = require('express-fileupload');
-const helmet = require('helmet');
-const cors = require('cors');
-
-
-
-// const app = express();
-
-// const PORT = process.env.PORT || 3000;
-
-// // secure apps by setting various HTTP headers
-// app.use(helmet());
-
-// // enable CORS - Cross Origin Resource Sharing
-// app.use(cors());
-
-// app.options('*', (req, res) => {
-//   return res.send('');
-// });
-
-// // parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// app.use(fileUpload());
-
-
-// app.get('/', (req, res) => {
-//   res.send('...');
-// });
-
-
-// app.use('/api/v1/', routes);
-
-
-// app.listen(PORT, () => {
-
-//   Logger.log('The API Server is Listening on Port : ', chalk.bold.green(PORT));
-
-// });
-
-
-// process.on('uncaughtException', (err) => {
-//   Logger.log(err);
-//   process.exit(1);
-// });
-
-console.log('Blaz Starting');
-
 import AppConstants from './server/config/AppConstants';
 import BlazInstaller from './server/utils/BlazInstaller';
+import BlazApiServer from './server/services/BlazApiServer'
 
-// // const AppConstants = require('../server/config/AppConstants');
-// // const BLazInstaller = require('../server/utils/BlazInstaller');
 
 const blazInstaller = new BlazInstaller()
+const blazApiServer = new BlazApiServer()
 
-blazInstaller.install()
+if (!blazInstaller.isInstalled()) {
+  blazInstaller.install() // Start the installer if Blaz is not installed
+} else {
+  blazApiServer.run() // Else start the Blaz Server
+}
