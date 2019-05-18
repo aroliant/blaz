@@ -1,4 +1,4 @@
-import { Logger } from './server/utils/Logger';
+import Logger from './server/utils/Logger';
 import AppConstants from './server/config/AppConstants';
 import BlazInstaller from './server/utils/BlazInstaller';
 import BlazApiServer from './server/services/BlazApiServer'
