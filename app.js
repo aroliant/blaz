@@ -12,8 +12,8 @@ if (!EnvVars.IS_BLAZ_INSTANCE) {
   Logger.info("Installing Blaz")
   blazInstaller.install() // Start the installer if Blaz is not installed
 } else {
-  Logger.info("Blaz Server starting")
-  blazApiServer.run() // Else start the Blaz Server
+  const blazApp = require('./server/blazApp')
+  
 }
 
 /*
