@@ -1,5 +1,5 @@
 
-# Default catch-all page. e.g. if you enter SOME-RANDOM-CHARS.captainroot.domain.com
+# Default catch-all page. e.g. if you enter SOME-RANDOM-CHARS.blazroot.domain.com
     server {
 
         # Catch all HTTP
@@ -7,11 +7,11 @@
 
         # Catch all HTTPS
         <%
-            if (captain.hasRootSsl) {
+            if (blaz.hasRootSsl) {
         %>
             listen              443 ssl;
-            ssl_certificate     <%-captain.crtPath%>;
-            ssl_certificate_key <%-captain.keyPath%>;
+            ssl_certificate     <%-blaz.crtPath%>;
+            ssl_certificate_key <%-blaz.keyPath%>;
         <%
             }
         %>
@@ -27,7 +27,7 @@
         }
 
         location / {
-            root   <%-captain.defaultHtmlDir%>;
+            root   <%-blaz.defaultHtmlDir%>;
             index  index.html index.htm;
         }
 
@@ -36,18 +36,18 @@
     }
 
 
-# Captain dashboard at captain.captainroot.domain.com
+# Blaz dashboard at blaz.blazroot.domain.com
     server {
 
         listen       80;
         client_max_body_size 300m;
 
     <%
-        if (captain.hasRootSsl) {
+        if (blaz.hasRootSsl) {
     %>
         listen              443 ssl;
-        ssl_certificate     <%-captain.crtPath%>;
-        ssl_certificate_key <%-captain.keyPath%>;
+        ssl_certificate     <%-blaz.crtPath%>;
+        ssl_certificate_key <%-blaz.keyPath%>;
             
         # Mozilla Intermediate configuration. tweak to your needs.
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
@@ -57,13 +57,13 @@
         }
     %>
 
-        server_name  <%-captain.domain%>;
+        server_name  <%-blaz.domain%>;
 
         # 127.0.0.11 is DNS set up by Docker, see:
         # https://docs.docker.com/engine/userguide/networking/configure-dns/
         # https://github.com/moby/moby/issues/20026
         resolver 127.0.0.11 valid=10s;
-        set $upstream http://<%-captain.serviceName%>:<%-captain.serviceExposedPort%>;
+        set $upstream http://<%-blaz.serviceName%>:<%-blaz.serviceExposedPort%>;
 
         # IMPORTANT!! Except proxy_read_timeout, this block should be same as location /api/v2/user/apps/appData
         location / {
@@ -85,15 +85,15 @@
             proxy_read_timeout 120s;
         }
 
-        # Used by Let's Encrypt and CapRover self health monitoring
+        # Used by Let's Encrypt and Blaz self health monitoring
         location /.well-known/ {
-            root <%-captain.staticWebRoot%>;
+            root <%-blaz.staticWebRoot%>;
         }
     }
 
 
 
-# Built-in Docker Registry at registry.captainroot.domain.com
+# Built-in Docker Registry at registry.blazroot.domain.com
 # Port 80/443 is used by Let's Encrypt to support HTTPS
 # But the Registry engine runs on port 996
     server {
