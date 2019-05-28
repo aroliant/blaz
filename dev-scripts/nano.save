@@ -1,0 +1,5 @@
+echo "removing all Image,Containervices"
+
+sudo docker stop $(docker ps -a -q)
+echo "y" | sudo docker system prune -a
+echo "y" | sudo docker volume prune
