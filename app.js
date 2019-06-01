@@ -11,6 +11,7 @@ const blazApiServer = new BlazApiServer()
 if (!EnvVars.IS_BLAZ_INSTANCE) {
   Logger.info("Installing Blaz")
   blazInstaller.install() // Start the installer if Blaz is not installed
+ 
 } else {
   const blazApp = require('./server/blazApp')
   
