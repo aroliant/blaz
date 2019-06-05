@@ -4,17 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "babel-node app.js",
-    "serve": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
     "ng:build": "ng build",
     "ng:test": "ng test",
     "ng:lint": "ng lint",
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo:all": "sequelize db:migrate:undo:all",
-    "server:lint": "eslint server"
+    "lint": "eslint server"
   },
   "private": true,
   "dependencies": {
