@@ -1,6 +1,0 @@
-echo "Removing all Image,Container,Volumes,Network and Services"
-
-sudo docker stop $(docker ps -a -q)
-echo "y" | sudo docker system prune -a
-ec
-
