@@ -20,7 +20,13 @@
         "one-var-declaration-per-line": 0,
         "prefer-template": 0,
         "no-plusplus": 0,
-        "prefer-destructuring" : 0
+        "prefer-destructuring": 0,
+        "max-len": [
+            "warn",
+            {
+                "code": 120
+            }
+        ]
     },
     "settings": {
         "import/resolver": {
