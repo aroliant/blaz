@@ -10,8 +10,8 @@
             if (blaz.hasRootSsl) {
         %>
             listen              443 ssl;
-            ssl_certificate     <%-blaz.crtPath%>;
-            ssl_certificate_key <%-blaz.keyPath%>;
+            <!-- ssl_certificate     <%-blaz.crtPath%>;
+            ssl_certificate_key <%-blaz.keyPath%>; -->
         <%
             }
         %>
@@ -46,8 +46,8 @@
         if (blaz.hasRootSsl) {
     %>
         listen              443 ssl;
-        ssl_certificate     <%-blaz.crtPath%>;
-        ssl_certificate_key <%-blaz.keyPath%>;
+        <!-- ssl_certificate     <%-blaz.crtPath%>;
+        ssl_certificate_key <%-blaz.keyPath%>; -->
             
         # Mozilla Intermediate configuration. tweak to your needs.
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
@@ -105,8 +105,8 @@
         if (registry.hasRootSsl) {
     %>
         listen              443 ssl;
-        ssl_certificate     <%-registry.crtPath%>;
-        ssl_certificate_key <%-registry.keyPath%>;
+        <!-- ssl_certificate     <%-registry.crtPath%>;
+        ssl_certificate_key <%-registry.keyPath%>; -->
     <%
         }
     %>
