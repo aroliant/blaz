@@ -18,8 +18,6 @@ if (!EnvVars.IS_BLAZ_INSTANCE) {
   const app = require('./server/blazApp')
 
   const port = process.env.PORT || 3000
-  //port = parseInt(port, 3000)
-  console.log("PORT ___ PORT", port)
   app.set('port', port)
 
   const server = http.createServer(app)
