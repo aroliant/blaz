@@ -9,7 +9,9 @@
     "ng:lint": "ng lint",
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo:all": "sequelize db:migrate:undo:all",
-    "lint": "eslint server"
+    "lint": "eslint server",
+    "blaz:build" : "sh dev-scripts/build-blaz.sh",
+    "blaz:run" : "sh dev-scripts/run-blaz.sh"
   },
   "private": true,
   "dependencies": {
