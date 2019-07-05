@@ -26,19 +26,8 @@ if (!EnvVars.IS_BLAZ_INSTANCE) {
   server.on('error', (err) => {
     Logger.log('Error on http ->  start', err)
   })
-  server.on('listening', (err) => {
-    Logger.log('Error on http -> listening', err)
+  server.on('listening', () => {
+    Logger.log('App is listening on port', port)
   })
 
 }
-
-
-/*
-
-if (!blazInstaller.isInstalled()) {
-  blazInstaller.install() // Start the installer if Blaz is not installed
-} else {
-  blazApiServer.run() // Else start the Blaz Server
-}
-
-*/
