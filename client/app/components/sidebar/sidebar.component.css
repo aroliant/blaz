@@ -16,6 +16,10 @@
     padding: 10px 30px;
 }
 
+.Sidebar__linksActive {
+    background: #f5f7fb;
+}
+
 .Sidebar__links:hover{
     background: #f5f7fb;
     text-decoration: none;

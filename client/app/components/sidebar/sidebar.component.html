@@ -1,36 +1,39 @@
 <div class="Sidebar">
   <a routerLink="/home" class="mx-auto h4 mt-5">
-  <img class="img-fluid p-3" src="../../../assets/images/blaz.png" alt="">
+    <img class="img-fluid p-3" src="../../../assets/images/blaz.png" alt="" style="height: 65px;">
   </a>
   <div class="py-5"></div>
 
-  <a class="Sidebar__links" routerLink="/apps">
+  <a class="Sidebar__links" routerLink="/home" routerLinkActive="Sidebar__linksActive">
+    Home
+  </a>
+  <a class="Sidebar__links" routerLink="/apps" routerLinkActive="Sidebar__linksActive">
     Apps
   </a>
 
-  <a href="" class="Sidebar__links" routerLink="/domains-n-hosts">Domains & Hosts</a>
+  <a href="" class="Sidebar__links" routerLink="/domains-n-hosts" routerLinkActive="Sidebar__linksActive">Domains & Hosts</a>
 
-  <a href="" class="Sidebar__links"  routerLink="/firewalls" >Firewall</a>
+  <a href="" class="Sidebar__links" routerLink="/firewalls" routerLinkActive="Sidebar__linksActive">Firewall</a>
 
 
   <a href="" class="Sidebar__links" data-toggle="collapse" href="#manageMenu" role="button" aria-expanded="false"
     aria-controls="manageMenu">Manage</a>
   <div class="collapse" id="manageMenu">
-    <a href="" class="ml-2 Sidebar__links" routerLink="/teams">Teams</a>
-    <a href="" class="ml-2 Sidebar__links" routerLink="/projects">Projects</a>
-    <a href="" class="ml-2 Sidebar__links" routerLink="/users">Users</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/teams" routerLinkActive="Sidebar__linksActive">Teams</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/projects" routerLinkActive="Sidebar__linksActive">Projects</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/users" routerLinkActive="Sidebar__linksActive">Users</a>
   </div>
 
-  <a href="" class="Sidebar__links"  data-toggle="collapse" href="#monitorMenu" role="button" aria-expanded="false"
-  aria-controls="monitorMenu">Monitoring</a>
+  <a href="" class="Sidebar__links" data-toggle="collapse" href="#monitorMenu" role="button" aria-expanded="false"
+    aria-controls="monitorMenu">Monitoring</a>
   <div class="collapse" id="monitorMenu">
-    <a href="" class="ml-2 Sidebar__links" routerLink="/monitoring/audits">Audits</a>
-    <a href="" class="ml-2 Sidebar__links" routerLink="/monitoring/health">Health</a>
-    <a href="" class="ml-2 Sidebar__links" routerLink="/monitoring/alerts">Alerts</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/monitoring/audits" routerLinkActive="Sidebar__linksActive">Audits</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/monitoring/health" routerLinkActive="Sidebar__linksActive">Health</a>
+    <a href="" class="ml-2 Sidebar__links" routerLink="/monitoring/alerts" routerLinkActive="Sidebar__linksActive">Alerts</a>
   </div>
 
-  <a href="" class="Sidebar__links" routerLink="/tools">Tools</a>
-  <a href="" class="Sidebar__links" routerLink="/settings">Settings</a>
+  <a href="" class="Sidebar__links" routerLink="/tools" routerLinkActive="Sidebar__linksActive">Tools</a>
+  <a href="" class="Sidebar__links" routerLink="/settings" routerLinkActive="Sidebar__linksActive">Settings</a>
 
 
 </div>
