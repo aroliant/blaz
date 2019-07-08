@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ApplicationComponent } from './layouts/application/application.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     ApplicationComponent,
     SidebarComponent,
     TopbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
