@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ApplicationComponent } from './layouts/application/application.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { AlertsComponent } from './pages/monitoring/alerts/alerts.component';
+import { AuditsComponent } from './pages/monitoring/audits/audits.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     ApplicationComponent,
     SidebarComponent,
     TopbarComponent,
+    AlertsComponent,
+    AuditsComponent
   ],
   imports: [
     BrowserModule,
