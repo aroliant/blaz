@@ -9,6 +9,8 @@ RUN npm i yarn -g && yarn install
 
 COPY ./ /usr/src/app
 
+RUN yarn ng build --prod
+
 ENV PORT 3000
 EXPOSE 3000
 
