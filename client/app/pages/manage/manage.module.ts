@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TeamsComponent } from './teams/teams.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { UsersComponent } from './users/users.component';
+import { EditComponent } from './teams/edit/edit.component';
+import { NewComponent } from './teams/new/new.component';
 
 
 export const ManageRoutes: Routes = [
@@ -34,7 +36,9 @@ export const ManageRoutes: Routes = [
     declarations: [
         TeamsComponent,
         ProjectsComponent,
-        UsersComponent
+        UsersComponent,
+        EditComponent,
+        NewComponent
     ]
 })
 export class ManageModule { }
