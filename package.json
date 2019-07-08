@@ -5,14 +5,17 @@
     "ng": "ng",
     "start": "babel-node app.js",
     "build:client": "ng build",
-    "build:server": "babel server -d dist/server",
+    "build:server": "babel server -d dist/server --copy-files",
     "ng:test": "ng test",
     "ng:lint": "ng lint",
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo:all": "sequelize db:migrate:undo:all",
     "lint": "eslint server",
     "blaz:build": "sh dev-scripts/build-blaz.sh",
-    "blaz:run": "sh dev-scripts/run-blaz.sh"
+    "blaz:run": "sh dev-scripts/run-blaz.sh",
+    "blaz:start": "node app.bin",
+    "server:pack": "pkg . -t node10.15.3-alpine-x64 --output app.bin",
+    "server:pack:local": "pkg package.json --output app.bin"
   },
   "private": true,
   "dependencies": {
@@ -101,5 +104,17 @@
     "hooks": {
       "pre-push": "yarn lint"
     }
+  },
+  "bin": "dist/server/index.js",
+  "pkg": {    
+    "scripts": [
+      "dist/server/**/*.js",
+      "dist/server/services/dns/**/*.js"
+    ],
+    "assets": [
+      "dist/server/pages/**",
+      "dist/server/template/**/*",
+      "dist/dashboard/**/*"
+    ]
   }
 }
