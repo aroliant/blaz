@@ -26,6 +26,7 @@ const routes: Routes = [
       { path: 'firewalls', loadChildren: './pages/firewall/firewall.module#FirewallModule' },
       // { path: 'manage', loadChildren: './pages/manage/manage.module#ManageModule' },
       { path: 'teams', loadChildren: './pages/manage/teams/teams.module#TeamsModule' },
+      { path: 'users', loadChildren: './pages/manage/users/users.module#UsersModule' },
 
       { path: 'monitoring', loadChildren: './pages/monitoring/monitoring.module#MonitoringModule' },
       { path: 'tools', loadChildren: './pages/tools/tools.module#ToolsModule' },
