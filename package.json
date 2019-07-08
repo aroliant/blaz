@@ -4,14 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "babel-node app.js",
-    "ng:build": "ng build",
+    "build:client": "ng build",
+    "build:server": "babel server -d dist/server",
     "ng:test": "ng test",
     "ng:lint": "ng lint",
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo:all": "sequelize db:migrate:undo:all",
     "lint": "eslint server",
-    "blaz:build" : "sh dev-scripts/build-blaz.sh",
-    "blaz:run" : "sh dev-scripts/run-blaz.sh"
+    "blaz:build": "sh dev-scripts/build-blaz.sh",
+    "blaz:run": "sh dev-scripts/run-blaz.sh"
   },
   "private": true,
   "dependencies": {
@@ -70,6 +71,7 @@
     "@angular/cli": "~7.3.8",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+    "@babel/cli": "^7.5.0",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
