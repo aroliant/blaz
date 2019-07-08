@@ -27,6 +27,7 @@ const routes: Routes = [
       // { path: 'manage', loadChildren: './pages/manage/manage.module#ManageModule' },
       { path: 'teams', loadChildren: './pages/manage/teams/teams.module#TeamsModule' },
       { path: 'users', loadChildren: './pages/manage/users/users.module#UsersModule' },
+      { path: 'projects', loadChildren: './pages/manage/projects/projects.module#ProjectsModule' },
 
       { path: 'monitoring', loadChildren: './pages/monitoring/monitoring.module#MonitoringModule' },
       { path: 'tools', loadChildren: './pages/tools/tools.module#ToolsModule' },
