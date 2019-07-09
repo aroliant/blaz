@@ -10,6 +10,7 @@ import { ApplicationComponent } from './layouts/application/application.componen
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AlertsComponent } from './components/alerts/alerts.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SidebarComponent,
     TopbarComponent,
     FooterComponent,
+    AlertsComponent,
   ],
   imports: [
     BrowserModule,
