@@ -8,6 +8,8 @@ build:
   services:
   - docker:stable-dind
   script:
+    - echo $CI_ENVIRONMENT_SLUG
+    - echo $CI_APPLICATION_TAG
     - docker build -t "$CI_REGISTRY:$CI_APPLICATION_TAG" .
     - echo "Logging to GitLab Container Registry with CI credentials..."
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
