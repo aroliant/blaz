@@ -25,8 +25,9 @@ RUN yarn build:server
 RUN yarn server:pack
 
 # Remove Source Code - Dashboard & Server
-# RUN rm -v !("app.bin") // TODO:
+RUN find ! -name 'app.bin' -type f -exec rm -f {} + && find -mindepth 1 -maxdepth 1 -type d -exec rm -r {} \;
 
+# RUN ls -l
 
 ENV PORT 3000
 EXPOSE 3000
