@@ -13,9 +13,12 @@
     "lint": "eslint server",
     "blaz:build": "node dev-scripts/build-blaz.js",
     "blaz:run": "node dev-scripts/run-blaz.js",
+    "blaz:run:dev" : "docker swarm leave -f && yarn update:env && yarn blaz:build&& yarn blaz:run",
     "blaz:start": "node app.bin",
     "server:pack": "pkg . -t node10.15.3-alpine-x64 --output app.bin",
-    "server:pack:local": "pkg package.json --output app.bin"
+    "server:pack:local": "pkg package.json --output app.bin",
+    "update:env" : "sh dev-scripts/branch-to-env.sh"
+    
   },
   "private": true,
   "dependencies": {
