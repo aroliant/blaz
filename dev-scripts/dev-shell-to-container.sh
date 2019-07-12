@@ -1,5 +1,4 @@
 #!/bin/sh
-# ./dev-shell-to-captain.sh captain-captain
 
 if ! [ $(id -u) = 0 ]; then
    echo "Must run as sudo or root"
