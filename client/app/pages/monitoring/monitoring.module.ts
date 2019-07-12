@@ -29,8 +29,8 @@ export const MonitoringRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(MonitoringRoutes)
+    RouterModule.forChild(MonitoringRoutes),
   ],
-  declarations: [HealthComponent, AlertsComponent, AuditsComponent]
+  declarations : [HealthComponent, AlertsComponent, AuditsComponent]
 })
 export class MonitoringModule { }
