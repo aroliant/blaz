@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { DetailComponent } from './detail/detail.component';
+import { AppService } from 'client/app/services/app.service';
 
 
 export const AppsRoutes: Routes = [
@@ -19,7 +20,7 @@ export const AppsRoutes: Routes = [
         component: CreateComponent
       },
       {
-        path: 'detail',
+        path: ':appId',
         component: DetailComponent
       }
     ]
@@ -31,6 +32,9 @@ export const AppsRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(AppsRoutes)
   ],
-  declarations: [ListComponent, CreateComponent, DetailComponent]
+  declarations: [ListComponent, CreateComponent, DetailComponent],
+  providers: [
+    AppService
+  ]
 })
 export class AppsModule { }

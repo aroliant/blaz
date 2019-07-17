@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'client/app/services/app.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  apps = []
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+
+    this.appService.getApps().then((result: any) => {
+      if (result.success) {
+        this.apps = result.apps
+      }
+    })
+
   }
 
 }
