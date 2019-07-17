@@ -1,0 +1,18 @@
+
+stages:
+  - build 
+
+build:
+  stage: build
+  image: docker:stable-git
+  services:
+  - docker:stable-dind
+  script:
+    - echo "BLAZ_IMAGE_TAG=$CI_COMMIT_REF_NAME" > server/env
+    - docker build -t "$CI_REGISTRY/blaz/blaz:$CI_COMMIT_REF_NAME" .
+    - echo "Logging to GitLab Container Registry with CI credentials..."
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+    - echo "Pushing to Blaz Container Registry..."
+    - docker push "$CI_REGISTRY/blaz/blaz:$CI_COMMIT_REF_NAME"
+  only:
+    - branches

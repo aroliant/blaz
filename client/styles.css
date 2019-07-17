@@ -1,17 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 .FlexDirectionRow {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .FlexDirectionColumn {
-    flex-direction: column;
+  flex-direction: column;
 }
 
-.TagInsideInput{
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin-left: 5px;
-    margin-top: 7px;
+.TagInsideInput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-left: 5px;
+  margin-top: 7px;
 }

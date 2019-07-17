@@ -7,10 +7,11 @@
 /currentdirectory
 /node_modules
 /built
-/dist-frontend
+/dist
 
 # Debug log from npm
 npm-debug.log
 
 
 .DS_Store
+app.bin

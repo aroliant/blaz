@@ -1,6 +1,7 @@
 /node_modules/
 /client/
 /dev-scripts/
+/dist/
 /e2e/
 /server/models/
 /server/services/dns
