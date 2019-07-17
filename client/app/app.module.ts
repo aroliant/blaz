@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+/* Third Party Libs */
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 /* Relative Imports*/
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +33,7 @@ import { AlertComponent } from './components/alert/alert.component';
     AppRoutingModule,
     MonitoringModule,
     HttpClientModule,
+    LoadingBarHttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
