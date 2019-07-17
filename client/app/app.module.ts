@@ -14,7 +14,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MonitoringModule } from './pages/monitoring/monitoring.module';
-import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { AlertComponent } from './components/alert/alert.component';
     ApplicationComponent,
     SidebarComponent,
     TopbarComponent,
-    AlertComponent,
     FooterComponent,
   ],
   imports: [
