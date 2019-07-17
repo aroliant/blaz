@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'client/app/services/app.service';
 
 @Component({
   selector: 'app-create',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+
+  app = {
+    appName: ''
+  }
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+
+
+
+  }
+
+  createApp() {
+
+    this.appService.createApp(this.app).subscribe((result: any) => {
+
+      if (result.success) {
+
+        alert('App created')
+
+      }
+
+    })
+
   }
 
 }

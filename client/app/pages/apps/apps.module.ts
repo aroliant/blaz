@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { DetailComponent } from './detail/detail.component';
 import { AppService } from 'client/app/services/app.service';
+import { FormsModule } from '@angular/forms';
 
 
 export const AppsRoutes: Routes = [
@@ -30,7 +31,8 @@ export const AppsRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(AppsRoutes)
+    RouterModule.forChild(AppsRoutes),
+    FormsModule,
   ],
   declarations: [ListComponent, CreateComponent, DetailComponent],
   providers: [
