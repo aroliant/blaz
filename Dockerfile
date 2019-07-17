@@ -1,17 +1,11 @@
 FROM node:10.15.3-alpine
 
-# Fix for bcrypt ( since this is an alpine image )
-RUN apk --no-cache add --virtual native-deps \
-  g++ gcc libgcc libstdc++ linux-headers make python  
-
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY ./yarn.lock package.json /usr/src/app/
 
-RUN yarn add node-gyp --dev
-
-RUN yarn install && apk del native-deps
+RUN yarn install
 
 COPY ./ /usr/src/app
 
