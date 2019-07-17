@@ -3,15 +3,22 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "babel-node app.js",
-    "ng:build": "ng build",
+    "start": "babel-node server/",
+    "start:dev": "nodemon -c 'babel-node server/'",
+    "build:client": "ng build",
+    "build:server": "babel server -d dist/server --copy-files",
     "ng:test": "ng test",
     "ng:lint": "ng lint",
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo:all": "sequelize db:migrate:undo:all",
     "lint": "eslint server",
-    "blaz:build": "sh dev-scripts/build-blaz.sh",
-    "blaz:run": "sh dev-scripts/run-blaz.sh"
+    "blaz:build": "node dev-scripts/build-blaz.js",
+    "blaz:run": "node dev-scripts/run-blaz.js",
+    "blaz:run:dev": "docker swarm leave -f || yarn update:env && yarn blaz:build --local && yarn blaz:run",
+    "blaz:start": "node app.bin",
+    "server:pack": "pkg . -t node10.15.3-alpine-x64 --output app.bin",
+    "server:pack:local": "pkg package.json --output app.bin",
+    "update:env": "sh dev-scripts/branch-to-env.sh"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +38,7 @@
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
     "dockerode": "^2.5.8",
+    "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-fileupload": "^1.1.4",
@@ -70,6 +78,7 @@
     "@angular/cli": "~7.3.8",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+    "@babel/cli": "^7.5.0",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
@@ -88,9 +97,11 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "pkg": "^4.4.0",
     "protractor": "~5.4.0",
     "semver": "^6.0.0",
     "sequelize-cli": "^5.4.0",
+    "shelljs": "^0.8.3",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
@@ -99,5 +110,18 @@
     "hooks": {
       "pre-push": "yarn lint"
     }
+  },
+  "bin": "dist/server/index.js",
+  "pkg": {
+    "scripts": [
+      "dist/server/**/*.js",
+      "dist/server/services/dns/**/*.js"
+    ],
+    "assets": [
+      "dist/server/pages/**",
+      "dist/server/env",
+      "dist/server/template/**/*",
+      "dist/dashboard/**/*"
+    ]
   }
 }

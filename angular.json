@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BlazApp": {
+    "dashboard": {
       "root": "",
       "sourceRoot": "client",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/BlazApp",
+            "outputPath": "dist/dashboard",
             "index": "client/index.html",
             "main": "client/main.ts",
             "polyfills": "client/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "BlazApp:build"
+            "browserTarget": "dashboard:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "BlazApp:build:production"
+              "browserTarget": "dashboard:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BlazApp:build"
+            "browserTarget": "dashboard:build"
           }
         },
         "test": {
@@ -121,7 +121,7 @@
         }
       }
     },
-    "BlazApp-e2e": {
+    "dashboard-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -130,11 +130,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "BlazApp:serve"
+            "devServerTarget": "dashboard:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "BlazApp:serve:production"
+              "devServerTarget": "dashboard:serve:production"
             }
           }
         },
@@ -150,5 +150,5 @@
       }
     }
   },
-  "defaultProject": "BlazApp"
+  "defaultProject": "dashboard"
 }
