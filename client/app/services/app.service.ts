@@ -11,7 +11,6 @@ export class AppService {
   apps = []
 
   constructor(private http: HttpClient, private router: Router) {
-    console.log(this.API_URL)
   }
 
 
