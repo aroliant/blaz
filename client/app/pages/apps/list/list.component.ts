@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.appService.getApps().then((result: any) => {
+    this.appService.getApps().subscribe((result: any) => {
       if (result.success) {
         this.apps = result.apps
       }

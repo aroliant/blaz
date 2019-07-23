@@ -21,7 +21,7 @@ export const AppsRoutes: Routes = [
         component: CreateComponent
       },
       {
-        path: ':appId',
+        path: ':appID',
         component: DetailComponent
       }
     ]

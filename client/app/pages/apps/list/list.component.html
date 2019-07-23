@@ -25,7 +25,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr routerLink="/apps/{{i}}" *ngFor="let app of apps; let i = index">
+                    <tr routerLink="/apps/{{app.appID}}" *ngFor="let app of apps; let i = index">
                       <td class="text-center">
                         <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
                           <span class="avatar-status bg-green"></span>
@@ -34,7 +34,7 @@
                       <td>
                         <div>{{app.appName}}</div>
                         <div class="small text-muted">
-                          Version: {{app.versions[app.versions.length-1].version}}
+                          Version: 1
                         </div>
                       </td>
                       <td>
@@ -45,7 +45,7 @@
                       </td>
                       <td>
                         <div class="small text-muted">Updated at</div>
-                        <div>{{app.versions[app.versions.length-1].timeStamp | date: 'short'}}</div>
+                        <div>{{ 1563879586067 | date: 'short'}}</div>
                       </td>
 
                       <td class="text-center">

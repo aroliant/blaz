@@ -8,35 +8,19 @@ export class AppService {
 
   API_URL = environment.API_URL
 
-  apps = []
-
   constructor(private http: HttpClient, private router: Router) {
   }
-
 
   createApp(data) {
     return this.http.post(this.API_URL + "/apps/create", data)
   }
 
   getApps() {
-    return new Promise((resolve, reject) => {
-      this.http.get(this.API_URL + "/apps").subscribe((result: any) => {
-        this.apps = result.apps
-        resolve(result)
-      })
-    })
-
+    return this.http.get(this.API_URL + "/apps")
   }
 
-
-  getApp(index) {
-
-    if (this.apps.length != 0) {
-      return this.apps[index]
-    }
-
-    return this.router.navigate(['/apps'])
-
-    
+  getApp(appID) {
+    return this.http.get(this.API_URL + "/apps/" + appID)
   }
+
 }

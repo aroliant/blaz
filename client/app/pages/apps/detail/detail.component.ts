@@ -17,7 +17,9 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe((data) => {
-      this.app = this.appService.getApp(data.appId)
+      this.appService.getApp(data.appID).subscribe((res: any) => {
+        this.app = res.app
+      })
     })
 
   }
