@@ -43,7 +43,6 @@
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "express-fileupload": "^1.1.4",
     "figures": "^2.0.0",
     "fs-extra": "^7.0.1",
     "helmet": "^3.16.0",
