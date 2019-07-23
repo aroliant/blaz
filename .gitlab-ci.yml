@@ -4,9 +4,9 @@ stages:
 
 build:
   stage: build
-  image: docker:stable-git
+  image: docker:18.09.8-git
   services:
-  - docker:stable-dind
+  - docker:18.09.8-dind
   script:
     - echo "BLAZ_IMAGE_TAG=$CI_COMMIT_REF_NAME" > server/env
     - docker build -t "$CI_REGISTRY/blaz/blaz:$CI_COMMIT_REF_NAME" .
