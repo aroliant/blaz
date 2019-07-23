@@ -47,7 +47,7 @@ export class DetailComponent implements OnInit {
     ajax.addEventListener("abort", (event) => {
 
     }, false);
-    ajax.open("POST", environment.API_URL + "/apps/upload/" + this.app.appName);
+    ajax.open("POST", environment.API_URL + "/apps/deploy/file/" + this.app.appID);
     ajax.send(formdata);
   }
 
