@@ -14,32 +14,33 @@
               </div>
               <ul class="nav nav-tabs">
                 <li class="nav-item" (click)="changeTab('overview')">
-                  <a class="nav-link" [class.active]="activeTab=='overview'" aria-controls="overview">Overview</a>
+                  <a class="nav-link" [class.active]="activeTab=='overview'">Overview</a>
                 </li>
                 <li class="nav-item" (click)="changeTab('http-settings')">
-                  <a class="nav-link" [class.active]="activeTab=='http-settings'" aria-controls="http-settings">HTTP Settings</a>
+                  <a class="nav-link" [class.active]="activeTab=='http-settings'">HTTP
+                    Settings</a>
                 </li>
                 <li class="nav-item" (click)="changeTab('app-configuration')">
-                  <a class="nav-link" [class.active]="activeTab=='app-configuration'" aria-controls="app-configuration">App Configuration</a>
+                  <a class="nav-link" [class.active]="activeTab=='app-configuration'">App Configuration</a>
                 </li>
                 <li class="nav-item" (click)="changeTab('deployment')">
-                  <a class="nav-link" [class.active]="activeTab=='deployment'" aria-controls="deployment">Deployment</a>
+                  <a class="nav-link" [class.active]="activeTab=='deployment'">Deployment</a>
                 </li>
                 <li class="nav-item" (click)="changeTab('activity')">
-                  <a class="nav-link" [class.active]="activeTab=='activity'" aria-controls="activity">Activity</a>
+                  <a class="nav-link" [class.active]="activeTab=='activity'">Activity</a>
                 </li>
                 <li class="nav-item" (click)="changeTab('access')">
-                  <a class="nav-link" [class.active]="activeTab=='access'" aria-controls="access">Access</a>
+                  <a class="nav-link" [class.active]="activeTab=='access'">Access</a>
                 </li>
               </ul>
               <div class="tab-content">
 
-                <app-detail-overview [activeTab]="activeTab"></app-detail-overview>
-                <app-detail-http-settings [activeTab]="activeTab"></app-detail-http-settings>
-                <app-detail-app-configuration [activeTab]="activeTab"></app-detail-app-configuration>
-                <app-detail-deployment [activeTab]="activeTab"></app-detail-deployment>
-                <app-detail-activity [activeTab]="activeTab"></app-detail-activity>
-                <app-detail-access [activeTab]="activeTab"></app-detail-access>
+                <app-detail-overview [activeTab]="activeTab" [app]="app"></app-detail-overview>
+                <app-detail-http-settings [activeTab]="activeTab" [app]="app"></app-detail-http-settings>
+                <app-detail-app-configuration [activeTab]="activeTab" [app]="app"></app-detail-app-configuration>
+                <app-detail-deployment [activeTab]="activeTab" [app]="app"></app-detail-deployment>
+                <app-detail-activity [activeTab]="activeTab" [app]="app"></app-detail-activity>
+                <app-detail-access [activeTab]="activeTab" [app]="app"></app-detail-access>
 
               </div>
             </div>
