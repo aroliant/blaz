@@ -1,0 +1,145 @@
+<div class="tab-pane" [class.show]="showTab" [class.active]="showTab" role="tabpanel" aria-labelledby="resources-tab">
+  <div class="row">
+    <div class="col-12">
+      <div class="my-3">
+        <div class="d-flex flex-column">
+          <div class="d-flex flex-grow"><span class="font-weight-bold">Environment Variables:</span>
+          </div>
+          <div class="d-flex align-self-end">
+            <div class="custom-switches-stacked">
+              <label class="custom-switch">
+                <input type="radio" name="option" value="2" class="custom-switch-input">
+                <span class="custom-switch-indicator"></span>
+                <span class="custom-switch-description">Bulk Edit</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex my-5 flex-column">
+          <div class="d-flex mb-1">
+            <div class="form-group flex-grow-1 mr-3">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Key">
+            </div>
+            <div class="form-group flex-grow-1">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Value">
+            </div>
+          </div>
+
+          <div class="d-flex mb-1">
+            <div class="form-group flex-grow-1 mr-3">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Key"
+                value="MYSQL_DATABASE">
+            </div>
+            <div class="form-group flex-grow-1">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Value"
+                value="wordpress">
+            </div>
+          </div>
+
+          <div class="d-flex mb-1">
+            <div class="form-group flex-grow-1 mr-3">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Key"
+                value="MYSQL_DATABASE">
+            </div>
+            <div class="form-group flex-grow-1">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Value"
+                value="wordpress">
+            </div>
+          </div>
+
+          <div class="d-flex mb-1">
+            <div class="form-group flex-grow-1 mr-3">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Key"
+                value="MYSQL_DATABASE">
+            </div>
+            <div class="form-group flex-grow-1">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Value"
+                value="wordpress">
+            </div>
+          </div>
+
+          <div class="d-flex mb-1">
+            <div class="form-group flex-grow-1 mr-3">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Key"
+                value="MYSQL_DATABASE">
+            </div>
+            <div class="form-group flex-grow-1">
+              <input class="form-control" id="exampleInputPassword1" placeholder="Value"
+                value="wordpress">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="d-flex flex-column my-5">
+          <div class="mb-2">
+            <span class="font-weight-bold">Port Mapping</span>
+          </div>
+          <div class="mb-2">
+            <i>Currently, this app does not have any custom port mapping.</i>
+          </div>
+          <div>
+            <div>
+              <div class="my-5 d-flex ">
+                <div class="input-group mr-2 flex-fill">
+                  <span class="input-group-prepend" id="basic-addon3">
+                    <span class="input-group-text">Server Port</span>
+                  </span>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                    placeholder="5050">
+                </div>
+                <div class="input-group mr-2 flex-fill">
+                  <span class="input-group-prepend" id="basic-addon3">
+                    <span class="input-group-text">Container Port</span>
+                  </span>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                    placeholder="6060">
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm">Add
+                Port Mapping</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-5 d-flex ">
+          <div class="input-group mr-2 flex-fill">
+            <span class="input-group-prepend" id="basic-addon3">
+              <span class="input-group-text">Path in App</span>
+            </span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+              value="/var/lib/mysql">
+          </div>
+          <div class="input-group mr-2 flex-fill">
+            <span class="input-group-prepend" id="basic-addon3">
+              <span class="input-group-text">Label</span>
+            </span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+              value="/var/lib/mysql">
+          </div>
+          <div class="d-flex align-items-center flex-fill">
+            <button class="btn btn-oultine-dark btn-sm">Set specific host path</button>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column my-5">
+          <div class="my-5">
+            <button class="btn btn-ourline-dark btn-sm">Add Presistent Directory</button>
+          </div>
+          <div class="d-flex">
+            <div class="input-group mr-2">
+              <span class="input-group-prepend" id="basic-addon3">
+                <span class="input-group-text">Instance Count</span>
+              </span>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                value="1">
+            </div>
+            <button class="btn btn-outline-dark btn-sm">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
