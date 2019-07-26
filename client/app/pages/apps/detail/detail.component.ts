@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'client/environments/environment';
+
+declare var $: any
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -11,6 +13,7 @@ export class DetailComponent implements OnInit {
 
 
   app
+  activeTab = "overview"
 
   constructor(private appService: AppService, private route: ActivatedRoute) { }
 
@@ -22,6 +25,11 @@ export class DetailComponent implements OnInit {
       })
     })
 
+  }
+
+  changeTab(tab) {
+    this.activeTab = tab
+    console.log(this.activeTab)
   }
 
 
