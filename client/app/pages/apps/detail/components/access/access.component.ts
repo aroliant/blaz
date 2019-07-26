@@ -13,7 +13,10 @@ export class AccessComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.showTab = this.activeTab == "access" ? true : false     
+  }
+  
+  ngOnChanges() {
+    this.showTab = this.activeTab == "access" ? true : false
   }
 
 }
