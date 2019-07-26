@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 app.bin
 server/env
+server/test.js
