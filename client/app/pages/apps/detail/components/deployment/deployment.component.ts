@@ -12,12 +12,32 @@ export class DeploymentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+
   }
 
   ngOnChanges() {
-    this.showTab = this.activeTab == "deployment" ? true : false 
+    this.showTab = this.activeTab == "deployment" ? true : false
+  }
+
+  deployTarFile() {
+
+  }
+
+  deployDockerFile() {
+
+  }
+
+  updateWebhook() {
+
+  }
+
+  getVersions() {
+
+  }
+
+  getLogs() {
+
   }
 
 }

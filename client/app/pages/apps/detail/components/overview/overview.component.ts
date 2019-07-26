@@ -12,12 +12,16 @@ export class OverviewComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+
   }
 
   ngOnChanges() {
-    this.showTab = this.activeTab == "overview" ? true : false 
+    this.showTab = this.activeTab == "overview" ? true : false
+  }
+
+  getStats() {
+
   }
 
 }
