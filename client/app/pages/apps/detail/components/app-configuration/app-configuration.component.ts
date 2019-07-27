@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AppConfigurationComponent implements OnInit {
 
   @Input() activeTab;
+  @Input() app;
   showTab = false
 
   constructor() { }

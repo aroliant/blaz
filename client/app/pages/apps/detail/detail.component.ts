@@ -33,30 +33,6 @@ export class DetailComponent implements OnInit {
   }
 
 
-  uploadTarFile() {
-
-    var file = document.getElementById("tarBallFile")['files'][0];
-
-    var formdata = new FormData();
-    formdata.append("sourceFile", file);
-
-    var ajax = new XMLHttpRequest();
-    ajax.upload.addEventListener("progress", (event) => {
-
-    }, false);
-    ajax.addEventListener("load", (event) => {
-
-      alert("File Deployed")
-
-    }, false);
-    ajax.addEventListener("error", (event) => {
-      alert("Unable to Deploy this file")
-    }, false);
-    ajax.addEventListener("abort", (event) => {
-
-    }, false);
-    ajax.open("POST", environment.API_URL + "/apps/deploy/file/" + this.app.appID);
-    ajax.send(formdata);
-  }
+  
 
 }
