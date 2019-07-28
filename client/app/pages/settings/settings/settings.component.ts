@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from 'client/app/services/settings.service';
 
 @Component({
   selector: 'app-settings',
@@ -13,14 +14,27 @@ export class SettingsComponent implements OnInit {
     BLAZ_ROOT_DOMAIN_ENABLE_HTTPS: false
   }
 
-  constructor() { }
+  constructor(private settingService: SettingsService,) { }
 
   ngOnInit() {
+    this.settingService.getRootDomain().subscribe((res:any) => {
+      if(res.success){
+        this.rootDomain = res.rootDomain;
+        console.log(this.rootDomain)
+      }
+    })
   }
 
 
   updateRootDomain() {
-    
+    this.settingService.updateRootDomain(this.rootDomain).subscribe((res:any)=>{
+      console.log(this.rootDomain)
+      if(res.success){
+        alert("Root Domain Updated");
+      }else{
+        alert("unable to Update Root Domain");
+      }
+    })
   }
 
 }
