@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
+  rootDomain = {
+    BLAZ_ROOT_DOMAIN: "",
+    BLAZ_ROOT_DOMAIN_FORCE_HTTPS: false,
+    BLAZ_ROOT_DOMAIN_ENABLE_HTTPS: false
+  }
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+  updateRootDomain() {
+    
   }
 
 }
