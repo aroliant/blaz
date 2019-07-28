@@ -15,6 +15,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MonitoringModule } from './pages/monitoring/monitoring.module';
 import { AlertComponent } from './components/alert/alert.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AlertComponent } from './components/alert/alert.component';
     BrowserModule,
     AppRoutingModule,
     MonitoringModule,
+    FormsModule,
     HttpClientModule,
     LoadingBarHttpClientModule,
   ],
