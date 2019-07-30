@@ -11,7 +11,7 @@
         </div>
         <div class="d-flex col-12 mt-3">
           <label class="custom-control custom-checkbox mr-3">
-            <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
+            <input type="checkbox" class="custom-control-input" name="example-checkbox1" [(ngModel)]="app.exposeApp" >
             <span class="custom-control-label">Expose App</span>
           </label>
         </div>
@@ -28,9 +28,7 @@
         </div>
         <div class="d-flex my-5 flex-column col-12">
           <div class="collapse mb-3" id="editNginx">
-            <textarea class="card card-body w-100" rows="15" cols="20">
-
-                            </textarea>
+            <textarea class="card card-body w-100" rows="15" cols="20"></textarea>
           </div>
           <div>
             <button class="btn btn-outline-secondary btn-sm" data-toggle="collapse" href="#editNginx" role="button"
@@ -45,13 +43,13 @@
             <span class="input-group-prepend" id="basic-addon3">
               <span class="input-group-text">Container HTTP Port</span>
             </span>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="80">
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.containerPort" >
           </div>
         </div>
 
         <div class="d-flex mt-1 mb-5 col-12">
           <label class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+            <input type="checkbox" class="custom-control-input" name="example-checkbox2" [(ngModel)]="app.forceHTTPS" >
             <span class="custom-control-label">Force HTTPS by redirecting all HTTP traffic to
               HTTPS</span>
           </label>
@@ -67,7 +65,7 @@
 
         <div class="d-flex my-5">
           <button class="btn btn-danger btn-sm mr-3">Delete App</button>
-          <button class="btn btn-primary btn-sm">Save & Update</button>
+          <button class="btn btn-primary btn-sm" (click)="saveAndUpdate()" >Save & Update</button>
         </div>
 
       </div>

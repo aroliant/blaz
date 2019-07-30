@@ -26,39 +26,12 @@
             </div>
           </div>
 
-          <div class="d-flex mb-1">
+          <div class="d-flex mb-1" *ngFor="let environment of app.environmentVars;let i = index" >
             <div class="form-group flex-grow-1 mr-3">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Key" value="MYSQL_DATABASE">
+              <input class="form-control" id="exampleInputPassword1" [(ngModel)]="app.environmentVars[i].key" >
             </div>
             <div class="form-group flex-grow-1">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Value" value="wordpress">
-            </div>
-          </div>
-
-          <div class="d-flex mb-1">
-            <div class="form-group flex-grow-1 mr-3">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Key" value="MYSQL_DATABASE">
-            </div>
-            <div class="form-group flex-grow-1">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Value" value="wordpress">
-            </div>
-          </div>
-
-          <div class="d-flex mb-1">
-            <div class="form-group flex-grow-1 mr-3">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Key" value="MYSQL_DATABASE">
-            </div>
-            <div class="form-group flex-grow-1">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Value" value="wordpress">
-            </div>
-          </div>
-
-          <div class="d-flex mb-1">
-            <div class="form-group flex-grow-1 mr-3">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Key" value="MYSQL_DATABASE">
-            </div>
-            <div class="form-group flex-grow-1">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Value" value="wordpress">
+              <input class="form-control" id="exampleInputPassword1" [(ngModel)]="app.environmentVars[i].value" >
             </div>
           </div>
 
@@ -68,29 +41,26 @@
           <div class="mb-2">
             <span class="font-weight-bold">Port Mapping</span>
           </div>
-          <div class="mb-2">
+          <div class="mb-2" *ngIf = "app.portMapping == undefined || app.portMapping.length == 0" >
             <i>Currently, this app does not have any custom port mapping.</i>
           </div>
           <div>
             <div>
-              <div class="my-5 d-flex ">
+              <div class="my-5 d-flex " *ngFor="let ports of app.portMapping;let i = index" >
                 <div class="input-group mr-2 flex-fill">
                   <span class="input-group-prepend" id="basic-addon3">
                     <span class="input-group-text">Server Port</span>
                   </span>
-                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
-                    placeholder="5050">
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.portMapping[i].hostPort" >
                 </div>
                 <div class="input-group mr-2 flex-fill">
                   <span class="input-group-prepend" id="basic-addon3">
                     <span class="input-group-text">Container Port</span>
                   </span>
-                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
-                    placeholder="6060">
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.portMapping[i].containerPort" >
                 </div>
               </div>
-              <button class="btn btn-primary btn-sm">Add
-                Port Mapping</button>
+              <button class="btn btn-primary btn-sm">Add Port Mapping</button>
             </div>
           </div>
         </div>
@@ -131,7 +101,7 @@
               <span class="input-group-prepend" id="basic-addon3">
                 <span class="input-group-text">Instance Count</span>
               </span>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="1">
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.instanceCount" >
             </div>
           </div>
         </div>
@@ -139,7 +109,7 @@
         <hr />
 
         <div class="d-flex my-5">
-          <button class="btn btn-primary btn-sm">Save & Update</button>
+          <button class="btn btn-primary btn-sm" (click)=saveAndUpdate() >Save & Update</button>
         </div>
 
       </div>
