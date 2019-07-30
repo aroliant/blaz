@@ -22,4 +22,8 @@ export class AppConfigurationComponent implements OnInit {
     this.showTab = this.activeTab == "app-configuration" ? true : false 
   }
 
+  saveAndUpdate(){
+    console.log(this.app)
+  }
+
 }

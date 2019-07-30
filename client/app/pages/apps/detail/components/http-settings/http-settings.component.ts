@@ -21,4 +21,8 @@ export class HttpSettingsComponent implements OnInit {
     this.showTab = this.activeTab == "http-settings" ? true : false 
   }
 
+  saveAndUpdate(){
+    console.log(this.app)
+  }
+
 }

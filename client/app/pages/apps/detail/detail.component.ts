@@ -22,6 +22,7 @@ export class DetailComponent implements OnInit {
     this.route.params.subscribe((data) => {
       this.appService.getApp(data.appID).subscribe((res: any) => {
         this.app = res.app
+        console.log(this.app)
       })
     })
 
