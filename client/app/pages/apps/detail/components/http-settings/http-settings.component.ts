@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AppService } from 'client/app/services/app.service';
 
 @Component({
   selector: 'app-detail-http-settings',
@@ -11,18 +12,29 @@ export class HttpSettingsComponent implements OnInit {
   @Input() app;
   showTab = false
 
-  constructor() { }
+  url = {
+    protocol: 'http',
+    location: ''
+  }
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+    if (this.app.forceHTTPS) {
+      this.url.protocol = 'https'
+    }
 
+    this.url.location = String(location.hostname).replace('blaz.', '')
   }
 
-  ngOnChanges(){
-    this.showTab = this.activeTab == "http-settings" ? true : false 
+  ngOnChanges() {
+    this.showTab = this.activeTab == "http-settings" ? true : false
   }
 
-  saveAndUpdate(){
-    console.log(this.app)
+  saveAndUpdate() {
+    this.appService.updateApp(this.app).subscribe((res: any) => {
+
+    })
   }
 
 }

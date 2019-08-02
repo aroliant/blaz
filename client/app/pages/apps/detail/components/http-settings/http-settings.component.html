@@ -4,21 +4,20 @@
     <div class="col-12">
       <div class="row my-3">
         <div class="d-flex">
-          <div>Your app is internally available as srv-blaz--wordpress-db to other Blaz apps. In
-            case of web-app, it is accessible via <a href="#">http://srv-blaz--wordpress-db</a> from
-            other apps.
-          </div>
+          <!-- <div>Your app is internally available as srv-blaz__ to other Blaz apps.</div> -->
         </div>
-        <div class="d-flex col-12 mt-3">
+        <div class="d-flex col-12 mt-3 mb-3">
           <label class="custom-control custom-checkbox mr-3">
-            <input type="checkbox" class="custom-control-input" name="example-checkbox1" [(ngModel)]="app.exposeApp" >
+            <input type="checkbox" class="custom-control-input" name="example-checkbox1" [(ngModel)]="app.exposeApp">
             <span class="custom-control-label">Expose App</span>
           </label>
         </div>
         <div class="d-flex flex-column mb-5 col-lg-6">
-          <div class="mb-2">Your app is available to public at:</div>
-          <div class="d-flex"><button class="btn btn-primary btn-sm mr-3">Enable HTTPS</button> <a
-              href="#">http://wordpress-db.server.demo.blaz.app</a></div>
+          <div class="mb-2">Your app is available to public at</div>
+          <div class="d-flex"><button class="btn btn-primary btn-sm mr-3">Enable HTTPS</button>
+            <a
+              href="{{url.protocol}}://{{app.appName}}.{{url.location}}">{{url.protocol}}://{{app.appName}}.{{url.location}}</a>
+          </div>
         </div>
         <div class="d-flex align-items-center col-lg-6">
           <div class="form-group mb-0 mr-3 flex-grow-1">
@@ -26,36 +25,38 @@
           </div>
           <button href="#" class="btn btn-primary btn-sm">Connect New Domain</button>
         </div>
+
+        <div class="d-flex mt-3 mb-2 col-lg-6">
+          <div class="input-group">
+            <span class="input-group-prepend" id="basic-addon3">
+              <span class="input-group-text">Container HTTP Port</span>
+            </span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+              [(ngModel)]="app.containerPort">
+          </div>
+        </div>
+
+        <div class="d-flex mb-5 col-12">
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="example-checkbox2" [(ngModel)]="app.forceHTTPS">
+            <span class="custom-control-label">Force HTTPS by redirecting all HTTP traffic to HTTPS</span>
+          </label>
+        </div>
+
+        <hr />
+
         <div class="d-flex my-5 flex-column col-12">
           <div class="collapse mb-3" id="editNginx">
             <textarea class="card card-body w-100" rows="15" cols="20"></textarea>
           </div>
           <div>
             <button class="btn btn-outline-secondary btn-sm" data-toggle="collapse" href="#editNginx" role="button"
-              aria-expanded="false" aria-controls="editNginx">Edit Default Nginx
-              Configurations</button>
+              aria-expanded="false" aria-controls="editNginx">Edit Default Nginx Configurations</button>
           </div>
 
         </div>
 
-        <div class="d-flex mt-1 mb-5 col-lg-6">
-          <div class="input-group">
-            <span class="input-group-prepend" id="basic-addon3">
-              <span class="input-group-text">Container HTTP Port</span>
-            </span>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.containerPort" >
-          </div>
-        </div>
-
-        <div class="d-flex mt-1 mb-5 col-12">
-          <label class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="example-checkbox2" [(ngModel)]="app.forceHTTPS" >
-            <span class="custom-control-label">Force HTTPS by redirecting all HTTP traffic to
-              HTTPS</span>
-          </label>
-        </div>
-
-        <div class="d-flex my-5 align-items-center">
+        <div class="d-flex my-5 align-items-center col-12">
           <button class="btn btn-outline-secondary btn-sm mr-3" data-toggle="modal" data-target="#httpAuth">Edit HTTP
             Basic Auth</button>
           <div>Current State: <span class="font-weight-bold">Inactive</span></div>
@@ -63,9 +64,9 @@
 
         <hr />
 
-        <div class="d-flex my-5">
+        <div class="d-flex my-5 col-12">
           <button class="btn btn-danger btn-sm mr-3">Delete App</button>
-          <button class="btn btn-primary btn-sm" (click)="saveAndUpdate()" >Save & Update</button>
+          <button class="btn btn-primary btn-sm" (click)="saveAndUpdate()">Save & Update</button>
         </div>
 
       </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -13,7 +14,7 @@ export class CreateComponent implements OnInit {
     appName: ''
   }
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, private router: Router) { }
 
   ngOnInit() {
 
@@ -26,10 +27,10 @@ export class CreateComponent implements OnInit {
     this.appService.createApp(this.app).subscribe((result: any) => {
 
       if (result.success) {
-
-        alert('App created')
-
+        return this.router.navigate(['/apps/' + result.app.appID])
       }
+
+      alert(result.message)
 
     })
 

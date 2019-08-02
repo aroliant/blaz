@@ -15,6 +15,10 @@ export class AppService {
     return this.http.post(this.API_URL + "/apps/create", data)
   }
 
+  updateApp(data){
+    return this.http.put(this.API_URL + `/apps/${data.appID}`, data)
+  }
+
   getApps() {
     return this.http.get(this.API_URL + "/apps")
   }
