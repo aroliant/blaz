@@ -2,10 +2,11 @@
   <div class="row">
     <div class="col-12">
       <div class="my-3">
-        <div class="d-flex flex-column">
+        <div class="d-flex mt-5 flex-column">
           <div class="d-flex flex-grow"><span class="font-weight-bold">Environment Variables:</span>
           </div>
-          <div class="d-flex align-self-end">
+          <!-- Disable Bulk Edit for Now -->
+          <!-- <div class="d-flex align-self-end">
             <div class="custom-switches-stacked">
               <label class="custom-switch">
                 <input type="radio" name="option" value="2" class="custom-switch-input">
@@ -13,25 +14,17 @@
                 <span class="custom-switch-description">Bulk Edit</span>
               </label>
             </div>
-          </div>
+          </div> -->
         </div>
 
-        <div class="d-flex my-5 flex-column">
-          <div class="d-flex mb-1">
+        <div class="d-flex my-2 flex-column">
+          <div class="d-flex mb-1" *ngFor="let environmentVar of app.environmentVars; let i = index">
             <div class="form-group flex-grow-1 mr-3">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Key">
+              <input class="form-control" [(ngModel)]="environmentVar.key" placeholder="Key">
             </div>
             <div class="form-group flex-grow-1">
-              <input class="form-control" id="exampleInputPassword1" placeholder="Value">
-            </div>
-          </div>
-
-          <div class="d-flex mb-1" *ngFor="let environment of app.environmentVars;let i = index" >
-            <div class="form-group flex-grow-1 mr-3">
-              <input class="form-control" id="exampleInputPassword1" [(ngModel)]="app.environmentVars[i].key" >
-            </div>
-            <div class="form-group flex-grow-1">
-              <input class="form-control" id="exampleInputPassword1" [(ngModel)]="app.environmentVars[i].value" >
+              <input class="form-control" [(ngModel)]="environmentVar.value" placeholder="Value"
+                (keyup)="enterEnvVars($event,i)">
             </div>
           </div>
 
@@ -41,27 +34,33 @@
           <div class="mb-2">
             <span class="font-weight-bold">Port Mapping</span>
           </div>
-          <div class="mb-2" *ngIf = "app.portMapping == undefined || app.portMapping.length == 0" >
+          <div class="mb-2" *ngIf="app.portMapping == undefined || app.portMapping.length == 0">
             <i>Currently, this app does not have any custom port mapping.</i>
           </div>
           <div>
-            <div>
-              <div class="my-5 d-flex " *ngFor="let ports of app.portMapping;let i = index" >
-                <div class="input-group mr-2 flex-fill">
-                  <span class="input-group-prepend" id="basic-addon3">
-                    <span class="input-group-text">Server Port</span>
-                  </span>
-                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.portMapping[i].hostPort" >
+            <div class="row">
+              <div *ngFor="let portMapping of app.portMapping;let i = index" class="row col-12">
+                <div class="my-2 d-flex col-6">
+                  <div class="input-group mr-2 flex-fill">
+                    <span class="input-group-prepend" id="basic-addon3">
+                      <span class="input-group-text">Server Port</span>
+                    </span>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                      [(ngModel)]="portMapping.hostPort">
+                  </div>
+                  <div class="input-group mr-2 flex-fill">
+                    <span class="input-group-prepend" id="basic-addon3">
+                      <span class="input-group-text">Container Port</span>
+                    </span>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                      [(ngModel)]="portMapping.containerPort">
+                  </div>
                 </div>
-                <div class="input-group mr-2 flex-fill">
-                  <span class="input-group-prepend" id="basic-addon3">
-                    <span class="input-group-text">Container Port</span>
-                  </span>
-                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.portMapping[i].containerPort" >
-                </div>
+                <div class="my-2 d-flex col-6"></div>
               </div>
-              <button class="btn btn-primary btn-sm">Add Port Mapping</button>
+
             </div>
+            <button class="btn btn-primary btn-sm" (click)="addNewPortMapping()">Add Port Mapping</button>
           </div>
         </div>
 
@@ -101,7 +100,8 @@
               <span class="input-group-prepend" id="basic-addon3">
                 <span class="input-group-text">Instance Count</span>
               </span>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="app.instanceCount" >
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                [(ngModel)]="app.instanceCount">
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
         <hr />
 
         <div class="d-flex my-5">
-          <button class="btn btn-primary btn-sm" (click)=saveAndUpdate() >Save & Update</button>
+          <button class="btn btn-primary btn-sm" (click)=saveAndUpdate()>Save & Update</button>
         </div>
 
       </div>
