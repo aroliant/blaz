@@ -44,7 +44,8 @@ export class DeploymentComponent implements OnInit {
     ajax.addEventListener("abort", (event) => {
 
     }, false);
-    ajax.open("POST", environment.API_URL + "/apps/deploy/file/" + this.app.appID);
+    ajax.open("POST", environment.API_URL + "/apps/upload");
+    ajax.setRequestHeader('x-app-id', this.app.appID)
     ajax.send(formdata);
   }
 
