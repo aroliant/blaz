@@ -43,7 +43,7 @@ export class DeploymentComponent implements OnInit {
         return this.fileUploadMessage = `File Uploaded, Build in Progress...`
       }
 
-      this.fileUploadMessage = `Uploading ${Math.round(percentage)} ( ${uploaded / (1024 * 1024)} MB  of ${total / (1024 * 1024)} MB)`
+      this.fileUploadMessage = `Uploading ${Math.round(percentage)} ( ${Math.round(uploaded / (1024 * 1024))} MB  of ${Math.round(total / (1024 * 1024))} MB)`
 
     }, false);
     ajax.addEventListener('load', (event) => {
