@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
+import { ViewComponent } from './view/view.component';
 
 
 export const ProjectsRoutes: Routes = [
@@ -13,6 +14,10 @@ export const ProjectsRoutes: Routes = [
       {
         path: "",
         component: ListComponent,
+      },
+      {
+        path: 'view',
+        component: ViewComponent
       },
       {
         path: 'create',
@@ -31,6 +36,6 @@ export const ProjectsRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(ProjectsRoutes)
   ],
-  declarations: [ListComponent, CreateComponent, EditComponent]
+  declarations: [ListComponent, CreateComponent, EditComponent, ViewComponent]
 })
 export class ProjectsModule { }
