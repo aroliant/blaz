@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent } from './list/list.component';
+import { TeamListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 
@@ -12,7 +12,7 @@ export const TeamsRoutes: Routes = [
     children: [
       {
         path: "",
-        component: ListComponent,
+        component: TeamListComponent,
       },
       {
         path: 'create',
@@ -31,6 +31,6 @@ export const TeamsRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(TeamsRoutes)
   ],
-  declarations: [ListComponent, CreateComponent, EditComponent]
+  declarations: [TeamListComponent, CreateComponent, EditComponent]
 })
 export class TeamsModule { }

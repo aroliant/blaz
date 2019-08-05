@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent } from './list/list.component';
-import { CreateComponent } from './create/create.component';
-import { EditComponent } from './edit/edit.component';
+import { UserListComponent } from './list/list.component';
+import { UserCreateComponent } from './create/create.component';
+import { UserEditComponent } from './edit/edit.component';
 
 
 export const UsersRoutes: Routes = [
@@ -12,15 +12,15 @@ export const UsersRoutes: Routes = [
     children: [
       {
         path: "",
-        component: ListComponent,
+        component: UserListComponent,
       },
       {
         path: 'create',
-        component: CreateComponent
+        component: UserCreateComponent
       },
       {
         path: 'edit',
-        component: EditComponent
+        component: UserEditComponent
       },
     ]
   }
@@ -31,6 +31,6 @@ export const UsersRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(UsersRoutes)
   ],
-  declarations: [ListComponent, CreateComponent, EditComponent]
+  declarations: [UserListComponent, UserCreateComponent, UserEditComponent]
 })
 export class UsersModule { }
