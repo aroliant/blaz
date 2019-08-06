@@ -7,12 +7,12 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="m-0">{{project.projectName}}</h3>
-                <button class="btn btn-primary ml-auto" routerLink="/projects/edit">Edit</button>
+                <h3 *ngIf="project" class="m-0">{{project?.projectName}}</h3>
+                <button class="btn btn-primary ml-auto" routerLink="/projects/edit/{{id}}">Edit</button>
               </div>
               <div class="row m-0">
-                <div class="col-lg-8 p-lg-5">
-                  <div>{{project.projectDescription}}</div>
+                <div class="col-lg-8 p-lg-5" *ngIf="project" >
+                  <div>{{project?.projectDescription}}</div>
                 </div>
                 <div class="col-lg-4 p-lg-5">
                   <h4>Labels</h4>

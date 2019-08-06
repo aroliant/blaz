@@ -5,6 +5,9 @@ import { TeamListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 
+import { TeamsService } from 'client/app/services/teams.service';
+import { FormsModule } from '@angular/forms';
+
 
 export const TeamsRoutes: Routes = [
   {
@@ -19,7 +22,7 @@ export const TeamsRoutes: Routes = [
         component: CreateComponent
       },
       {
-        path: 'edit',
+        path: 'edit/:id',
         component: EditComponent
       },
     ]
@@ -29,8 +32,12 @@ export const TeamsRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(TeamsRoutes)
   ],
-  declarations: [TeamListComponent, CreateComponent, EditComponent]
+  declarations: [TeamListComponent, CreateComponent, EditComponent],
+  providers: [
+    TeamsService
+  ]
 })
 export class TeamsModule { }

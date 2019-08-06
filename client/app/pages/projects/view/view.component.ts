@@ -17,6 +17,7 @@ export class ProjectViewComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe((data) => {
+      this.id = data.id
       this.projectsService.getProject(data.id).subscribe((res:any) => {
         if(res.success){
           this.project = res.project;

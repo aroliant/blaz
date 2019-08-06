@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'client/app/services/users.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditComponent implements OnInit {
 
-  constructor() { }
+  user: {}
+
+  constructor(private usersService: UsersService,private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe((data) => {
+      this.usersService.getUser(data.id).subscribe((res:any) => {
+        if(res.success){
+          this.user = res.user;
+        }
+      })
+    })
   }
 
 }

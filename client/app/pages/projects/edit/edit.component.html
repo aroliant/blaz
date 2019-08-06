@@ -12,7 +12,7 @@
               <div class="row m-0">
                 <div class="col-lg-8 p-lg-5">
                   <label for="description">Description</label>
-                  <textarea rows="5" cols="33" class="form-control" id="description"></textarea>
+                  <textarea *ngIf="project" rows="5" cols="33" [(ngModel)]="project.projectDescription" class="form-control" id="description"></textarea>
                 </div>
                 <div class="col-lg-4 p-lg-5">
                   <h4>Labels</h4>

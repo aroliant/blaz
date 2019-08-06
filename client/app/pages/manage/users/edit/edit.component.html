@@ -17,7 +17,7 @@
                         <span class="input-icon-addon">
                           <i class="fe fe-user"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input *ngIf="user" type="text" class="form-control" [(ngModel)]="user.username" placeholder="Username">
                       </div>
                     </div>
                     <div class="col-12 p-2">
@@ -25,7 +25,7 @@
                         <span class="input-icon-addon">
                           <i class="fe fe-mail"></i>
                         </span>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input *ngIf="user" type="email" class="form-control" [(ngModel)]="user.userEmail" placeholder="Email">
                       </div>
                     </div>
                     <div class="col-12 p-2">

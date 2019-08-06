@@ -27,7 +27,7 @@ export const ProjectsRoutes: Routes = [
         component: ProjectCreateComponent
       },
       {
-        path: 'edit',
+        path: 'edit/:id',
         component: ProjectEditComponent
       },
     ]

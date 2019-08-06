@@ -19,7 +19,18 @@
                             <span class="input-icon-addon">
                               <i class="fe fe-users"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Team Name">
+                            <input type="text" [(ngModel)]="team.teamName" class="form-control" placeholder="Team Name">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label class="form-label">Team Email</label>
+                          <div class="input-icon">
+                            <span class="input-icon-addon">
+                              <i class="fe fe-users"></i>
+                            </span>
+                            <input type="text" [(ngModel)]="team.teamEmail" class="form-control" placeholder="Team Email">
                           </div>
                         </div>
                       </div>
@@ -251,7 +262,7 @@
                       </div>
                     </div>
                     <div class="w-100 text-right mb-3">
-                      <button class="btn btn-primary mr-2" routerLink="/teams">Create</button>
+                      <button class="btn btn-primary mr-2" (click)="createTeam()">Create</button>
                     </div>
                   </div>
                 </div>

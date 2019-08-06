@@ -19,7 +19,7 @@
                           <span class="input-icon-addon">
                             <i class="fe fe-users"></i>
                           </span>
-                          <input type="text" class="form-control" placeholder="Team Name">
+                          <input *ngIf="team" type="text" class="form-control" [(ngModel)]="team.teamName" placeholder="Team Name">
                         </div>
                       </div>
                     </div>
