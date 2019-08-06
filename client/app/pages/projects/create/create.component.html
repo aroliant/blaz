@@ -19,7 +19,18 @@
                             <span class="input-icon-addon">
                               <i class="fe fe-square"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Project Name">
+                            <input type="text" class="form-control" [(ngModel)]="project.projectName" placeholder="Project Name">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label class="form-label">Project Description</label>
+                          <div class="input-icon">
+                            <span class="input-icon-addon">
+                              <i class="fe fe-square"></i>
+                            </span>
+                            <input type="text" class="form-control" [(ngModel)]="project.projectDescription" placeholder="Project Description">
                           </div>
                         </div>
                       </div>
@@ -251,7 +262,7 @@
                       </div>
                     </div>
                     <div class="w-100 text-right mb-3">
-                      <button class="btn btn-primary mr-2" routerLink="/projects">Create</button>
+                      <button class="btn btn-primary mr-2" (click)="createProduct()">Create</button>
                     </div>
                   </div>
                 </div>

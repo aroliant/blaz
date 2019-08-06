@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from 'client/app/services/projects.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectViewComponent implements OnInit {
 
-  constructor() { }
+  project : {}
+  id: String
+
+  constructor(private projectsService: ProjectsService,private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.route.params.subscribe((data) => {
+      this.projectsService.getProject(data.id).subscribe((res:any) => {
+        if(res.success){
+          this.project = res.project;
+        }
+      })
+    })
+
   }
 
 }
