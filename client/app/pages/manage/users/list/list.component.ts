@@ -15,7 +15,7 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
     this.usersService.getUsers().subscribe((res:any)=>{
       if(res.success){
-        this.users = res.teams;
+        this.users = res.users;
       }
     })
   }
