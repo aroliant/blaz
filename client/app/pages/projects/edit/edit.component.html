@@ -22,15 +22,8 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Add</button>
                   </div>
-                  <div class="tags">
-                    <span class="tag">
-                      One
-                      <a href="#" class="tag-addon"><i class="fe fe-x"></i></a>
-                    </span>
-                    <span class="tag">
-                      Two
-                      <a href="#" class="tag-addon"><i class="fe fe-x"></i></a>
-                    </span>
+                  <div class="tags" *ngIf="project.projectLabels.length > 0" >
+                    <span *ngFor="let label of project.projectLabels" class="tag">{{label}}<a href="#" class="tag-addon"><i class="fe fe-x"></i></a></span>
                   </div>
                 </div>
 

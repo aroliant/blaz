@@ -14,12 +14,12 @@ export class TeamsService {
     return this.http.get(this.API_URL + "/teams")
   }
 
-  getTeam(str) {
-    return this.http.get(this.API_URL + "/teams/"+str)
+  getTeam(teamID) {
+    return this.http.get(this.API_URL + "/teams/" + teamID)
   }
 
-  createTeam(data) {
-    return this.http.post(this.API_URL + "/teams",data);
+  createTeam(team) {
+    return this.http.post(this.API_URL + "/teams",team);
   }
 
 }
