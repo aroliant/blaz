@@ -22,7 +22,7 @@ export const TeamsRoutes: Routes = [
         component: CreateComponent
       },
       {
-        path: 'edit/:id',
+        path: ':id',
         component: EditComponent
       },
     ]

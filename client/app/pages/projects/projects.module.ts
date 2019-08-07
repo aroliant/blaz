@@ -19,7 +19,7 @@ export const ProjectsRoutes: Routes = [
         component: ProjectListComponent,
       },
       {
-        path: 'view/:id',
+        path: ':id',
         component: ProjectViewComponent
       },
       {

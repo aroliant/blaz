@@ -15,7 +15,7 @@
 
               <div class="row my-3 mx-1">
                 <div class="col-lg-3 p-2" *ngFor="let project of projects">
-                  <div routerLink="/projects/view/{{project.projectID}}" class="card Project m-0">
+                  <div routerLink="/projects/{{project.projectID}}" class="card Project m-0">
                     <div class="card-header p-2">
                       <span class="avatar avatar-cyan mr-2">PR</span>
                       <h3 class="card-title">{{project.projectName}}</h3>
