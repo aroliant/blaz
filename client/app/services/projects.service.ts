@@ -14,12 +14,12 @@ export class ProjectsService {
     return this.http.get(this.API_URL + "/projects")
   }
 
-  getProject(str) {
-    return this.http.get(this.API_URL + "/projects/"+str);
+  getProject(projectID) {
+    return this.http.get(this.API_URL + "/projects/" + projectID);
   }
 
-  createproject(data) {
-    return this.http.post(this.API_URL + "/projects", data);
+  createproject(project) {
+    return this.http.post(this.API_URL + "/projects", project);
   }
 
 }

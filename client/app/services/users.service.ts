@@ -14,12 +14,12 @@ export class UsersService {
     return this.http.get(this.API_URL + "/users")
   }
 
-  getUser(str) {
-    return this.http.get(this.API_URL + "/users/"+str)
+  getUser(projectID) {
+    return this.http.get(this.API_URL + "/users/" + projectID)
   }
 
-  createUser(data) {
-    return this.http.post(this.API_URL + "/users",data);
+  createUser(user) {
+    return this.http.post(this.API_URL + "/users",user);
   }
 
 }

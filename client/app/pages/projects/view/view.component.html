@@ -16,9 +16,8 @@
                 </div>
                 <div class="col-lg-4 p-lg-5">
                   <h4>Labels</h4>
-                  <div class="tags">
-                    <span class="tag">Label 1</span>
-                    <span class="tag">Label 2</span>
+                  <div class="tags" *ngIf="project.projectLabels.length > 0" >
+                    <span *ngFor="let label of project.projectLabels" class="tag">{{label}}</span>
                   </div>
                 </div>
                 <hr>
