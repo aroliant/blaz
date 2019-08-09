@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class EditComponent implements OnInit {
 
   team : {}
+  users: []
 
   constructor(private teamsService: TeamsService,private route: ActivatedRoute) { }
 
@@ -18,6 +19,7 @@ export class EditComponent implements OnInit {
       this.teamsService.getTeam(data.id).subscribe((res:any) => {
         if(res.success){
           this.team = res.team;
+          this.users = res.users;
         }
       })
     })

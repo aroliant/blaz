@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-body o-auto">
                       <ul class="list-unstyled list-separated">
-                        <li class="list-separated-item">
+                        <li class="list-separated-item" *ngFor="let app of apps" >
                           <div class="row align-items-center">
                             <div class="col-auto">
                               <span class="avatar avatar-md d-block"
@@ -38,97 +38,10 @@
                             </div>
                             <div class="col">
                               <div>
-                                <a href="#" class="text-inherit">App Name</a>
+                                <a href="#" class="text-inherit">{{app.appName}}</a>
                               </div>
-                              <div class="small text-muted">
-                                Version: 1
-                              </div>
-                              <div>http://192.168.100.101</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-separated-item">
-                          <div class="row align-items-center">
-                            <div class="col-auto">
-                              <span class="avatar avatar-md d-block"
-                                style="background-image: url('http://img.blaz.app/40x40')"></span>
-                            </div>
-                            <div class="col">
-                              <div>
-                                <a href="#" class="text-inherit">App Name</a>
-                              </div>
-                              <div class="small text-muted">
-                                Version: 1
-                              </div>
-                              <div>http://192.168.100.101</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-separated-item">
-                          <div class="row align-items-center">
-                            <div class="col-auto">
-                              <span class="avatar avatar-md d-block"
-                                style="background-image: url('http://img.blaz.app/40x40')"></span>
-                            </div>
-                            <div class="col">
-                              <div>
-                                <a href="#" class="text-inherit">App Name</a>
-                              </div>
-                              <div class="small text-muted">
-                                Version: 1
-                              </div>
-                              <div>http://192.168.100.101</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-separated-item">
-                          <div class="row align-items-center">
-                            <div class="col-auto">
-                              <span class="avatar avatar-md d-block"
-                                style="background-image: url('http://img.blaz.app/40x40')"></span>
-                            </div>
-                            <div class="col">
-                              <div>
-                                <a href="#" class="text-inherit">App Name</a>
-                              </div>
-                              <div class="small text-muted">
-                                Version: 1
-                              </div>
-                              <div>http://192.168.100.101</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-separated-item">
-                          <div class="row align-items-center">
-                            <div class="col-auto">
-                              <span class="avatar avatar-md d-block"
-                                style="background-image: url('http://img.blaz.app/40x40')"></span>
-                            </div>
-                            <div class="col">
-                              <div>
-                                <a href="#" class="text-inherit">App Name</a>
-                              </div>
-                              <div class="small text-muted">
-                                Version: 1
-                              </div>
-                              <div>http://192.168.100.101</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-separated-item">
-                          <div class="row align-items-center">
-                            <div class="col-auto">
-                              <span class="avatar avatar-md d-block"
-                                style="background-image: url('http://img.blaz.app/40x40')"></span>
-                            </div>
-                            <div class="col">
-                              <div>
-                                <a href="#" class="text-inherit">App Name</a>
-                              </div>
-                              <div class="small text-muted">
-                                Version: 1
-                              </div>
-                              <div>http://192.168.100.101</div>
+                              <div class="small text-muted">Version: {{app.version.versionName}}</div>
+                              <div>http://{{app.appName}}.localhost</div>
                             </div>
                           </div>
                         </li>

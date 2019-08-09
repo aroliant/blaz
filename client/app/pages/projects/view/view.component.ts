@@ -11,6 +11,7 @@ export class ProjectViewComponent implements OnInit {
 
   project : {}
   id: String
+  apps : []
 
   constructor(private projectsService: ProjectsService,private route: ActivatedRoute) { }
 
@@ -21,6 +22,7 @@ export class ProjectViewComponent implements OnInit {
       this.projectsService.getProject(data.id).subscribe((res:any) => {
         if(res.success){
           this.project = res.project;
+          this.apps = res.apps;
         }
       })
     })
