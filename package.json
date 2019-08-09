@@ -25,7 +25,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn client:lint && yarn server:lint"
+      "pre-push": "yarn client:lint && yarn server:lint",
+      "pre-commit": "node dev-scripts/pre-commit.js",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "dependencies": {
@@ -90,6 +92,8 @@
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/preset-env": "^7.4.3",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "babel-eslint": "8.2.2",
