@@ -19,8 +19,8 @@
     "server:pack": "pkg . -t node10.15.3-alpine-x64 --output app.bin",
     "server:pack:local": "pkg package.json --output app.bin",
     "server:start": "babel-node server/",
-    "server:start:dev:api": "nodemon -c 'babel-node server/index.js'",
-    "server:start:dev": "nodemon -c 'babel-node server/'",
+    "server:start:dev:api": "nodemon --exec babel-node server/index.js",
+    "server:start:dev": "nodemon --exec babel-node server/",
     "update:env": "sh dev-scripts/branch-to-env.sh"
   },
   "husky": {
@@ -109,7 +109,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "nodemon": "^1.19.1",
+    "nodemon": "1.18.11",
     "pkg": "^4.4.0",
     "protractor": "~5.4.0",
     "semver": "^6.0.0",
