@@ -25,7 +25,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint"
+      "pre-push": "yarn client:lint && yarn server:lint"
     }
   },
   "dependencies": {
