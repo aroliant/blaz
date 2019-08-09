@@ -11,6 +11,8 @@ export class EditComponent implements OnInit {
 
   team : {}
   users: []
+  toSearch = ""
+  searchedUsers = []
 
   constructor(private teamsService: TeamsService,private route: ActivatedRoute) { }
 
@@ -23,6 +25,14 @@ export class EditComponent implements OnInit {
         }
       })
     })
+  }
+
+  searchUser(){
+
+  }
+
+  addUser(userID){
+
   }
 
 }

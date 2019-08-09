@@ -30,7 +30,7 @@
                           <span class="input-icon-addon">
                             <i class="fe fe-user"></i>
                           </span>
-                          <input type="text" class="form-control" placeholder="Search for users..">
+                          <input type="text" class="form-control" [(ngModel)]="toSearch" (input)="searchUser()" placeholder="Search for users..">
                         </div>
                       </div>
                     </div>

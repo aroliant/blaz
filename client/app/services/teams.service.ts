@@ -22,4 +22,12 @@ export class TeamsService {
     return this.http.post(this.API_URL + "/teams",team);
   }
 
+  searchUsers(toSearch) {
+
+  }
+
+  addUserToTeam(teamID,user) {
+
+  }
+
 }
