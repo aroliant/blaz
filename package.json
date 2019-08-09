@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "babel-node server/",
+    "start:api:dev": "nodemon -c 'babel-node server/index.js'",
     "start:dev": "nodemon -c 'babel-node server/'",
     "build:client": "ng build",
     "build:server": "babel server -d dist/server --copy-files",
