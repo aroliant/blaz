@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HostsComponent } from './hosts/hosts.component';
 
 
-export const HostsAndDomainsRoutes: Routes = [
+export const HostsRoutes: Routes = [
   {
     path: '',
     children: [
@@ -19,10 +19,10 @@ export const HostsAndDomainsRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(HostsAndDomainsRoutes)
+    RouterModule.forChild(HostsRoutes)
   ],
   declarations: [
     HostsComponent,
   ]
 })
-export class HostsAndDomains { }
+export class HostsModule { }

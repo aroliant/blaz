@@ -25,310 +25,41 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
+                    <tr *ngFor="let user of users">
+                      <td class="text-center" routerLink="/users/{{user.userID}}">
                         <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
                           <span class="avatar-status bg-green"></span>
                         </div>
                       </td>
-                      <td>
-                        <div>Emilia Clarke</div>
+                      <td routerLink="/users/{{user.userID}}">
+                        <div>{{user.username}}</div>
                       </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
+                      <td routerLink="/users/{{user.userID}}">
+                        <div>{{user.userEmail}}</div>
                       </td>
-                      <td>
+                      <td routerLink="/users/{{user.userID}}">
                         <div>Admin</div>
                       </td>
-                      <td>
+                      <td routerLink="/users/{{user.userID}}">
                         <div class="small text-muted">Last login</div>
                         <div>4 minutes ago</div>
                       </td>
 
                       <td class="text-center">
                         <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
+                          <a data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                           <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                            <a class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
+                              View Account </a>
+                            <a class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i>Edit</a>
                             <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
+                            <a class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
+                              Delete Account</a>
                           </div>
                         </div>
                       </td>
                     </tr>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
-                        <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
-                          <span class="avatar-status bg-green"></span>
-                        </div>
-                      </td>
-                      <td>
-                        <div>Emilia Clarke</div>
-                      </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
-                      </td>
-                      <td>
-                        <div>Admin</div>
-                      </td>
-                      <td>
-                        <div class="small text-muted">Last login</div>
-                        <div>5 minutes ago</div>
-                      </td>
 
-                      <td class="text-center">
-                        <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
-                        <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
-                          <span class="avatar-status bg-green"></span>
-                        </div>
-                      </td>
-                      <td>
-                        <div>Emilia Clarke</div>
-                      </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
-                      </td>
-                      <td>
-                        <div>Admin</div>
-                      </td>
-                      <td>
-                        <div class="small text-muted">Last login</div>
-                        <div>a minute ago</div>
-                      </td>
-
-                      <td class="text-center">
-                        <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
-                        <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
-                          <span class="avatar-status bg-green"></span>
-                        </div>
-                      </td>
-                      <td>
-                        <div>Emilia Clarke</div>
-                      </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
-                      </td>
-                      <td>
-                        <div>Admin</div>
-                      </td>
-                      <td>
-                        <div class="small text-muted">Last login</div>
-                        <div>a minute ago</div>
-                      </td>
-
-                      <td class="text-center">
-                        <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
-                        <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
-                          <span class="avatar-status bg-green"></span>
-                        </div>
-                      </td>
-                      <td>
-                        <div>Emilia Clarke</div>
-                      </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
-                      </td>
-                      <td>
-                        <div>Admin</div>
-                      </td>
-                      <td>
-                        <div class="small text-muted">Last login</div>
-                        <div>2 minutes ago</div>
-                      </td>
-
-                      <td class="text-center">
-                        <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
-                        <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
-                          <span class="avatar-status bg-green"></span>
-                        </div>
-                      </td>
-                      <td>
-                        <div>Emilia Clarke</div>
-                      </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
-                      </td>
-                      <td>
-                        <div>Admin</div>
-                      </td>
-                      <td>
-                        <div class="small text-muted">Last login</div>
-                        <div>a minute ago</div>
-                      </td>
-
-                      <td class="text-center">
-                        <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
-                        <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
-                          <span class="avatar-status bg-green"></span>
-                        </div>
-                      </td>
-                      <td>
-                        <div>Emilia Clarke</div>
-                      </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
-                      </td>
-                      <td>
-                        <div>Admin</div>
-                      </td>
-                      <td>
-                        <div class="small text-muted">Last login</div>
-                        <div>9 minutes ago</div>
-                      </td>
-
-                      <td class="text-center">
-                        <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr routerLink="/users/edit">
-                      <td class="text-center">
-                        <div class="avatar d-block" style="background-image: url('http://img.blaz.app/40x40')">
-                          <span class="avatar-status bg-green"></span>
-                        </div>
-                      </td>
-                      <td>
-                        <div>Emilia Clarke</div>
-                      </td>
-                      <td>
-                        <div>emilia@imdb.com</div>
-                      </td>
-                      <td>
-                        <div>Admin</div>
-                      </td>
-                      <td>
-                        <div class="small text-muted">Last login</div>
-                        <div>8 minutes ago</div>
-                      </td>
-
-                      <td class="text-center">
-                        <div class="item-action dropdown">
-                          <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
-                              Action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a href="javascript:void(0)" class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
-                              Separated link</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
                   </tbody>
                 </table>
               </div>

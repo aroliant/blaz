@@ -1,0 +1,43 @@
+<div class="page">
+  <div class="page-main">
+
+    <div class="my-3 my-md-5">
+      <div class="container">
+        <div class="row row-cards row-deck">
+          <div class="col-12">
+            <div class="w-100 mb-3 text-right">
+              <button class="btn btn-primary" routerLink="/projects/create">Create Project</button>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="m-0">List of Projects</h3>
+              </div>
+
+              <div class="row my-3 mx-1">
+                <div class="col-lg-3 p-2" *ngFor="let project of projects">
+                  <div routerLink="/projects/{{project.projectID}}" class="card Project m-0">
+                    <div class="card-header p-2">
+                      <span class="avatar avatar-cyan mr-2">PR</span>
+                      <h3 class="card-title">{{project.projectName}}</h3>
+                    </div>
+                    <div class="card-body p-2 Project__description">{{project.projectDescription}}</div>
+                    <div class="card-footer p-2">
+                      <div class="card-options">
+                        <div class="tags" *ngIf="project.projectLabels.length > 0" >
+                          <span *ngFor="let label of project.projectLabels" class="tag">{{label}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

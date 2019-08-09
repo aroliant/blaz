@@ -1,26 +1,35 @@
 {
-  "name": "blaz-app",
-  "version": "0.0.0",
+  "name": "blaz",
+  "version": "0.1.0",
+  "private": true,
+  "bin": "dist/server/index.js",
   "scripts": {
-    "ng": "ng",
-    "start": "babel-node server/",
-    "start:dev": "nodemon -c 'babel-node server/'",
-    "build:client": "ng build",
-    "build:server": "babel server -d dist/server --copy-files",
-    "ng:test": "ng test",
-    "ng:lint": "ng lint",
-    "db:migrate": "sequelize db:migrate",
-    "db:migrate:undo:all": "sequelize db:migrate:undo:all",
-    "lint": "eslint server",
     "blaz:build": "node dev-scripts/build-blaz.js",
     "blaz:run": "node dev-scripts/run-blaz.js",
     "blaz:run:dev": "yarn update:env && yarn blaz:build --local && docker swarm leave -f ; yarn blaz:run",
     "blaz:start": "node app.bin",
+    "client:build": "ng build",
+    "client:lint": "ng lint",
+    "client:test": "ng test",
+    "db:clear": "sequelize db:seed:undo:all && sequelize db:migrate:undo:all",
+    "db:setup": "sequelize db:migrate && sequelize db:seed:all",
+    "ng": "ng",
+    "server:build": "babel server -d dist/server --copy-files",
+    "server:lint": "eslint server",
     "server:pack": "pkg . -t node10.15.3-alpine-x64 --output app.bin",
     "server:pack:local": "pkg package.json --output app.bin",
+    "server:start": "babel-node server/",
+    "server:start:dev:api": "nodemon -c 'babel-node server/index.js'",
+    "server:start:dev": "nodemon -c 'babel-node server/'",
     "update:env": "sh dev-scripts/branch-to-env.sh"
   },
-  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn client:lint && yarn server:lint",
+      "pre-commit": "node dev-scripts/pre-commit.js",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
@@ -58,7 +67,6 @@
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "nodemailer": "^6.0.0",
-    "nodemon": "^1.18.11",
     "proxy-addr": "^2.0.4",
     "public-ip": "^3.1.0",
     "request": "^2.88.0",
@@ -84,6 +92,8 @@
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/preset-env": "^7.4.3",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "babel-eslint": "8.2.2",
@@ -91,6 +101,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "husky": "^3.0.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
@@ -98,6 +109,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "nodemon": "^1.19.1",
     "pkg": "^4.4.0",
     "protractor": "~5.4.0",
     "semver": "^6.0.0",
@@ -107,12 +119,6 @@
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn lint"
-    }
-  },
-  "bin": "dist/server/index.js",
   "pkg": {
     "scripts": [
       "dist/server/**/*.js",

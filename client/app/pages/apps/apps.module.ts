@@ -5,9 +5,9 @@ import { AppService } from 'client/app/services/app.service';
 import { FormsModule } from '@angular/forms';
 
 
-import { ListComponent } from './list/list.component';
-import { CreateComponent } from './create/create.component';
-import { DetailComponent } from './detail/detail.component';
+import { AppsListComponent } from './list/list.component';
+import { CreateAppComponent } from './create/create.component';
+import { AppDetailComponent } from './detail/detail.component';
 
 import { HttpSettingsComponent } from './detail/components/http-settings/http-settings.component';
 import { OverviewComponent } from './detail/components/overview/overview.component';
@@ -23,15 +23,15 @@ export const AppsRoutes: Routes = [
     children: [
       {
         path: "",
-        component: ListComponent,
+        component: AppsListComponent,
       },
       {
         path: 'create',
-        component: CreateComponent
+        component: CreateAppComponent
       },
       {
         path: ':appID',
-        component: DetailComponent
+        component: AppDetailComponent
       }
     ]
   }
@@ -44,9 +44,9 @@ export const AppsRoutes: Routes = [
     FormsModule,
   ],
   declarations: [
-    ListComponent,
-    CreateComponent,
-    DetailComponent,
+    AppsListComponent,
+    CreateAppComponent,
+    AppDetailComponent,
     HttpSettingsComponent,
     OverviewComponent,
     AppConfigurationComponent,
