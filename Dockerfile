@@ -13,7 +13,7 @@ COPY ./ /usr/src/app
 RUN yarn ng build --prod
 
 # Babel JavaScript Transcompile
-RUN yarn build:server
+RUN yarn server:build
 
 # Pack to binary with pkg
 RUN yarn server:pack
