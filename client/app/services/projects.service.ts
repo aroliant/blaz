@@ -22,4 +22,21 @@ export class ProjectsService {
     return this.http.post(this.API_URL + "/projects", project);
   }
 
+  searchTeam(toSearchInTeam){
+    return this.http.get(this.API_URL + "/teams/search/" + toSearchInTeam);
+  }
+
+  addTeamInProject(projectID, teamID) {
+    return this.http.put(this.API_URL + "/projects/" + projectID + "/team/add", { "teamID": teamID });
+  }
+
+  searchUser(toSearchInUser){
+    // return this.http.get(this.API_URL + "/users/search/" + toSearchInUser);
+    return this.http.get(this.API_URL + "/users")
+  }
+
+  addUserInProject(projectID, userID) {
+    return this.http.put(this.API_URL + "/projects/" + projectID + "/user/add", { "userID": userID });
+  }
+
 }

@@ -11,6 +11,29 @@
               <div>Collaborators
               </div>
               <button class="btn btn-primary btn-sm" href="#">Add Collaborator</button>
+              <div class="input-icon">
+                  <span class="input-icon-addon">
+                    <i class="fe fe-user"></i>
+                  </span>
+                  <input type="text" [(ngModel)]="toSearchUser" class="form-control" placeholder="Search for users.." (input)="searchUsers()" >
+                </div>
+            </div>
+            <div class="col-12 p-0">
+                <div class="card">
+                  <div class="list-separated-item" *ngFor="let user of displaySearchedUsers" >
+                    <div class="row align-items-center" (click)="addUserInApp(user)" >
+                      <div class="col-auto">
+                        <span class="avatar avatar-md d-block"
+                          style="background-image: url('https://img.blaz.app/40x40')"></span>
+                      </div>
+                      <div class="col">
+                        <div>
+                          <a  class="text-inherit">{{user.username}}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="table-responsive">
               <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
@@ -23,6 +46,40 @@
                   </tr>
                 </thead>
                 <tbody>
+                    <tr *ngFor="let user of users" >
+                        <td class="text-center">
+                          <div class="avatar d-block"
+                            style="background-image: url('https://img.blaz.app/40x40')">
+                            <span class="avatar-status bg-green"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div>{{user.username}}</div>
+                          <div class="small text-muted">{{user.userEmail}}</div>
+                        </td>
+                        <td>
+                          <div>Administrator</div>
+                        </td>
+                        <td class="text-center">
+                          <div class="item-action dropdown">
+                            <a  data-toggle="dropdown" class="icon"><i
+                                class="fe fe-more-vertical"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-tag"></i>
+                                Action </a>
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                              <div class="dropdown-divider"></div>
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-link"></i>
+                                Separated link</a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
                   <tr>
                     <td class="text-center">
                       <div class="avatar d-block"
@@ -105,6 +162,29 @@
               <div>Teams
               </div>
               <button class="btn btn-primary btn-sm" href="#">Add Team</button>
+              <div class="input-icon">
+                <span class="input-icon-addon">
+                  <i class="fe fe-user"></i>
+                </span>
+                <input type="text" [(ngModel)]="toSearchTeam" class="form-control" placeholder="Search for teams.." (input)="searchTeams()" >
+              </div>
+            </div>
+            <div class="col-12 p-0">
+                <div class="card">
+                  <div class="list-separated-item" *ngFor="let team of displaySearchedTeams" >
+                    <div class="row align-items-center" (click)="addTeamInApp(team)" >
+                      <div class="col-auto">
+                        <span class="avatar avatar-md d-block"
+                          style="background-image: url('https://img.blaz.app/40x40')"></span>
+                      </div>
+                      <div class="col">
+                        <div>
+                          <a  class="text-inherit">{{team.teamName}}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="table-responsive">
               <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
@@ -117,6 +197,43 @@
                   </tr>
                 </thead>
                 <tbody>
+                    <tr *ngFor="let team of teams" >
+                        <td class="text-center">
+                          <div class="avatar d-block"
+                            style="background-image: url('https://img.blaz.app/40x40')">
+                            <span class="avatar-status bg-green"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div>{{team.teamName}}</div>
+                          <div class="small text-muted">
+                            {{team.teamEmail}}
+                          </div>
+                        </td>
+                        <td>
+                          <div>6</div>
+                        </td>
+                        <td class="text-center">
+                          <div class="item-action dropdown">
+                            <a  data-toggle="dropdown" class="icon"><i
+                                class="fe fe-more-vertical"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-tag"></i>
+                                Action </a>
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                              <div class="dropdown-divider"></div>
+                              <a  class="dropdown-item"><i
+                                  class="dropdown-icon fe fe-link"></i>
+                                Separated link</a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
                   <tr>
                     <td class="text-center">
                       <div class="avatar d-block"

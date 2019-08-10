@@ -10,14 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 export class EditComponent implements OnInit {
 
   team : {}
-  users: []
+  users = []
+  id
   toSearch = ""
   searchedUsers = []
+  toSearchUser = ""
+  displaySearchedUsers : []
 
   constructor(private teamsService: TeamsService,private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
+      this.id = data.id
       this.teamsService.getTeam(data.id).subscribe((res:any) => {
         if(res.success){
           this.team = res.team;
@@ -27,12 +31,24 @@ export class EditComponent implements OnInit {
     })
   }
 
-  searchUser(){
-
+  searchUsers(){
+    if(this.toSearchUser == "" || this.toSearchUser == null){
+      this.displaySearchedUsers = [];
+      return;
+    }
+    this.teamsService.searchUser(this.toSearchUser).subscribe((res:any)=>{
+      if(res.success){
+        this.displaySearchedUsers = res.users;
+      }
+    })
   }
 
-  addUser(userID){
-
+  addUserInTeam(user){
+    this.teamsService.addUserToTeam(this.id,user.userID).subscribe((res:any)=>{
+      if(res.success){
+        this.users.push(user);
+      }
+    })
   }
 
 }

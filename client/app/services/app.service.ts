@@ -27,4 +27,21 @@ export class AppService {
     return this.http.get(this.API_URL + "/apps/" + appID)
   }
 
+  searchUser(toSearchInUser){
+    // return this.http.get(this.API_URL + "/users/search/" + toSearchInUser);
+    return this.http.get(this.API_URL + "/users")
+  }
+
+  addUserInApp(appID, userID) {
+    return this.http.put(this.API_URL + "/apps/" + appID + "/user/add", { "userID": userID });
+  }
+
+  searchTeam(toSearchInTeam){
+    return this.http.get(this.API_URL + "/teams/search/" + toSearchInTeam);
+  }
+
+  addTeamInApp(appID, teamID) {
+    return this.http.put(this.API_URL + "/apps/" + appID + "/team/add", { "teamID": teamID });
+  }
+
 }

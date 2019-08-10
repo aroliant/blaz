@@ -22,12 +22,13 @@ export class TeamsService {
     return this.http.post(this.API_URL + "/teams",team);
   }
 
-  searchUsers(toSearch) {
-
+  searchUser(toSearchInUser){
+    // return this.http.get(this.API_URL + "/users/search/" + toSearchInUser);
+    return this.http.get(this.API_URL + "/users")
   }
 
-  addUserToTeam(teamID,user) {
-
+  addUserToTeam(teamID,userID) {
+    return this.http.put(this.API_URL + "/teams/" + teamID + "/user/add", { "userID": userID });
   }
 
 }
