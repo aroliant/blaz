@@ -22,7 +22,7 @@ export const AppsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: AppsListComponent,
       },
       {

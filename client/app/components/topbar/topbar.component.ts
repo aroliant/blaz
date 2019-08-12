@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopbarComponent implements OnInit {
 
-  pageTitle = ""
+  pageTitle = '';
   constructor() { }
 
   ngOnInit() {

@@ -9,16 +9,16 @@ export class ActivityComponent implements OnInit {
 
   @Input() activeTab;
   @Input() app;
-  showTab = false
+  showTab = false;
 
   constructor() { }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+
   }
 
   ngOnChanges() {
-    this.showTab = this.activeTab == "activity" ? true : false     
+    this.showTab = this.activeTab === 'activity' ? true : false;
   }
 
 }
