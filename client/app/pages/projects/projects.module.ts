@@ -19,12 +19,12 @@ export const ProjectsRoutes: Routes = [
         component: ProjectListComponent,
       },
       {
-        path: ':id',
-        component: ProjectViewComponent
-      },
-      {
         path: 'create',
         component: ProjectCreateComponent
+      },
+      {
+        path: ':id',
+        component: ProjectViewComponent
       },
       {
         path: 'edit/:id',
