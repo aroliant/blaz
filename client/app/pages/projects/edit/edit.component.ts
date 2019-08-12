@@ -18,7 +18,11 @@ export class ProjectEditComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  project: any;
+  project = {
+    projectName: '',
+    projectDescription: '',
+    projectLabels: []
+  };
   id;
   teamSearchResult: [];
   userSearchResult: [];
