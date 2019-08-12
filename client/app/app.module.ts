@@ -19,6 +19,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MonitoringModule } from './pages/monitoring/monitoring.module';
+import { ToasterComponent } from './components/toaster/toaster.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MonitoringModule } from './pages/monitoring/monitoring.module';
     SidebarComponent,
     TopbarComponent,
     FooterComponent,
+    ToasterComponent,
   ],
   imports: [
     BrowserModule,

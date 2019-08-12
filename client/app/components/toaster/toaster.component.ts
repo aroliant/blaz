@@ -12,7 +12,7 @@ interface Toast {
 @Component({
   selector: 'app-toaster-container',
   templateUrl: './toaster.component.html',
-  styleUrls: ['./toaster.component.css']
+  styleUrls: []
 })
 export class ToasterComponent implements OnInit {
 
