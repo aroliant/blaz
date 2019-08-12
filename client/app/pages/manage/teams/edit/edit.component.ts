@@ -9,13 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  team: {};
-  users = [];
-  id;
-  toSearch = '';
-  searchedUsers = [];
-  toSearchUser = '';
-  displaySearchedUsers: [];
+  team: {}
+  users = []
+  id
+
+  userSearchResult = [];
+  userSearchKeyword = '';
+
 
   constructor(private teamsService: TeamsService, private route: ActivatedRoute) { }
 
@@ -27,18 +27,19 @@ export class EditComponent implements OnInit {
           this.team = res.team;
           this.users = res.users;
         }
-      });
-    });
+      })
+    })
+
+    this.searchUsers()
+
   }
 
+
+
   searchUsers() {
-    if (this.toSearchUser === '' || this.toSearchUser == null) {
-      this.displaySearchedUsers = [];
-      return;
-    }
-    this.teamsService.searchUser(this.toSearchUser).subscribe((res: any) => {
+    this.teamsService.searchUser(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
-        this.displaySearchedUsers = res.users;
+        this.userSearchResult = res.users;
       }
     });
   }
