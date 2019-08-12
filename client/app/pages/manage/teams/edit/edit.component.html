@@ -30,9 +30,26 @@
                           <span class="input-icon-addon">
                             <i class="fe fe-user"></i>
                           </span>
-                          <input type="text" class="form-control" placeholder="Search for users..">
+                          <input type="text" [(ngModel)]="toSearchUser" (input)="searchUsers()" class="form-control" placeholder="Search for users..">
                         </div>
                       </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="card">
+                          <div class="list-separated-item" *ngFor="let user of displaySearchedUsers" >
+                            <div class="row align-items-center" (click)="addUserInTeam(user)" >
+                              <div class="col-auto">
+                                <span class="avatar avatar-md d-block"
+                                  style="background-image: url('https://img.blaz.app/40x40')"></span>
+                              </div>
+                              <div class="col">
+                                <div>
+                                  <a  class="text-inherit">{{user.username}}</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                     <div class="col-12"  *ngIf="users">
                       <div class="card">

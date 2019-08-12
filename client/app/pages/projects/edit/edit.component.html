@@ -37,8 +37,25 @@
                       <span class="input-icon-addon">
                         <i class="fe fe-user"></i>
                       </span>
-                      <input type="text" class="form-control" placeholder="Search for users..">
+                      <input type="text" [(ngModel)]="toSearchUser" (input)="searchUsers()" class="form-control" placeholder="Search for users..">
                     </div>
+                  </div>
+                  <div class="col-12 p-0">
+                      <div class="card">
+                        <div class="list-separated-item" *ngFor="let user of displaySearchedUsers" >
+                          <div class="row align-items-center" (click)="addUserInProject(user)" >
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url('https://img.blaz.app/40x40')"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a  class="text-inherit">{{user.username}}</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   </div>
                   <div class="col-12 p-0">
                     <div class="card">
@@ -47,6 +64,40 @@
                       </div>
                       <div class="card-body o-auto" style="height: 15rem">
                         <ul class="list-unstyled list-separated">
+                            <li class="list-separated-item" *ngFor="let user of users" >
+                                <div class="row align-items-center">
+                                  <div class="col-auto">
+                                    <span class="avatar avatar-md d-block"
+                                      style="background-image: url('https://img.blaz.app/40x40')"></span>
+                                  </div>
+                                  <div class="col">
+                                    <div>
+                                      <a  class="text-inherit">{{user.username}}</a>
+                                    </div>
+                                    <small
+                                      class="d-block item-except text-sm text-muted h-1x">{{user.userEmail}}</small>
+                                  </div>
+                                  <div class="col-auto">
+                                    <div class="item-action dropdown">
+                                      <a  data-toggle="dropdown" class="icon"><i
+                                          class="fe fe-more-vertical"></i></a>
+                                      <div class="dropdown-menu dropdown-menu-right">
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-tag"></i>
+                                          Action </a>
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-link"></i>
+                                          Separated link</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
                           <li class="list-separated-item">
                             <div class="row align-items-center">
                               <div class="col-auto">
@@ -261,8 +312,25 @@
                       <span class="input-icon-addon">
                         <i class="fe fe-user"></i>
                       </span>
-                      <input type="text" class="form-control" placeholder="Search for teams..">
+                      <input type="text" [(ngModel)]="toSearchTeam" class="form-control" placeholder="Search for teams.." (input)="searchTeams()" >
                     </div>
+                  </div>
+                  <div class="col-12 p-0">
+                      <div class="card">
+                        <div class="list-separated-item" *ngFor="let team of displaySearchedTeams" >
+                          <div class="row align-items-center" (click)="addTeamInProject(team)" >
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url('https://img.blaz.app/40x40')"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a  class="text-inherit">{{team.teamName}}</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   </div>
                   <div class="col-12 p-0">
                     <div class="card">
@@ -271,6 +339,38 @@
                       </div>
                       <div class="card-body o-auto" style="height: 15rem">
                         <ul class="list-unstyled list-separated">
+                            <li class="list-separated-item" *ngFor="let team of teams" >
+                                <div class="row align-items-center">
+                                  <div class="col-auto">
+                                    <span class="avatar avatar-md d-block"
+                                      style="background-image: url('https://img.blaz.app/40x40')"></span>
+                                  </div>
+                                  <div class="col">
+                                    <div>
+                                      <a  class="text-inherit">{{team.teamName}}</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-auto">
+                                    <div class="item-action dropdown">
+                                      <a  data-toggle="dropdown" class="icon"><i
+                                          class="fe fe-more-vertical"></i></a>
+                                      <div class="dropdown-menu dropdown-menu-right">
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-tag"></i>
+                                          Action </a>
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a  class="dropdown-item"><i
+                                            class="dropdown-icon fe fe-link"></i>
+                                          Separated link</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
                           <li class="list-separated-item">
                             <div class="row align-items-center">
                               <div class="col-auto">
