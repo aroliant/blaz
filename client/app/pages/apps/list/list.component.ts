@@ -6,7 +6,7 @@ import { AppService } from 'client/app/services/app.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class AppsListComponent implements OnInit {
 
   apps = []
 

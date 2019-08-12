@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './firewall.component.html',
   styleUrls: ['./firewall.component.css']
 })
-export class FirewallComponent implements OnInit {
+export class FirewallViewComponent implements OnInit {
 
   constructor() { }
 

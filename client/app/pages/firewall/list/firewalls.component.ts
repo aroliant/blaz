@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls:['./firewalls.component.css']
 })
 
-export class FirewallsComponent implements OnInit{
+export class FirewallListComponent implements OnInit{
 
 
     constructor(){

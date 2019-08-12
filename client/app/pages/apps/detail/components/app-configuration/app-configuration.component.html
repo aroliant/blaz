@@ -39,8 +39,8 @@
           </div>
           <div>
             <div class="row">
-              <div *ngFor="let portMapping of app.portMapping;let i = index" class="row col-12">
-                <div class="my-2 d-flex col-6">
+              <div class="col-lg-6">
+                <div *ngFor="let portMapping of app.portMapping;let i = index" class="d-flex col-12 mb-2">
                   <div class="input-group mr-2 flex-fill">
                     <span class="input-group-prepend" id="basic-addon3">
                       <span class="input-group-text">Server Port</span>
@@ -56,11 +56,11 @@
                       [(ngModel)]="portMapping.containerPort">
                   </div>
                 </div>
-                <div class="my-2 d-flex col-6"></div>
               </div>
-
+              <div class="col-lg-3 align-self-end mb-3">
+                <button class="btn btn-primary btn-sm" (click)="addNewPortMapping()">Add new Port Mapping</button>
+              </div>
             </div>
-            <button class="btn btn-primary btn-sm" (click)="addNewPortMapping()">Add new Port Mapping</button>
           </div>
         </div>
 
@@ -92,7 +92,7 @@
 
         </div> -->
 
-        <div class="d-flex flex-column my-5">
+        <div class="d-flex flex-column col-lg-6 p-0 my-5">
           <div class="mb-2">
             <span class="font-weight-bold">Instances ( Replications )</span>
           </div>
