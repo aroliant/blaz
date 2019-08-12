@@ -30,7 +30,7 @@ export class EditComponent implements OnInit {
       })
     })
 
-    this.searchUsers()
+    this.searchUsers();
 
   }
 

@@ -13,10 +13,10 @@ export class ProjectEditComponent implements OnInit {
 
   project: {};
   id;
-  displaySearchedTeams: [];
-  displaySearchedUsers: [];
-  toSearchTeam = '';
-  toSearchUser = '';
+  teamSearchResult: [];
+  userSearchResult: [];
+  teamSearchKeyword = '';
+  userSearchKeyword = '';
   teams = [];
   users = [];
 
@@ -32,25 +32,17 @@ export class ProjectEditComponent implements OnInit {
   }
 
   searchUsers() {
-    if (this.toSearchUser === '' || this.toSearchUser == null) {
-      this.displaySearchedUsers = [];
-      return;
-    }
-    this.projectsService.searchUser(this.toSearchUser).subscribe((res: any) => {
+    this.projectsService.searchUser(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
-        this.displaySearchedUsers = res.users;
+        this.userSearchResult = res.users;
       }
     });
   }
 
   searchTeams() {
-    if (this.toSearchTeam === '') {
-      this.displaySearchedTeams = [];
-      return;
-    }
-    this.projectsService.searchTeam(this.toSearchTeam).subscribe((res: any) => {
+    this.projectsService.searchTeam(this.teamSearchKeyword).subscribe((res: any) => {
       if (res.success) {
-        this.displaySearchedTeams = res.teams;
+        this.teamSearchResult = res.teams;
       }
     });
   }

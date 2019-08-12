@@ -14,11 +14,11 @@ export class AccessComponent implements OnInit {
   showTab = false;
   id;
   teams = [];
-  displaySearchedTeams = [];
-  displaySearchedUsers = [];
+  teamSearchResult = [];
+  userSearchResult = [];
   users = [];
-  toSearchTeam = '';
-  toSearchUser = '';
+  teamSearchKeyword = '';
+  userSearchKeyword = '';
 
   constructor(private appService: AppService, private route: ActivatedRoute) { }
 
@@ -33,13 +33,9 @@ export class AccessComponent implements OnInit {
   }
 
   searchUsers() {
-    if (this.toSearchUser === '') {
-      this.displaySearchedUsers = [];
-      return;
-    }
-    this.appService.searchUser(this.toSearchUser).subscribe((res: any) => {
+    this.appService.searchUser(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
-        this.displaySearchedUsers = res.users;
+        this.userSearchResult = res.users;
       }
     });
   }
@@ -53,13 +49,9 @@ export class AccessComponent implements OnInit {
   }
 
   searchTeams() {
-    if (this.toSearchTeam === '') {
-      this.displaySearchedTeams = [];
-      return;
-    }
-    this.appService.searchTeam(this.toSearchTeam).subscribe((res: any) =>  {
+    this.appService.searchTeam(this.teamSearchKeyword).subscribe((res: any) =>  {
       if (res.success) {
-        this.displaySearchedTeams = res.teams;
+        this.teamSearchResult = res.teams;
       }
     });
   }

@@ -8,6 +8,7 @@ import { ProjectEditComponent } from './edit/edit.component';
 import { ProjectViewComponent } from './view/view.component';
 
 import { ProjectsService } from './../../services/projects.service';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 export const ProjectsRoutes: Routes = [
@@ -38,6 +39,7 @@ export const ProjectsRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    NgSelectModule,
     RouterModule.forChild(ProjectsRoutes)
   ],
   declarations: [ProjectListComponent, ProjectCreateComponent, ProjectEditComponent, ProjectViewComponent],

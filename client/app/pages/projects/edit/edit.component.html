@@ -39,13 +39,17 @@
                       <span class="input-icon-addon">
                         <i class="fe fe-user"></i>
                       </span>
-                      <input type="text" [(ngModel)]="toSearchUser" (input)="searchUsers()" class="form-control"
-                        placeholder="Search for users..">
+                      <!-- <input type="text" [(ngModel)]="userSearchKeyword" (input)="searchUsers()" class="form-control"
+                        placeholder="Search for users.."> -->
+                        <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                          bindLabel="username" (search)="searchUsers()"
+                          (add)="addUserInProject(userSearchResult)" placeholder="Search and add users..">
+                        </ng-select>
                     </div>
                   </div>
-                  <div class="col-12 p-0">
+                  <!-- <div class="col-12 p-0">
                     <div class="card">
-                      <div class="list-separated-item" *ngFor="let user of displaySearchedUsers">
+                      <div class="list-separated-item" *ngFor="let user of userSearchResult">
                         <div class="row align-items-center" (click)="addUserInProject(user)">
                           <div class="col-auto">
                             <span class="avatar avatar-md d-block"
@@ -59,7 +63,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="col-12 p-0">
                     <div class="card">
                       <div class="card-header">
@@ -296,13 +300,17 @@
                       <span class="input-icon-addon">
                         <i class="fe fe-user"></i>
                       </span>
-                      <input type="text" [(ngModel)]="toSearchTeam" class="form-control"
-                        placeholder="Search for teams.." (input)="searchTeams()">
+                      <!-- <input type="text" [(ngModel)]="teamSearchKeyword" class="form-control"
+                        placeholder="Search for teams.." (input)="searchTeams()"> -->
+                        <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
+                            bindLabel="teamName" (search)="searchTeams()"
+                            (add)="addTeamInProject(teamSearchResult)" placeholder="Search and add teams..">
+                          </ng-select>
                     </div>
                   </div>
-                  <div class="col-12 p-0">
+                  <!-- <div class="col-12 p-0">
                     <div class="card">
-                      <div class="list-separated-item" *ngFor="let team of displaySearchedTeams">
+                      <div class="list-separated-item" *ngFor="let team of teamSearchResult">
                         <div class="row align-items-center" (click)="addTeamInProject(team)">
                           <div class="col-auto">
                             <span class="avatar avatar-md d-block"
@@ -316,7 +324,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="col-12 p-0">
                     <div class="card">
                       <div class="card-header">

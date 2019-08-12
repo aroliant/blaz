@@ -16,6 +16,8 @@ import { DeploymentComponent } from './detail/components/deployment/deployment.c
 import { ActivityComponent } from './detail/components/activity/activity.component';
 import { AccessComponent } from './detail/components/access/access.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+
 
 export const AppsRoutes: Routes = [
   {
@@ -42,6 +44,7 @@ export const AppsRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(AppsRoutes),
     FormsModule,
+    NgSelectModule,
   ],
   declarations: [
     AppsListComponent,

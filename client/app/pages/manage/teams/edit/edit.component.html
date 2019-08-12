@@ -33,7 +33,7 @@
                           </span>
                           <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
                             bindLabel="username" (search)="searchUsers()"
-                            (add)="addUserInTeam(userSearchResult)" placeholder="Search for users..">
+                            (add)="addUserInTeam(userSearchResult)" placeholder="Search and Add users..">
                           </ng-select>
 
                         </div>
@@ -41,7 +41,7 @@
                     </div>
                     <!-- <div class="col-12 p-0">
                       <div class="card">
-                        <div class="list-separated-item" *ngFor="let user of displaySearchedUsers">
+                        <div class="list-separated-item" *ngFor="let user of userSearchResult">
                           <div class="row align-items-center" (click)="addUserInTeam(user)">
                             <div class="col-auto">
                               <span class="avatar avatar-md d-block"
