@@ -11,12 +11,12 @@ export class AccessComponent implements OnInit {
 
   @Input() activeTab;
   @Input() app;
+  @Input() teams = [];
+  @Input() users = [];
   showTab = false
   id
-  teams = []
   displaySearchedTeams : []
   displaySearchedUsers : []
-  users = []
   toSearchTeam = ""
   toSearchUser = ""
 
@@ -24,7 +24,7 @@ export class AccessComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.id = data.id
+      this.id = data.appID
     })
   }
   
