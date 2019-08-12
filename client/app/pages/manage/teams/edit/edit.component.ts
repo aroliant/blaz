@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamsService } from 'client/app/services/teams.service';
 import { ActivatedRoute } from '@angular/router';
+import { UsersService } from 'client/app/services/users.service';
 
 @Component({
   selector: 'app-edit',
@@ -17,7 +18,11 @@ export class EditComponent implements OnInit {
   userSearchKeyword = '';
 
 
-  constructor(private teamsService: TeamsService, private route: ActivatedRoute) { }
+  constructor(
+    private teamsService: TeamsService,
+    private userService: UsersService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
@@ -35,16 +40,15 @@ export class EditComponent implements OnInit {
   }
 
 
-
   searchUsers() {
-    this.teamsService.searchUser(this.userSearchKeyword).subscribe((res: any) => {
+    this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.userSearchResult = res.users;
       }
     });
   }
 
-  addUserInTeam(user) {
+  addUserToTeam(user) {
     this.teamsService.addUserToTeam(this.id, user.userID).subscribe((res: any) => {
       if (res.success) {
         this.users.push(user);

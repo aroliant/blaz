@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 import { ActivatedRoute } from '@angular/router';
+import { UsersService } from 'client/app/services/users.service';
+import { TeamsService } from 'client/app/services/teams.service';
 
 @Component({
   selector: 'app-detail-access',
@@ -12,7 +14,7 @@ export class AccessComponent implements OnInit, OnChanges {
   @Input() activeTab;
   @Input() app;
   showTab = false;
-  id;
+  appID;
   teams = [];
   teamSearchResult = [];
   userSearchResult = [];
@@ -20,11 +22,16 @@ export class AccessComponent implements OnInit, OnChanges {
   teamSearchKeyword = '';
   userSearchKeyword = '';
 
-  constructor(private appService: AppService, private route: ActivatedRoute) { }
+  constructor(
+    private appService: AppService,
+    private userService: UsersService,
+    private teamService: TeamsService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.id = data.id;
+      this.appID = data.id;
     });
   }
 
@@ -33,15 +40,15 @@ export class AccessComponent implements OnInit, OnChanges {
   }
 
   searchUsers() {
-    this.appService.searchUser(this.userSearchKeyword).subscribe((res: any) => {
+    this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.userSearchResult = res.users;
       }
     });
   }
 
-  addUserInApp(user) {
-    this.appService.addUserInApp(this.id, user.userID).subscribe((res: any) => {
+  addUserToApp(user) {
+    this.appService.addUserToApp(this.appID, user.userID).subscribe((res: any) => {
       if (res.success) {
         this.users.push(user);
       }
@@ -49,15 +56,15 @@ export class AccessComponent implements OnInit, OnChanges {
   }
 
   searchTeams() {
-    this.appService.searchTeam(this.teamSearchKeyword).subscribe((res: any) =>  {
+    this.teamService.searchTeams(this.teamSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.teamSearchResult = res.teams;
       }
     });
   }
 
-  addTeamInApp(team) {
-    this.appService.addTeamInApp(this.id, team.teamID).subscribe((res: any) =>  {
+  addTeamToApp(team) {
+    this.appService.addTeamToApp(this.appID, team.teamID).subscribe((res: any) => {
       if (res.success) {
         this.teams.push(team);
       }

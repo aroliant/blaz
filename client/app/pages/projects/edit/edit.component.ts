@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from 'client/app/services/projects.service';
 import { ActivatedRoute } from '@angular/router';
+import { UsersService } from 'client/app/services/users.service';
+import { TeamsService } from 'client/app/services/teams.service';
 
 @Component({
   selector: 'app-edit',
@@ -9,7 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectEditComponent implements OnInit {
 
-  constructor(private projectsService: ProjectsService, private route: ActivatedRoute) { }
+  constructor(
+    private projectsService: ProjectsService,
+    private userService: UsersService,
+    private teamService: TeamsService,
+    private route: ActivatedRoute
+  ) { }
 
   project: {};
   id;
@@ -32,7 +39,7 @@ export class ProjectEditComponent implements OnInit {
   }
 
   searchUsers() {
-    this.projectsService.searchUser(this.userSearchKeyword).subscribe((res: any) => {
+    this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.userSearchResult = res.users;
       }
@@ -40,23 +47,23 @@ export class ProjectEditComponent implements OnInit {
   }
 
   searchTeams() {
-    this.projectsService.searchTeam(this.teamSearchKeyword).subscribe((res: any) => {
+    this.teamService.searchTeams(this.teamSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.teamSearchResult = res.teams;
       }
     });
   }
 
-  addTeamInProject(team) {
-    this.projectsService.addTeamInProject(this.id, team.teamID).subscribe((res: any) => {
+  addTeamToProject(team) {
+    this.projectsService.addTeamToProject(this.id, team.teamID).subscribe((res: any) => {
       if (res.success) {
         this.teams.push(team);
       }
     });
   }
 
-  addUserInProject(user) {
-    this.projectsService.addUserInProject(this.id, user.userID).subscribe((res: any) => {
+  addUserToProject(user) {
+    this.projectsService.addUserToProject(this.id, user.userID).subscribe((res: any) => {
       if (res.success) {
         this.users.push(user);
       }

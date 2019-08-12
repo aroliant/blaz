@@ -53,10 +53,10 @@
                       </span>
                       <!-- <input type="text" [(ngModel)]="userSearchKeyword" (input)="searchUsers()" class="form-control"
                         placeholder="Search for users.."> -->
-                      <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
-                        bindLabel="username" (search)="searchUsers()" (add)="addUserInProject(userSearchResult)"
-                        placeholder="Search and add users..">
-                      </ng-select>
+                        <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                          bindLabel="username" (search)="searchUsers()"
+                          (add)="addUserToProject(userSearchResult)" placeholder="Search and add users..">
+                        </ng-select>
                     </div>
                   </div>
                   <!-- <div class="col-12 p-0">
@@ -314,10 +314,10 @@
                       </span>
                       <!-- <input type="text" [(ngModel)]="teamSearchKeyword" class="form-control"
                         placeholder="Search for teams.." (input)="searchTeams()"> -->
-                      <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
-                        bindLabel="teamName" (search)="searchTeams()" (add)="addTeamInProject(teamSearchResult)"
-                        placeholder="Search and add teams..">
-                      </ng-select>
+                        <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
+                            bindLabel="teamName" (search)="searchTeams()"
+                            (add)="addTeamToProject(teamSearchResult)" placeholder="Search and add teams..">
+                          </ng-select>
                     </div>
                   </div>
                   <!-- <div class="col-12 p-0">

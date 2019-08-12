@@ -22,9 +22,8 @@ export class TeamsService {
     return this.http.post(this.API_URL + '/teams', team);
   }
 
-  searchUser(toSearchInUser) {
-    // return this.http.get(this.API_URL + '/users/search/' + toSearchInUser);
-    return this.http.get(this.API_URL + '/users');
+  searchTeams(keyword) {
+    return this.http.get(this.API_URL + '/teams/search/' + keyword);
   }
 
   addUserToTeam(teamID, userID) {
