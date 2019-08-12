@@ -32,8 +32,8 @@
                             <i class="fe fe-user"></i>
                           </span>
                           <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
-                            bindLabel="username" (search)="searchUsers($event)"
-                            (add)="addUserInTeam(displaySearchedUsers)" placeholder="Search for users..">
+                            bindLabel="username" (search)="searchUsers()"
+                            (add)="addUserInTeam(userSearchResult)" placeholder="Search for users..">
                           </ng-select>
 
                         </div>
