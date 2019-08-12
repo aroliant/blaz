@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class ToasterService {
 
-  constructor() {
+  constructor(private toastr: ToastrService) {
 
   }
 
-  addToast() {
-
+  success(title, message) {
+    this.toastr.success(title, message)
   }
 
-  removeToast() {
-
+  error(title, message) {
+    this.toastr.error(title, message)
   }
-
-  pop() {
-
-  }
-
 
 
 }

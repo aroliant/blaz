@@ -8,6 +8,7 @@ import { ProjectEditComponent } from './edit/edit.component';
 import { ProjectViewComponent } from './view/view.component';
 
 import { ProjectsService } from './../../services/projects.service';
+import { ToasterService } from 'client/app/components/toaster/toaster.service';
 
 
 export const ProjectsRoutes: Routes = [
@@ -42,7 +43,8 @@ export const ProjectsRoutes: Routes = [
   ],
   declarations: [ProjectListComponent, ProjectCreateComponent, ProjectEditComponent, ProjectViewComponent],
   providers: [
-    ProjectsService
+    ProjectsService,
+    ToasterService,
   ]
 })
 export class ProjectsModule { }
