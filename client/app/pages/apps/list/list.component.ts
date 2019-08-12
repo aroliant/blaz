@@ -10,6 +10,11 @@ export class AppsListComponent implements OnInit {
 
   apps = []
 
+  url = {
+    protocol: 'http',
+    location: ''
+  }
+
   constructor(private appService: AppService) { }
 
   ngOnInit() {
@@ -19,6 +24,8 @@ export class AppsListComponent implements OnInit {
         this.apps = result.apps
       }
     })
+
+    this.url.location = String(location.hostname).replace('blaz.', '')
 
   }
 
