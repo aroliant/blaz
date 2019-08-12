@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { environment } from 'client/environments/environment';
 
 @Component({
@@ -6,7 +6,7 @@ import { environment } from 'client/environments/environment';
   templateUrl: './deployment.component.html',
   styleUrls: ['./deployment.component.css']
 })
-export class DeploymentComponent implements OnInit {
+export class DeploymentComponent implements OnInit, OnChanges {
 
   @Input() activeTab;
   @Input() app;
@@ -25,8 +25,8 @@ export class DeploymentComponent implements OnInit {
   }
 
   uploadTarFile() {
-
-    const file = document.getElementById('tarBallFile')['files'][0];
+    const fileKey = 'files';
+    const file = document.getElementById('tarBallFile')[fileKey][0];
 
     const formdata = new FormData();
     formdata.append('sourceFile', file);
@@ -43,7 +43,8 @@ export class DeploymentComponent implements OnInit {
         return this.fileUploadMessage = `File Uploaded, Build in Progress...`;
       }
 
-      this.fileUploadMessage = `Uploading ${Math.round(percentage)} ( ${Math.round(uploaded / (1024 * 1024))} MB  of ${Math.round(total / (1024 * 1024))} MB)`;
+      this.fileUploadMessage = `Uploading ${Math.round(percentage)}
+       ( ${Math.round(uploaded / (1024 * 1024))} MB  of ${Math.round(total / (1024 * 1024))} MB)`;
 
     }, false);
     ajax.addEventListener('load', (event) => {

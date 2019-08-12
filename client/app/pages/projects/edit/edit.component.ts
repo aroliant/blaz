@@ -52,7 +52,7 @@ export class ProjectEditComponent implements OnInit {
       if (res.success) {
         this.teams.push(team);
       }
-    })
+    });
   }
 
   addUserInProject(user) {

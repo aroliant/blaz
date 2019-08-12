@@ -9,6 +9,7 @@ import { ProjectViewComponent } from './view/view.component';
 
 import { ProjectsService } from './../../services/projects.service';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ToasterService } from 'client/app/components/toaster/toaster.service';
 
 
 export const ProjectsRoutes: Routes = [
@@ -16,7 +17,7 @@ export const ProjectsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: ProjectListComponent,
       },
       {
@@ -44,7 +45,8 @@ export const ProjectsRoutes: Routes = [
   ],
   declarations: [ProjectListComponent, ProjectCreateComponent, ProjectEditComponent, ProjectViewComponent],
   providers: [
-    ProjectsService
+    ProjectsService,
+    ToasterService,
   ]
 })
 export class ProjectsModule { }

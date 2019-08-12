@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AppService } from 'client/app/services/app.service';
   templateUrl: './app-configuration.component.html',
   styleUrls: ['./app-configuration.component.css']
 })
-export class AppConfigurationComponent implements OnInit {
+export class AppConfigurationComponent implements OnInit, OnChanges {
 
   @Input() activeTab;
   @Input() app;

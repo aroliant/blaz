@@ -23,7 +23,7 @@ export class AppDetailComponent implements OnInit {
       this.appService.getApp(data.appID).subscribe((res: any) => {
         this.app = res.app;
         console.log(this.app);
-      })
+      });
     });
 
   }

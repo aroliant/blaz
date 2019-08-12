@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'firewalls',
+    selector: 'app-firewalls',
     templateUrl: './firewalls.component.html',
     styleUrls: ['./firewalls.component.css']
 })

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './access.component.html',
   styleUrls: ['./access.component.css']
 })
-export class AccessComponent implements OnInit {
+export class AccessComponent implements OnInit, OnChanges {
 
   @Input() activeTab;
   @Input() app;

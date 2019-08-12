@@ -17,7 +17,7 @@ export class UserListComponent implements OnInit {
       if (res.success) {
         this.users = res.users;
       }
-    })
+    });
   }
 
 }
