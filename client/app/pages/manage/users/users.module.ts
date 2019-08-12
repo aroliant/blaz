@@ -13,7 +13,7 @@ export const UsersRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: UserListComponent,
       },
       {

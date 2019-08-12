@@ -15,7 +15,7 @@ export const TeamsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: TeamListComponent,
       },
       {

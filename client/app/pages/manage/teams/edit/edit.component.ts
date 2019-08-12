@@ -9,46 +9,46 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  team : {}
-  users = []
-  id
-  toSearch = ""
-  searchedUsers = []
-  toSearchUser = ""
-  displaySearchedUsers : []
+  team: {};
+  users = [];
+  id;
+  toSearch = '';
+  searchedUsers = [];
+  toSearchUser = '';
+  displaySearchedUsers: [];
 
-  constructor(private teamsService: TeamsService,private route: ActivatedRoute) { }
+  constructor(private teamsService: TeamsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.id = data.id
-      this.teamsService.getTeam(data.id).subscribe((res:any) => {
-        if(res.success){
+      this.id = data.id;
+      this.teamsService.getTeam(data.id).subscribe((res: any) => {
+        if (res.success) {
           this.team = res.team;
           this.users = res.users;
         }
-      })
-    })
+      });
+    });
   }
 
-  searchUsers(){
-    if(this.toSearchUser == "" || this.toSearchUser == null){
+  searchUsers() {
+    if (this.toSearchUser === '' || this.toSearchUser == null) {
       this.displaySearchedUsers = [];
       return;
     }
-    this.teamsService.searchUser(this.toSearchUser).subscribe((res:any)=>{
-      if(res.success){
+    this.teamsService.searchUser(this.toSearchUser).subscribe((res: any) => {
+      if (res.success) {
         this.displaySearchedUsers = res.users;
       }
-    })
+    });
   }
 
-  addUserInTeam(user){
-    this.teamsService.addUserToTeam(this.id,user.userID).subscribe((res:any)=>{
-      if(res.success){
+  addUserInTeam(user) {
+    this.teamsService.addUserToTeam(this.id, user.userID).subscribe((res: any) => {
+      if (res.success) {
         this.users.push(user);
       }
-    })
+    });
   }
 
 }

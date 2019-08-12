@@ -11,23 +11,23 @@ import { Router } from '@angular/router';
 export class ProjectCreateComponent implements OnInit {
 
   project = {
-    projectName: "",
-    projectDescription: "",
-    createdBy: "123"
-  }
+    projectName: '',
+    projectDescription: '',
+    createdBy: '123'
+  };
 
-  constructor(private projectsService: ProjectsService,private router: Router) { }
+  constructor(private projectsService: ProjectsService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  createProduct(){
-    this.projectsService.createproject(this.project).subscribe((res:any)=>{
-      if(res.success){
-        alert("Project Created");
-        this.router.navigate(["/projects"]);
+  createProduct() {
+    this.projectsService.createproject(this.project).subscribe((res: any) => {
+      if (res.success) {
+        alert('Project Created');
+        this.router.navigate(['/projects']);
       }
-    })
+    });
   }
 
 }
