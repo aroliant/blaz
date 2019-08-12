@@ -32,7 +32,7 @@
 
               </div>
             </div>
-            <div class="card text-center py-5">
+            <div class="card text-center py-5" *ngIf="teams.length == 0" >
               <div class="h4 m-0 text-dark">No teams found</div>
               <div class="small">Create teams to manage projects more efficiently.</div>
             </div>

@@ -8,7 +8,7 @@ import { ProjectsService } from 'client/app/services/projects.service';
 })
 export class ProjectListComponent implements OnInit {
 
-  projects: [];
+  projects = [];
 
   constructor(private projectsService: ProjectsService) { }
 

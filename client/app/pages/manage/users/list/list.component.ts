@@ -8,7 +8,7 @@ import { UsersService } from 'client/app/services/users.service';
 })
 export class UserListComponent implements OnInit {
 
-  users: [];
+  users = [];
 
   constructor(private usersService: UsersService) { }
 

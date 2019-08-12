@@ -8,7 +8,7 @@ import { TeamsService } from 'client/app/services/teams.service';
 })
 export class TeamListComponent implements OnInit {
 
-  teams: [];
+  teams = [];
 
   constructor(private teamsService: TeamsService) { }
 

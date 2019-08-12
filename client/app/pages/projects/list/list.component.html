@@ -35,7 +35,7 @@
 
 
             </div>
-            <div class="card text-center py-5">
+            <div class="card text-center py-5" *ngIf="projects.length == 0">
               <div class="h4 m-0 text-dark">No projects found</div>
               <div class="small">Create project to manage your apps.</div>
             </div>
