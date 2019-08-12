@@ -10,25 +10,23 @@ interface Toast {
 }
 
 @Component({
-  selector: 'toaster-container',
+  selector: 'app-toaster-container',
   templateUrl: './toaster.component.html',
   styleUrls: ['./toaster.component.css']
 })
 export class ToasterComponent implements OnInit {
 
-  toasts = []
+  toasts = [];
 
   constructor() { }
 
   ngOnInit() {
 
-    
-
   }
 
   showToast(toast: Toast) {
 
-    this.toasts.push(toast)
+    this.toasts.push(toast);
 
   }
 

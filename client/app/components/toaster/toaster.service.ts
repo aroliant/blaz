@@ -9,11 +9,11 @@ export class ToasterService {
   }
 
   success(title, message) {
-    this.toastr.success(title, message)
+    this.toastr.success(title, message);
   }
 
   error(title, message) {
-    this.toastr.error(title, message)
+    this.toastr.error(title, message);
   }
 
 
