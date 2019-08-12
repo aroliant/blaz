@@ -11,12 +11,24 @@
               </div>
               <div class="row m-0">
                 <div class="col-lg-8 p-lg-5">
-                  <label for="description">Description</label>
+                  <div class="form-group mb-0">
+                    <label class="form-label">Project Name</label>
+                    <div class="input-icon">
+                      <span class="input-icon-addon">
+                        <i class="fe fe-square"></i>
+                      </span>
+                      <input type="text" class="form-control" [(ngModel)]="project.projectName"
+                        placeholder="Project Name">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8 p-lg-5">
+                  <label class="form-label" for="description">Description</label>
                   <textarea *ngIf="project" rows="5" cols="33" [(ngModel)]="project.projectDescription"
                     class="form-control" id="description"></textarea>
                 </div>
                 <div class="col-lg-4 p-lg-5">
-                  <h4>Labels</h4>
+                  <label class="form-label" for="tags">Labels</label>
                   <div class="form-inline mb-3">
                     <div class="form-group">
                       <input type="text" class="form-control mr-3" placeholder="Add a label">
@@ -41,10 +53,10 @@
                       </span>
                       <!-- <input type="text" [(ngModel)]="userSearchKeyword" (input)="searchUsers()" class="form-control"
                         placeholder="Search for users.."> -->
-                        <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
-                          bindLabel="username" (search)="searchUsers()"
-                          (add)="addUserInProject(userSearchResult)" placeholder="Search and add users..">
-                        </ng-select>
+                      <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                        bindLabel="username" (search)="searchUsers()" (add)="addUserInProject(userSearchResult)"
+                        placeholder="Search and add users..">
+                      </ng-select>
                     </div>
                   </div>
                   <!-- <div class="col-12 p-0">
@@ -302,10 +314,10 @@
                       </span>
                       <!-- <input type="text" [(ngModel)]="teamSearchKeyword" class="form-control"
                         placeholder="Search for teams.." (input)="searchTeams()"> -->
-                        <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
-                            bindLabel="teamName" (search)="searchTeams()"
-                            (add)="addTeamInProject(teamSearchResult)" placeholder="Search and add teams..">
-                          </ng-select>
+                      <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
+                        bindLabel="teamName" (search)="searchTeams()" (add)="addTeamInProject(teamSearchResult)"
+                        placeholder="Search and add teams..">
+                      </ng-select>
                     </div>
                   </div>
                   <!-- <div class="col-12 p-0">
