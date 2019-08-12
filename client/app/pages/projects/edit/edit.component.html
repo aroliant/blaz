@@ -11,12 +11,24 @@
               </div>
               <div class="row m-0">
                 <div class="col-lg-8 p-lg-5">
-                  <label for="description">Description</label>
+                  <div class="form-group mb-0">
+                    <label class="form-label">Project Name</label>
+                    <div class="input-icon">
+                      <span class="input-icon-addon">
+                        <i class="fe fe-square"></i>
+                      </span>
+                      <input type="text" class="form-control" [(ngModel)]="project.projectName"
+                        placeholder="Project Name">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8 p-lg-5">
+                  <label class="form-label" for="description">Description</label>
                   <textarea *ngIf="project" rows="5" cols="33" [(ngModel)]="project.projectDescription"
                     class="form-control" id="description"></textarea>
                 </div>
                 <div class="col-lg-4 p-lg-5">
-                  <h4>Labels</h4>
+                  <label class="form-label" for="tags">Labels</label>
                   <div class="form-inline mb-3">
                     <div class="form-group">
                       <input type="text" class="form-control mr-3" placeholder="Add a label">
