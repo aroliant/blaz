@@ -16,7 +16,7 @@ export class AppConfigurationComponent implements OnInit, OnChanges {
 
 
   ngOnInit() {
-    if (!this.app.environmentVars) {
+    if (!this.app.environmentVars || this.app.environmentVars.length === 0) {
       this.app.environmentVars = [{
         key: '', value: ''
       }];
