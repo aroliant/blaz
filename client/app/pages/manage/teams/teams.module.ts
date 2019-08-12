@@ -7,6 +7,7 @@ import { EditComponent } from './edit/edit.component';
 
 import { TeamsService } from 'client/app/services/teams.service';
 import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 export const TeamsRoutes: Routes = [
@@ -33,7 +34,8 @@ export const TeamsRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(TeamsRoutes)
+    RouterModule.forChild(TeamsRoutes),
+    NgSelectModule
   ],
   declarations: [TeamListComponent, CreateComponent, EditComponent],
   providers: [

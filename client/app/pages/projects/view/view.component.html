@@ -11,13 +11,13 @@
                 <button class="btn btn-primary ml-auto" routerLink="/projects/edit/{{id}}">Edit</button>
               </div>
               <div class="row m-0">
-                <div class="col-lg-8 p-lg-5" *ngIf="project" >
+                <div class="col-lg-8 p-lg-5" *ngIf="project">
                   <div>{{project?.projectDescription}}</div>
                 </div>
                 <div class="col-lg-4 p-lg-5">
                   <h4>Labels</h4>
-                  <div *ngIf="project" >
-                    <div class="tags" *ngIf="project.projectLabels.length > 0" >
+                  <div *ngIf="project">
+                    <div class="tags" *ngIf="project.projectLabels.length > 0">
                       <span *ngFor="let label of project.projectLabels" class="tag">{{label}}</span>
                     </div>
                   </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-body o-auto">
                       <ul class="list-unstyled list-separated">
-                        <li class="list-separated-item" *ngFor="let app of apps" routerLink="/apps/{{app.appID}}" >
+                        <li class="list-separated-item" *ngFor="let app of apps" routerLink="/apps/{{app.appID}}">
                           <div class="row align-items-center">
                             <div class="col-auto">
                               <span class="avatar avatar-md d-block"
@@ -41,11 +41,15 @@
                                 <a href="#" class="text-inherit">{{app.appName}}</a>
                               </div>
                               <div class="small text-muted">Version: {{app.version.versionName}}</div>
-                              <div><a href="http://{{app.appName}}.localhost" target="_blank" >http://{{app.appName}}.localhost</a></div>
+                              <div><a href="http://{{app.appName}}.localhost"
+                                  target="_blank">http://{{app.appName}}.localhost</a></div>
                             </div>
                           </div>
                         </li>
                       </ul>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="small">There are no apps added to this project.</div>
                     </div>
                   </div>
                 </div>
