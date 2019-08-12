@@ -31,8 +31,11 @@
                           <span class="input-icon-addon">
                             <i class="fe fe-user"></i>
                           </span>
-                          <input type="text" [(ngModel)]="toSearchUser" (input)="searchUsers()" class="form-control"
-                            placeholder="Search for users..">
+                          <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                            bindLabel="username" (search)="searchUsers($event)"
+                            (add)="addUserInTeam(displaySearchedUsers)" placeholder="Search for users..">
+                          </ng-select>
+
                         </div>
                       </div>
                     </div>
@@ -53,14 +56,11 @@
                         </div>
                       </div>
                     </div> -->
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                       <div class="card">
-                        <ng-select [items]="displaySearchedUsers"
-                          bindLabel="username"
-                          (click)="addUserInTeam(displaySearchedUsers)">
-                        </ng-select>
+
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-12" *ngIf="users">
                       <div class="card">
                         <div class="card-header">
