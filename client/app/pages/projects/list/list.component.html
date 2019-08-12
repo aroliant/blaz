@@ -23,7 +23,7 @@
                     <div class="card-body p-2 Project__description">{{project.projectDescription}}</div>
                     <div class="card-footer p-2">
                       <div class="card-options">
-                        <div class="tags" *ngIf="project.projectLabels.length > 0" >
+                        <div class="tags" *ngIf="project.projectLabels.length > 0">
                           <span *ngFor="let label of project.projectLabels" class="tag">{{label}}</span>
                         </div>
                       </div>
@@ -34,6 +34,10 @@
               </div>
 
 
+            </div>
+            <div class="card text-center py-5">
+              <div class="h4 m-0 text-dark">No projects found</div>
+              <div class="small">Create project to manage your apps.</div>
             </div>
           </div>
         </div>
