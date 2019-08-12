@@ -12,7 +12,7 @@ export class CreateAppComponent implements OnInit {
 
   app = {
     appName: ''
-  }
+  };
 
   constructor(private appService: AppService, private router: Router) { }
 
@@ -27,12 +27,12 @@ export class CreateAppComponent implements OnInit {
     this.appService.createApp(this.app).subscribe((result: any) => {
 
       if (result.success) {
-        return this.router.navigate(['/apps/' + result.app.appID])
+        return this.router.navigate(['/apps/' + result.app.appID]);
       }
 
-      alert(result.message)
+      alert(result.message);
 
-    })
+    });
 
   }
 
