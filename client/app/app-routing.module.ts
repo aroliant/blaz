@@ -21,16 +21,16 @@ const routes: Routes = [
     component: ApplicationComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'apps', loadChildren: './pages/apps/apps.module#AppsModule' },
-      { path: 'hosts', loadChildren: './pages/hosts/hosts.module#HostsModule' },
-      { path: 'firewalls', loadChildren: './pages/firewall/firewall.module#FirewallModule' },
-      { path: 'manage', loadChildren: './pages/manage/manage.module#ManageModule' },
-      { path: 'teams', loadChildren: './pages/manage/teams/teams.module#TeamsModule' },
-      { path: 'users', loadChildren: './pages/manage/users/users.module#UsersModule' },
-      { path: 'projects', loadChildren: './pages/projects/projects.module#ProjectsModule' },
-      { path: 'monitoring', loadChildren: './pages/monitoring/monitoring.module#MonitoringModule' },
-      { path: 'tools', loadChildren: './pages/tools/tools.module#ToolsModule' },
-      { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsModule' }
+      { path: 'apps', loadChildren: () => import('./pages/apps/apps.module').then(m => m.AppsModule) },
+      { path: 'hosts', loadChildren: () => import('./pages/hosts/hosts.module').then(m => m.HostsModule) },
+      { path: 'firewalls', loadChildren: () => import('./pages/firewall/firewall.module').then(m => m.FirewallModule) },
+      { path: 'manage', loadChildren: () => import('./pages/manage/manage.module').then(m => m.ManageModule) },
+      { path: 'teams', loadChildren: () => import('./pages/manage/teams/teams.module').then(m => m.TeamsModule) },
+      { path: 'users', loadChildren: () => import('./pages/manage/users/users.module').then(m => m.UsersModule) },
+      { path: 'projects', loadChildren: () => import('./pages/projects/projects.module').then(m => m.ProjectsModule) },
+      { path: 'monitoring', loadChildren: () => import('./pages/monitoring/monitoring.module').then(m => m.MonitoringModule) },
+      { path: 'tools', loadChildren: () => import('./pages/tools/tools.module').then(m => m.ToolsModule) },
+      { path: 'settings', loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsModule) }
     ]
   }
 ];
