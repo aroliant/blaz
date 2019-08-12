@@ -9,7 +9,7 @@ export class OverviewComponent implements OnInit {
 
   @Input() activeTab;
   @Input() app;
-  showTab = false
+  showTab = false;
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class OverviewComponent implements OnInit {
   }
 
   ngOnChanges() {
-    this.showTab = this.activeTab == "overview" ? true : false
+    this.showTab = this.activeTab === 'overview' ? true : false;
   }
 
   getStats() {

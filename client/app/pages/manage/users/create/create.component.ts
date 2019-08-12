@@ -10,24 +10,24 @@ import { Router } from '@angular/router';
 export class UserCreateComponent implements OnInit {
 
   user = {
-    username: "",
-    userEmail: "",
-    password: ""
-  }
+    username: '',
+    userEmail: '',
+    password: ''
+  };
 
-  constructor(private usersService: UsersService,private router: Router) { }
+  constructor(private usersService: UsersService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  createUser(){
+  createUser() {
     console.log(this.user);
-    this.usersService.createUser(this.user).subscribe((res:any)=>{
+    this.usersService.createUser(this.user).subscribe((res: any) => {
       if(res.success){
-        alert("User Created");
-        this.router.navigate(["/users"]);
+        alert('User Created');
+        this.router.navigate(['/users']);
       }
-    })
+    });
   }
 
 }

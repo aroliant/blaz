@@ -11,7 +11,7 @@ export const MonitoringRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "health",
+        path: 'health',
         component: HealthComponent,
       },
       {

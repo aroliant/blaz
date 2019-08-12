@@ -39,7 +39,8 @@
                       </td>
                       <td>
                         <div><a
-                          href="{{url.protocol}}://{{app.appName}}.{{url.location}}">{{url.protocol}}://{{app.appName}}.{{url.location}}</a></div>
+                            href="{{url.protocol}}://{{app.appName}}.{{url.location}}">{{url.protocol}}://{{app.appName}}.{{url.location}}</a>
+                        </div>
                       </td>
                       <td>
                         <div>{{ app.createdAt | date: 'medium'}}</div>
@@ -51,17 +52,15 @@
 
                       <td class="text-center">
                         <div class="item-action dropdown">
-                          <a  data-toggle="dropdown" class="icon"><i
-                              class="fe fe-more-vertical"></i></a>
+                          <a data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                           <div class="dropdown-menu dropdown-menu-right">
-                            <a  class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
+                            <a class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
                               Action </a>
-                            <a  class="dropdown-item"><i
-                                class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                            <a  class="dropdown-item"><i
-                                class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                            <a class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                            <a class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else
+                              here</a>
                             <div class="dropdown-divider"></div>
-                            <a  class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
+                            <a class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
                               Separated link</a>
                           </div>
                         </div>
@@ -70,6 +69,10 @@
                   </tbody>
                 </table>
               </div>
+            </div>
+            <div class="card text-center py-5">
+              <div class="h4 m-0 text-dark">No Apps found</div>
+              <div class="small">Create Apps to deploy.</div>
             </div>
           </div>
         </div>

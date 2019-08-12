@@ -9,18 +9,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserEditComponent implements OnInit {
 
-  user: {}
+  user: {};
 
-  constructor(private usersService: UsersService,private route: ActivatedRoute) { }
+  constructor(private usersService: UsersService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.usersService.getUser(data.id).subscribe((res:any) => {
-        if(res.success){
+      this.usersService.getUser(data.id).subscribe((res: any) => {
+        if (res.success) {
           this.user = res.user;
         }
-      })
-    })
+      });
+    });
   }
 
 }
