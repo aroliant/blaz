@@ -43,7 +43,7 @@
                         placeholder="Search for users.."> -->
                         <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
                           bindLabel="username" (search)="searchUsers()"
-                          (add)="addUserInProject(userSearchResult)" placeholder="Search and add users..">
+                          (add)="addUserToProject(userSearchResult)" placeholder="Search and add users..">
                         </ng-select>
                     </div>
                   </div>
@@ -304,7 +304,7 @@
                         placeholder="Search for teams.." (input)="searchTeams()"> -->
                         <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
                             bindLabel="teamName" (search)="searchTeams()"
-                            (add)="addTeamInProject(teamSearchResult)" placeholder="Search and add teams..">
+                            (add)="addTeamToProject(teamSearchResult)" placeholder="Search and add teams..">
                           </ng-select>
                     </div>
                   </div>

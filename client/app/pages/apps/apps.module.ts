@@ -17,6 +17,8 @@ import { ActivityComponent } from './detail/components/activity/activity.compone
 import { AccessComponent } from './detail/components/access/access.component';
 
 import { NgSelectModule } from '@ng-select/ng-select';
+import { TeamsService } from 'client/app/services/teams.service';
+import { UsersService } from 'client/app/services/users.service';
 
 
 export const AppsRoutes: Routes = [
@@ -58,7 +60,9 @@ export const AppsRoutes: Routes = [
     AccessComponent,
   ],
   providers: [
-    AppService
+    AppService,
+    TeamsService,
+    UsersService,
   ]
 })
 export class AppsModule { }

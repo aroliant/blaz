@@ -18,7 +18,7 @@
                   <!-- <input type="text" [(ngModel)]="userSearchKeyword" class="form-control" placeholder="Search for users.." (input)="searchUsers()" > -->
                   <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
                     bindLabel="username" (search)="searchUsers()"
-                    (add)="addUserInProject(userSearchResult)" placeholder="Search and add users..">
+                    (add)="addUserToApp(userSearchKeyword)" placeholder="Search and add users..">
                   </ng-select>
                 </div>
             </div>
@@ -176,7 +176,7 @@
                 <!-- <input type="text" [(ngModel)]="toSearchTeam" class="form-control" placeholder="Search for teams.." (input)="searchTeams()" > -->
                 <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
                   bindLabel="teamName" (search)="searchTeams()"
-                  (add)="addTeamInProject(teamSearchResult)" placeholder="Search and add teams..">
+                  (add)="addTeamToApp(teamSearchKeyword)" placeholder="Search and add teams..">
                 </ng-select>
               </div>
             </div>

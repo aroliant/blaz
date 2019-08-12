@@ -26,16 +26,11 @@ export class ProjectsService {
     return this.http.get(this.API_URL + '/teams/search/' + toSearchInTeam);
   }
 
-  addTeamInProject(projectID, teamID) {
+  addTeamToProject(projectID, teamID) {
     return this.http.put(this.API_URL + '/projects/' + projectID + '/team/add', { teamID });
   }
 
-  searchUser(toSearchInUser) {
-    // return this.http.get(this.API_URL + '/users/search/' + toSearchInUser);
-    return this.http.get(this.API_URL + '/users');
-  }
-
-  addUserInProject(projectID, userID) {
+  addUserToProject(projectID, userID) {
     return this.http.put(this.API_URL + '/projects/' + projectID + '/user/add', { userID });
   }
 
