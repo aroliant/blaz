@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  team: {}
-  users = []
-  id
+  team: {};
+  users = [];
+  id;
 
   userSearchResult = [];
   userSearchKeyword = '';
@@ -27,10 +27,10 @@ export class EditComponent implements OnInit {
           this.team = res.team;
           this.users = res.users;
         }
-      })
-    })
+      });
+    });
 
-    this.searchUsers()
+    this.searchUsers();
 
   }
 

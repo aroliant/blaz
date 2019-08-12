@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AppService } from 'client/app/services/app.service';
   templateUrl: './http-settings.component.html',
   styleUrls: ['./http-settings.component.css']
 })
-export class HttpSettingsComponent implements OnInit {
+export class HttpSettingsComponent implements OnInit, OnChanges {
 
   @Input() activeTab;
   @Input() app;

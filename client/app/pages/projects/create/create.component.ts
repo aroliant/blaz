@@ -12,23 +12,23 @@ import { ToasterService } from 'client/app/components/toaster/toaster.service';
 export class ProjectCreateComponent implements OnInit {
 
   project = {
-    projectName: "",
-    projectDescription: "",
-    createdBy: "123"
-  }
+    projectName: '',
+    projectDescription: '',
+    createdBy: '123'
+  };
 
   constructor(private projectsService: ProjectsService, private toaster: ToasterService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  createProduct(){
-    this.projectsService.createproject(this.project).subscribe((res:any)=>{
-      if(res.success){
-        this.toaster.success('Project created','')
-        this.router.navigate(["/projects"]);
+  createProduct() {
+    this.projectsService.createproject(this.project).subscribe((res: any) => {
+      if (res.success) {
+        this.toaster.success('Project created', '');
+        this.router.navigate(['/projects']);
       }
-    })
+    });
   }
 
 }

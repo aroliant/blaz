@@ -16,5 +16,4 @@ export class ToasterService {
     this.toastr.error(title, message);
   }
 
-
 }

@@ -16,7 +16,7 @@ export const ProjectsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: ProjectListComponent,
       },
       {
