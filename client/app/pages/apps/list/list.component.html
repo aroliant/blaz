@@ -38,14 +38,15 @@
                         </div>
                       </td>
                       <td>
-                        <div>192.168.100.101</div>
+                        <div><a
+                          href="{{url.protocol}}://{{app.appName}}.{{url.location}}">{{url.protocol}}://{{app.appName}}.{{url.location}}</a></div>
                       </td>
                       <td>
-                        <div>3 days ago</div>
+                        <div>{{ app.createdAt | date: 'medium'}}</div>
                       </td>
                       <td>
                         <div class="small text-muted">Updated at</div>
-                        <div>{{ 1563879586067 | date: 'short'}}</div>
+                        <div>{{ app.updatedAt | date: 'medium'}}</div>
                       </td>
 
                       <td class="text-center">
