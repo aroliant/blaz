@@ -9,9 +9,9 @@
               <div class="row mt-2">
                 <div class="form-group col-lg-6">
                   <label class="form-label">App Name</label>
-                  <input type="text" class="form-control" [(ngModel)]="app.appName" name="example-text-input"
+                  <input type="text" class="form-control" (input)="validateAppName()" [(ngModel)]="app.appName" name="example-text-input"
                     placeholder="Text..">
-
+                  <p><span style="color:red" >{{appValidationErrortext}}</span></p>
                 </div>
                 <!-- <div class="form-group col-lg-6">
                   <label class="form-label">Memory</label>
