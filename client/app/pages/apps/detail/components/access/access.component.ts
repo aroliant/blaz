@@ -13,12 +13,13 @@ export class AccessComponent implements OnInit, OnChanges {
 
   @Input() activeTab;
   @Input() app;
+  @Input() appDetails;
   showTab = false;
   appID;
-  @Input() teams = [];
+
   teamSearchResult = [];
   userSearchResult = [];
-  @Input() users = [];
+
   teamSearchKeyword = '';
   userSearchKeyword = '';
 
@@ -50,7 +51,7 @@ export class AccessComponent implements OnInit, OnChanges {
   addUserToApp(user) {
     this.appService.addUserToApp(this.appID, user.userID).subscribe((res: any) => {
       if (res.success) {
-        this.users.push(user);
+        this.appDetails.users.push(user);
       }
     });
   }
@@ -66,7 +67,7 @@ export class AccessComponent implements OnInit, OnChanges {
   addTeamToApp(team) {
     this.appService.addTeamToApp(this.appID, team.teamID).subscribe((res: any) => {
       if (res.success) {
-        this.teams.push(team);
+        this.appDetails.teams.push(team);
       }
     });
   }

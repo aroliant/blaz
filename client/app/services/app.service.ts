@@ -27,6 +27,10 @@ export class AppService {
     return this.http.get(this.API_URL + '/apps/' + appID);
   }
 
+  getAppDetails(appID) {
+    return this.http.get(this.API_URL + '/apps/' + appID + '/details');
+  }
+
   addUserToApp(appID, userID) {
     return this.http.put(this.API_URL + '/apps/' + appID + '/user/add', { userID });
   }
