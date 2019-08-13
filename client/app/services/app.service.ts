@@ -35,4 +35,10 @@ export class AppService {
     return this.http.put(this.API_URL + '/apps/' + appID + '/team/add', { teamID });
   }
 
+  getMetrics(serviceName) {
+    return this.http.post(this.API_URL + '/metrics/containers', { serviceName }, {
+      headers: { ignoreLoadingBar: '' },
+    });
+  }
+
 }
