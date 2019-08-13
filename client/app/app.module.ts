@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 /* Third Party Libs */
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 /* Relative Imports*/
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +18,6 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MonitoringModule } from './pages/monitoring/monitoring.module';
 import { AlertComponent } from './components/alert/alert.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     LoadingBarHttpClientModule,
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
