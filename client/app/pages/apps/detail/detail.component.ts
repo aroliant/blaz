@@ -28,7 +28,6 @@ export class AppDetailComponent implements OnInit {
         this.app = res.app;
         this.teams = res.teams;
         this.users = res.users;
-        console.log(this.app);
       });
     });
 
