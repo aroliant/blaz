@@ -11,7 +11,7 @@ export class ProjectViewComponent implements OnInit {
 
   project: {};
   projectID: string;
-  apps: [];
+  apps = [];
 
   constructor(private projectsService: ProjectsService, private route: ActivatedRoute) { }
 
