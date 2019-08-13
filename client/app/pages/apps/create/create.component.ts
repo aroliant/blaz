@@ -14,6 +14,7 @@ export class CreateAppComponent implements OnInit {
   app = {
     appName: ''
   };
+  appValidationErrortext = '';
 
   constructor(private appService: AppService, private router: Router, private toastr: ToastrService) { }
 
@@ -23,7 +24,27 @@ export class CreateAppComponent implements OnInit {
 
   }
 
+  validateAppName() {
+    if (this.app.appName === null || this.app.appName === '') {
+      this.appValidationErrortext = 'App Name cannot be Empty';
+      return false;
+    }
+    let x;
+    for (x of this.app.appName) {
+      if (!/[a-z-1-9]/g.test(x)) {
+        this.appValidationErrortext = 'Not a valid App Name, it should be lowercase alphanumeric and only - is permissible';
+        return false;
+      }
+    }
+    this.appValidationErrortext = '';
+    return true;
+  }
+
   createApp() {
+
+    if (!this.validateAppName()) {
+      return false;
+    }
 
     this.appService.createApp(this.app).subscribe((result: any) => {
 
