@@ -8,16 +8,16 @@ import { ProjectsService } from 'client/app/services/projects.service';
 })
 export class ProjectListComponent implements OnInit {
 
-  projects : []
+  projects = [];
 
   constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
-    this.projectsService.getProjects().subscribe((res:any)=>{
-      if(res.success){
+    this.projectsService.getProjects().subscribe((res: any) => {
+      if (res.success) {
         this.projects = res.projects;
       }
-    })
+    });
   }
 
 }

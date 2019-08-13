@@ -19,7 +19,8 @@
                           <span class="input-icon-addon">
                             <i class="fe fe-users"></i>
                           </span>
-                          <input *ngIf="team" type="text" class="form-control" [(ngModel)]="team.teamName" placeholder="Team Name">
+                          <input *ngIf="team" type="text" class="form-control" [(ngModel)]="team.teamName"
+                            placeholder="Team Name">
                         </div>
                       </div>
                     </div>
@@ -30,35 +31,44 @@
                           <span class="input-icon-addon">
                             <i class="fe fe-user"></i>
                           </span>
-                          <input type="text" [(ngModel)]="toSearchUser" (input)="searchUsers()" class="form-control" placeholder="Search for users..">
+                          <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                            bindLabel="username" (search)="searchUsers($event)"
+                            (change)="addUserToTeam($event)" placeholder="Search and add users..">
+                          </ng-select>
+
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 p-0">
-                        <div class="card">
-                          <div class="list-separated-item" *ngFor="let user of displaySearchedUsers" >
-                            <div class="row align-items-center" (click)="addUserInTeam(user)" >
-                              <div class="col-auto">
-                                <span class="avatar avatar-md d-block"
-                                  style="background-image: url('https://img.blaz.app/40x40')"></span>
-                              </div>
-                              <div class="col">
-                                <div>
-                                  <a  class="text-inherit">{{user.username}}</a>
-                                </div>
+                    <!-- <div class="col-12 p-0">
+                      <div class="card">
+                        <div class="list-separated-item" *ngFor="let user of userSearchResult">
+                          <div class="row align-items-center" (click)="addUserInTeam(user)">
+                            <div class="col-auto">
+                              <span class="avatar avatar-md d-block"
+                                style="background-image: url('https://img.blaz.app/40x40')"></span>
+                            </div>
+                            <div class="col">
+                              <div>
+                                <a class="text-inherit">{{user.username}}</a>
                               </div>
                             </div>
                           </div>
                         </div>
-                    </div>
-                    <div class="col-12"  *ngIf="users">
+                      </div>
+                    </div> -->
+                    <!-- <div class="col-12">
+                      <div class="card">
+
+                      </div>
+                    </div> -->
+                    <div class="col-12" *ngIf="users">
                       <div class="card">
                         <div class="card-header">
                           <h3 class="card-title">Members</h3>
                         </div>
                         <div class="card-body o-auto" style="height: 15rem">
                           <ul class="list-unstyled list-separated">
-                            <li class="list-separated-item" *ngFor="let user of users" >
+                            <li class="list-separated-item" *ngFor="let user of users">
                               <div class="row align-items-center">
                                 <div class="col-auto">
                                   <span class="avatar avatar-md d-block"
@@ -66,26 +76,22 @@
                                 </div>
                                 <div class="col">
                                   <div>
-                                    <a  class="text-inherit">{{user.username}}</a>
+                                    <a class="text-inherit">{{user.username}}</a>
                                   </div>
-                                  <small
-                                    class="d-block item-except text-sm text-muted h-1x">{{user.userEmail}}</small>
+                                  <small class="d-block item-except text-sm text-muted h-1x">{{user.userEmail}}</small>
                                 </div>
                                 <div class="col-auto">
                                   <div class="item-action dropdown">
-                                    <a  data-toggle="dropdown" class="icon"><i
-                                        class="fe fe-more-vertical"></i></a>
+                                    <a data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                      <a  class="dropdown-item"><i
-                                          class="dropdown-icon fe fe-tag"></i>
+                                      <a class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
                                         Action </a>
-                                      <a  class="dropdown-item"><i
-                                          class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                      <a  class="dropdown-item"><i
-                                          class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                      <a class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action
+                                      </a>
+                                      <a class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i>
+                                        Something else here</a>
                                       <div class="dropdown-divider"></div>
-                                      <a  class="dropdown-item"><i
-                                          class="dropdown-icon fe fe-link"></i>
+                                      <a class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
                                         Separated link</a>
                                     </div>
                                   </div>
@@ -93,6 +99,9 @@
                               </div>
                             </li>
                           </ul>
+                        </div>
+                        <div class="card-body text-center" *ngIf="users.length == 0" >
+                          <div class="small">No users added to this team.</div>
                         </div>
                       </div>
                     </div>

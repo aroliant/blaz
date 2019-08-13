@@ -64,6 +64,10 @@
                 </table>
               </div>
             </div>
+            <div class="card text-center py-5" *ngIf="users.length == 0" >
+              <div class="h4 m-0 text-dark">No users found</div>
+              <div class="small">Create users to manage projects more efficiently.</div>
+            </div>
           </div>
         </div>
       </div>

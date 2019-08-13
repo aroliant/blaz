@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from 'client/app/services/projects.service';
 import { ActivatedRoute } from '@angular/router';
+import { UsersService } from 'client/app/services/users.service';
+import { TeamsService } from 'client/app/services/teams.service';
 
 @Component({
   selector: 'app-edit',
@@ -9,66 +11,67 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectEditComponent implements OnInit {
 
-  constructor(private projectsService: ProjectsService,private route: ActivatedRoute) { }
+  constructor(
+    private projectsService: ProjectsService,
+    private userService: UsersService,
+    private teamService: TeamsService,
+    private route: ActivatedRoute
+  ) { }
 
-  project: {}
-  id
-  displaySearchedTeams : []
-  displaySearchedUsers : []
-  toSearchTeam = ""
-  toSearchUser = ""
-  teams = []
-  users = []
+  project = {
+    projectName: '',
+    projectDescription: '',
+    projectLabels: []
+  };
+  projectID;
+  teamSearchResult: [];
+  userSearchResult: [];
+  teamSearchKeyword = '';
+  userSearchKeyword = '';
+  teams = [];
+  users = [];
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.id = data.id
-      this.projectsService.getProject(data.id).subscribe((res:any) => {
-        if(res.success){
+      this.projectID = data.projectID;
+      this.projectsService.getProject(this.projectID).subscribe((res: any) => {
+        if (res.success) {
           this.project = res.project;
         }
-      })
-    })
+      });
+    });
   }
 
   searchUsers() {
-    if(this.toSearchUser == "" || this.toSearchUser == null){
-      this.displaySearchedUsers = [];
-      return;
-    }
-    this.projectsService.searchUser(this.toSearchUser).subscribe((res:any)=>{
-      if(res.success){
-        this.displaySearchedUsers = res.users;
+    this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
+      if (res.success) {
+        this.userSearchResult = res.users;
       }
-    })
+    });
   }
 
   searchTeams() {
-    if(this.toSearchTeam == ""){
-      this.displaySearchedTeams = [];
-      return;
-    }
-    this.projectsService.searchTeam(this.toSearchTeam).subscribe((res:any)=>{
-      if(res.success){
-        this.displaySearchedTeams = res.teams;
+    this.teamService.searchTeams(this.teamSearchKeyword).subscribe((res: any) => {
+      if (res.success) {
+        this.teamSearchResult = res.teams;
       }
-    })
+    });
   }
 
-  addTeamInProject(team){
-    this.projectsService.addTeamInProject(this.id,team.teamID).subscribe((res:any)=>{
-      if(res.success){
+  addTeamToProject(team) {
+    this.projectsService.addTeamToProject(this.projectID, team.teamID).subscribe((res: any) => {
+      if (res.success) {
         this.teams.push(team);
       }
-    })
+    });
   }
 
-  addUserInProject(user){
-    this.projectsService.addUserInProject(this.id,user.userID).subscribe((res:any)=>{
-      if(res.success){
+  addUserToProject(user) {
+    this.projectsService.addUserToProject(this.projectID, user.userID).subscribe((res: any) => {
+      if (res.success) {
         this.users.push(user);
       }
-    })
+    });
   }
 
 }

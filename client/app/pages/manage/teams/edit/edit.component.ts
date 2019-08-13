@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamsService } from 'client/app/services/teams.service';
 import { ActivatedRoute } from '@angular/router';
+import { UsersService } from 'client/app/services/users.service';
 
 @Component({
   selector: 'app-edit',
@@ -9,46 +10,54 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  team : {}
-  users = []
-  id
-  toSearch = ""
-  searchedUsers = []
-  toSearchUser = ""
-  displaySearchedUsers : []
+  team: {};
+  users = [];
+  teamID;
 
-  constructor(private teamsService: TeamsService,private route: ActivatedRoute) { }
+  userSearchResult = [];
+  userSearchKeyword = '';
+
+
+  constructor(
+    private teamsService: TeamsService,
+    private userService: UsersService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.id = data.id
-      this.teamsService.getTeam(data.id).subscribe((res:any) => {
-        if(res.success){
+      this.teamID = data.teamID;
+      this.teamsService.getTeam(this.teamID).subscribe((res: any) => {
+        if (res.success) {
           this.team = res.team;
           this.users = res.users;
         }
-      })
-    })
+      });
+    });
+
+    this.searchUsers('a');
+
   }
 
-  searchUsers(){
-    if(this.toSearchUser == "" || this.toSearchUser == null){
-      this.displaySearchedUsers = [];
-      return;
+
+  searchUsers(keyword) {
+    if (keyword instanceof Object) {
+      keyword = keyword.term;
     }
-    this.teamsService.searchUser(this.toSearchUser).subscribe((res:any)=>{
-      if(res.success){
-        this.displaySearchedUsers = res.users;
+    this.userSearchKeyword = keyword;
+    this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
+      if (res.success) {
+        this.userSearchResult = res.users;
       }
-    })
+    });
   }
 
-  addUserInTeam(user){
-    this.teamsService.addUserToTeam(this.id,user.userID).subscribe((res:any)=>{
-      if(res.success){
+  addUserToTeam(user) {
+    this.teamsService.addUserToTeam(this.teamID, user.userID).subscribe((res: any) => {
+      if (res.success) {
         this.users.push(user);
       }
-    })
+    });
   }
 
 }

@@ -8,16 +8,16 @@ import { TeamsService } from 'client/app/services/teams.service';
 })
 export class TeamListComponent implements OnInit {
 
-  teams : []
+  teams = [];
 
-  constructor(private teamsService : TeamsService) { }
+  constructor(private teamsService: TeamsService) { }
 
   ngOnInit() {
-    this.teamsService.getTeams().subscribe((res:any)=>{
-      if(res.success){
-        this.teams = res.teams
+    this.teamsService.getTeams().subscribe((res: any) => {
+      if (res.success) {
+        this.teams = res.teams;
       }
-    })
+    });
   }
 
 }
