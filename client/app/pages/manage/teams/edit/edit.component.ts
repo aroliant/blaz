@@ -26,7 +26,7 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.teamID = data.userID;
+      this.teamID = data.teamID;
       this.teamsService.getTeam(this.teamID).subscribe((res: any) => {
         if (res.success) {
           this.team = res.team;
