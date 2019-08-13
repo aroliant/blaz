@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, OnDestroy } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 
 declare var document: any;
@@ -8,11 +8,13 @@ declare var Chart: any;
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.css']
 })
-export class OverviewComponent implements OnInit, OnChanges {
+export class OverviewComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() activeTab;
   @Input() app;
   showTab = false;
+
+  timer = null;
 
   datasetLengthToShow = 8;
 
@@ -199,7 +201,7 @@ export class OverviewComponent implements OnInit, OnChanges {
     this.chartDisk.chart = new Chart(this.chartDisk.ctx, this.chartDisk.data);
     this.chartNetwork.chart = new Chart(this.chartNetwork.ctx, this.chartNetwork.data);
 
-    setInterval(() => {
+    this.timer = setInterval(() => {
       this.appService.getMetrics('blaz-blaz').subscribe((res: any) => {
         const metrics = res.metrics;
         this.processCPUMetrics(metrics);
@@ -210,6 +212,10 @@ export class OverviewComponent implements OnInit, OnChanges {
       });
     }, 2500);
 
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.timer);
   }
 
   processCPUMetrics(metrics) {
@@ -267,7 +273,7 @@ export class OverviewComponent implements OnInit, OnChanges {
 
     const ram = metrics.memory_stats;
 
-    const usage = ram.usage / (1024 * 1024 );
+    const usage = ram.usage / (1024 * 1024);
 
     this.chartRAM.data.data.datasets[0].data.push(usage);
 
