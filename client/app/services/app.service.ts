@@ -45,4 +45,12 @@ export class AppService {
     });
   }
 
+  deployDockerfile(dockerfile, appID) {
+    return this.http.post(this.API_URL + '/apps/upload', { dockerFileSource: dockerfile }, {
+      headers: {
+        'x-app-id': appID
+      },
+    });
+  }
+
 }
