@@ -53,10 +53,10 @@
                       </span>
                       <!-- <input type="text" [(ngModel)]="userSearchKeyword" (input)="searchUsers()" class="form-control"
                         placeholder="Search for users.."> -->
-                        <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
-                          bindLabel="username" (search)="searchUsers($event)"
-                          (change)="addUserToProject($event)" placeholder="Search and add users..">
-                        </ng-select>
+                      <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                        bindLabel="username" (search)="searchUsers($event)" (change)="addUserToProject($event)"
+                        placeholder="Search and add users..">
+                      </ng-select>
                     </div>
                   </div>
                   <!-- <div class="col-12 p-0">
@@ -314,10 +314,10 @@
                       </span>
                       <!-- <input type="text" [(ngModel)]="teamSearchKeyword" class="form-control"
                         placeholder="Search for teams.." (input)="searchTeams()"> -->
-                        <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
-                            bindLabel="teamName" (search)="searchTeams($event)"
-                            (change)="addTeamToProject($event)" placeholder="Search and add teams..">
-                          </ng-select>
+                      <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
+                        bindLabel="teamName" (search)="searchTeams($event)" (change)="addTeamToProject($event)"
+                        placeholder="Search and add teams..">
+                      </ng-select>
                     </div>
                   </div>
                   <!-- <div class="col-12 p-0">
@@ -557,7 +557,7 @@
                 </div>
 
                 <div class="w-100 text-right mb-3">
-                  <button class="btn btn-outline-danger mr-2">Delete Project</button>
+                  <!-- <button class="btn btn-outline-danger mr-2">Delete Project</button> -->
                   <button class="btn btn-primary mr-3" routerLink="/projects/view">Save & Update</button>
                 </div>
               </div>

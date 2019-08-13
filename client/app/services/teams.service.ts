@@ -27,7 +27,7 @@ export class TeamsService {
   }
 
   addUserToTeam(teamID, userID) {
-    return this.http.put(this.API_URL + '/teams/' + teamID + '/user/add', { userID });
+    return this.http.post(this.API_URL + '/teams/' + teamID + '/user', { userID });
   }
 
 }
