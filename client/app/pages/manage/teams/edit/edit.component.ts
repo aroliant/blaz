@@ -55,7 +55,7 @@ export class EditComponent implements OnInit {
   addUserToTeam(user) {
     this.teamsService.addUserToTeam(this.teamID, user.userID).subscribe((res: any) => {
       if (res.success) {
-        this.users.push(user);
+        this.users.push({ User: user });
       }
     });
   }

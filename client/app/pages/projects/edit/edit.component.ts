@@ -71,7 +71,7 @@ export class ProjectEditComponent implements OnInit {
   addTeamToProject(team) {
     this.projectsService.addTeamToProject(this.projectID, team.teamID).subscribe((res: any) => {
       if (res.success) {
-        this.teams.push(team);
+        this.teams.push({ Team: team });
       }
     });
   }
@@ -79,7 +79,7 @@ export class ProjectEditComponent implements OnInit {
   addUserToProject(user) {
     this.projectsService.addUserToProject(this.projectID, user.userID).subscribe((res: any) => {
       if (res.success) {
-        this.users.push(user);
+        this.users.push({ User: user });
       }
     });
   }

@@ -54,7 +54,7 @@ export class AccessComponent implements OnInit, OnChanges {
   addUserToApp(user) {
     this.appService.addUserToApp(this.appID, user.userID).subscribe((res: any) => {
       if (res.success) {
-        this.appDetails.users.push(user);
+        this.appDetails.users.push({ User: user });
       }
     });
   }
@@ -74,7 +74,7 @@ export class AccessComponent implements OnInit, OnChanges {
   addTeamToApp(team) {
     this.appService.addTeamToApp(this.appID, team.teamID).subscribe((res: any) => {
       if (res.success) {
-        this.appDetails.teams.push(team);
+        this.appDetails.teams.push({ Team: team });
       }
     });
   }
