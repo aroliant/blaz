@@ -9,7 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectViewComponent implements OnInit {
 
-  project: {};
+  project = {
+    projectLabels: [],
+    projectName: '',
+    projectDescription: ''
+  };
   projectID: string;
   apps = [];
 
