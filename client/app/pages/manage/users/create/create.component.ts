@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'client/app/services/users.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -15,7 +16,7 @@ export class UserCreateComponent implements OnInit {
     password: ''
   };
 
-  constructor(private usersService: UsersService, private router: Router) { }
+  constructor(private usersService: UsersService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -24,7 +25,7 @@ export class UserCreateComponent implements OnInit {
     console.log(this.user);
     this.usersService.createUser(this.user).subscribe((res: any) => {
       if (res.success) {
-        alert('User Created');
+        this.toastr.success('User Created', 'Success!');
         this.router.navigate(['/users']);
       }
     });

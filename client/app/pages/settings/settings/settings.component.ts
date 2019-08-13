@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from 'client/app/services/settings.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-settings',
@@ -14,7 +15,7 @@ export class SettingsComponent implements OnInit {
     BLAZ_ROOT_DOMAIN_ENABLE_HTTPS: false
   };
 
-  constructor(private settingService: SettingsService, ) { }
+  constructor(private settingService: SettingsService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.settingService.getRootDomain().subscribe((res: any) => {
@@ -29,9 +30,9 @@ export class SettingsComponent implements OnInit {
     this.settingService.updateRootDomain(this.rootDomain).subscribe((res: any) => {
 
       if (res.success) {
-        alert('Root Domain Updated');
+        this.toastr.success('Root Domain Updated', 'Success!');
       } else {
-        alert('unable to Update Root Domain');
+        this.toastr.error('Unable to Update Root Domain', 'Try Again!');
       }
     });
   }

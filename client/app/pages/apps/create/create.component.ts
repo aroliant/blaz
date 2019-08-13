@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -14,7 +15,7 @@ export class CreateAppComponent implements OnInit {
     appName: ''
   };
 
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(private appService: AppService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -30,7 +31,7 @@ export class CreateAppComponent implements OnInit {
         return this.router.navigate(['/apps/' + result.app.appID]);
       }
 
-      alert(result.message);
+      this.toastr.error(result.message);
 
     });
 
