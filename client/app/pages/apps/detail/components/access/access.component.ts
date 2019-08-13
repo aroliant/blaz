@@ -15,10 +15,10 @@ export class AccessComponent implements OnInit, OnChanges {
   @Input() app;
   showTab = false;
   appID;
-  teams = [];
+  @Input() teams = [];
   teamSearchResult = [];
   userSearchResult = [];
-  users = [];
+  @Input() users = [];
   teamSearchKeyword = '';
   userSearchKeyword = '';
 

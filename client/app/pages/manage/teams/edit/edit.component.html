@@ -100,7 +100,7 @@
                             </li>
                           </ul>
                         </div>
-                        <div class="card-body text-center">
+                        <div class="card-body text-center" *ngIf="users.length == 0" >
                           <div class="small">No users added to this team.</div>
                         </div>
                       </div>

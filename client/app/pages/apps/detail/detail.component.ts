@@ -14,6 +14,8 @@ export class AppDetailComponent implements OnInit {
 
   app;
   activeTab = 'overview';
+  users = [];
+  teams = [];
 
   constructor(private appService: AppService, private route: ActivatedRoute) { }
 
@@ -22,6 +24,8 @@ export class AppDetailComponent implements OnInit {
     this.route.params.subscribe((data) => {
       this.appService.getApp(data.appID).subscribe((res: any) => {
         this.app = res.app;
+        this.teams = res.teams;
+        this.users = res.users;
         console.log(this.app);
       });
     });
