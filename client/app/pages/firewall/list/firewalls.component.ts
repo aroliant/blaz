@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector:"firewalls",
-    templateUrl:"./firewalls.component.html",
-    styleUrls:['./firewalls.component.css']
+    selector: 'app-firewalls',
+    templateUrl: './firewalls.component.html',
+    styleUrls: ['./firewalls.component.css']
 })
 
-export class FirewallListComponent implements OnInit{
+export class FirewallListComponent implements OnInit {
 
 
-    constructor(){
+    constructor() {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
     }
 

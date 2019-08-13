@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -12,9 +13,9 @@ export class CreateAppComponent implements OnInit {
 
   app = {
     appName: ''
-  }
+  };
 
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(private appService: AppService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -27,12 +28,12 @@ export class CreateAppComponent implements OnInit {
     this.appService.createApp(this.app).subscribe((result: any) => {
 
       if (result.success) {
-        return this.router.navigate(['/apps/' + result.app.appID])
+        return this.router.navigate(['/apps/' + result.app.appID]);
       }
 
-      alert(result.message)
+      this.toastr.error(result.message);
 
-    })
+    });
 
   }
 

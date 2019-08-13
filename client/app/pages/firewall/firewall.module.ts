@@ -10,7 +10,7 @@ export const FirewallRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: FirewallListComponent,
       },
       {

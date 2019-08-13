@@ -6,25 +6,39 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AppService {
 
-  API_URL = environment.API_URL
+  API_URL = environment.API_URL;
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   createApp(data) {
-    return this.http.post(this.API_URL + "/apps/create", data)
+    return this.http.post(this.API_URL + '/apps/create', data);
   }
 
-  updateApp(data){
-    return this.http.put(this.API_URL + `/apps/${data.appID}`, data)
+  updateApp(data) {
+    return this.http.put(this.API_URL + `/apps/${data.appID}`, data);
   }
 
   getApps() {
-    return this.http.get(this.API_URL + "/apps")
+    return this.http.get(this.API_URL + '/apps');
   }
 
   getApp(appID) {
-    return this.http.get(this.API_URL + "/apps/" + appID)
+    return this.http.get(this.API_URL + '/apps/' + appID);
+  }
+
+  addUserToApp(appID, userID) {
+    return this.http.put(this.API_URL + '/apps/' + appID + '/user/add', { userID });
+  }
+
+  addTeamToApp(appID, teamID) {
+    return this.http.put(this.API_URL + '/apps/' + appID + '/team/add', { teamID });
+  }
+
+  getMetrics(serviceName) {
+    return this.http.post(this.API_URL + '/metrics/containers', { serviceName }, {
+      headers: { ignoreLoadingBar: '' },
+    });
   }
 
 }

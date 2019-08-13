@@ -16,13 +16,17 @@ import { DeploymentComponent } from './detail/components/deployment/deployment.c
 import { ActivityComponent } from './detail/components/activity/activity.component';
 import { AccessComponent } from './detail/components/access/access.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+import { TeamsService } from 'client/app/services/teams.service';
+import { UsersService } from 'client/app/services/users.service';
+
 
 export const AppsRoutes: Routes = [
   {
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: AppsListComponent,
       },
       {
@@ -42,6 +46,7 @@ export const AppsRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(AppsRoutes),
     FormsModule,
+    NgSelectModule,
   ],
   declarations: [
     AppsListComponent,
@@ -55,7 +60,9 @@ export const AppsRoutes: Routes = [
     AccessComponent,
   ],
   providers: [
-    AppService
+    AppService,
+    TeamsService,
+    UsersService,
   ]
 })
 export class AppsModule { }

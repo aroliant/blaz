@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamsService } from 'client/app/services/teams.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -10,22 +11,22 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
 
   team = {
-    teamName: "",
-    teamEmail: ""
-  }
+    teamName: '',
+    teamEmail: ''
+  };
 
-  constructor(private teamsService: TeamsService,private router: Router) { }
+  constructor(private teamsService: TeamsService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
 
-  createTeam(){
-    this.teamsService.createTeam(this.team).subscribe((res:any)=>{
-      if(res.success){
-        alert("Team Created");
-        this.router.navigate(["/teams"]);
+  createTeam() {
+    this.teamsService.createTeam(this.team).subscribe((res: any) => {
+      if (res.success) {
+        this.toastr.success('Team Created', 'Success');
+        this.router.navigate(['/teams']);
       }
-    })
+    });
   }
 
 }

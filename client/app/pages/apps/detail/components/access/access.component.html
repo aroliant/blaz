@@ -7,11 +7,37 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <div class="d-flex justify-content-between mb-2">
+            <div class="d-flex flex-column mb-2">
               <div>Collaborators
               </div>
-              <button class="btn btn-primary btn-sm" href="#">Add Collaborator</button>
+              <div class="input-icon">
+                  <span class="input-icon-addon">
+                    <i class="fe fe-user"></i>
+                  </span>
+                  <!-- <input type="text" [(ngModel)]="userSearchKeyword" class="form-control" placeholder="Search for users.." (input)="searchUsers()" > -->
+                  <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                    bindLabel="username" (search)="searchUsers()"
+                    (add)="addUserToApp(userSearchKeyword)" placeholder="Search and add users..">
+                  </ng-select>
+                </div>
             </div>
+            <!-- <div class="col-12 p-0">
+              <div class="card">
+                <div class="list-separated-item" *ngFor="let user of userSearchResult" >
+                  <div class="row align-items-center" (click)="addUserInApp(user)" >
+                    <div class="col-auto">
+                      <span class="avatar avatar-md d-block"
+                        style="background-image: url('https://img.blaz.app/40x40')"></span>
+                    </div>
+                    <div class="col">
+                      <div>
+                        <a  class="text-inherit">{{user.username}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
             <div class="table-responsive">
               <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
                 <thead>
@@ -23,73 +49,30 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let user of users">
                     <td class="text-center">
-                      <div class="avatar d-block"
-                        style="background-image: url('https://img.blaz.app/40x40')">
+                      <div class="avatar d-block" style="background-image: url('https://img.blaz.app/40x40')">
                         <span class="avatar-status bg-green"></span>
                       </div>
                     </td>
                     <td>
-                      <div>Jacob Samro</div>
-                      <div class="small text-muted">
-                        jacob@aroliant.com
-                      </div>
+                      <div>{{user.username}}</div>
+                      <div class="small text-muted">{{user.userEmail}}</div>
                     </td>
                     <td>
                       <div>Administrator</div>
                     </td>
                     <td class="text-center">
                       <div class="item-action dropdown">
-                        <a  data-toggle="dropdown" class="icon"><i
-                            class="fe fe-more-vertical"></i></a>
+                        <a data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-tag"></i>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
                             Action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else
+                            here</a>
                           <div class="dropdown-divider"></div>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-link"></i>
-                            Separated link</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">
-                      <div class="avatar d-block"
-                        style="background-image: url('https://img.blaz.app/40x40')">
-                        <span class="avatar-status bg-green"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Jacob Samro</div>
-                      <div class="small text-muted">
-                        jacob@aroliant.com
-                      </div>
-                    </td>
-                    <td>
-                      <div>Administrator</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="item-action dropdown">
-                        <a  data-toggle="dropdown" class="icon"><i
-                            class="fe fe-more-vertical"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-tag"></i>
-                            Action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                          <div class="dropdown-divider"></div>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-link"></i>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
                             Separated link</a>
                         </div>
                       </div>
@@ -98,14 +81,43 @@
 
                 </tbody>
               </table>
+              <div class="card-body text-center" *ngIf="users.length == 0" >
+                <div class="small">No collaborators added to this app.</div>
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="d-flex justify-content-between mb-2">
+            <div class="d-flex flex-column mb-2">
               <div>Teams
               </div>
-              <button class="btn btn-primary btn-sm" href="#">Add Team</button>
+              <div class="input-icon">
+                <span class="input-icon-addon">
+                  <i class="fe fe-user"></i>
+                </span>
+                <!-- <input type="text" [(ngModel)]="toSearchTeam" class="form-control" placeholder="Search for teams.." (input)="searchTeams()" > -->
+                <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
+                  bindLabel="teamName" (search)="searchTeams()"
+                  (add)="addTeamToApp(teamSearchKeyword)" placeholder="Search and add teams..">
+                </ng-select>
+              </div>
             </div>
+            <!-- <div class="col-12 p-0">
+                <div class="card">
+                  <div class="list-separated-item" *ngFor="let team of teamSearchResult" >
+                    <div class="row align-items-center" (click)="addTeamInApp(team)" >
+                      <div class="col-auto">
+                        <span class="avatar avatar-md d-block"
+                          style="background-image: url('https://img.blaz.app/40x40')"></span>
+                      </div>
+                      <div class="col">
+                        <div>
+                          <a  class="text-inherit">{{team.teamName}}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div> -->
             <div class="table-responsive">
               <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
                 <thead>
@@ -117,17 +129,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let team of teams">
                     <td class="text-center">
-                      <div class="avatar d-block"
-                        style="background-image: url('https://img.blaz.app/40x40')">
+                      <div class="avatar d-block" style="background-image: url('https://img.blaz.app/40x40')">
                         <span class="avatar-status bg-green"></span>
                       </div>
                     </td>
                     <td>
-                      <div>Aroliant</div>
+                      <div>{{team.teamName}}</div>
                       <div class="small text-muted">
-                        apps@aroliant.com
+                        {{team.teamEmail}}
                       </div>
                     </td>
                     <td>
@@ -135,55 +146,15 @@
                     </td>
                     <td class="text-center">
                       <div class="item-action dropdown">
-                        <a  data-toggle="dropdown" class="icon"><i
-                            class="fe fe-more-vertical"></i></a>
+                        <a data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-tag"></i>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
                             Action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else
+                            here</a>
                           <div class="dropdown-divider"></div>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-link"></i>
-                            Separated link</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">
-                      <div class="avatar d-block"
-                        style="background-image: url('https://img.blaz.app/40x40')">
-                        <span class="avatar-status bg-green"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Aroliant</div>
-                      <div class="small text-muted">
-                        apps@aroliant.com
-                      </div>
-                    </td>
-                    <td>
-                      <div>15</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="item-action dropdown">
-                        <a  data-toggle="dropdown" class="icon"><i
-                            class="fe fe-more-vertical"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-tag"></i>
-                            Action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                          <div class="dropdown-divider"></div>
-                          <a  class="dropdown-item"><i
-                              class="dropdown-icon fe fe-link"></i>
+                          <a class="dropdown-item"><i class="dropdown-icon fe fe-link"></i>
                             Separated link</a>
                         </div>
                       </div>
@@ -192,6 +163,9 @@
 
                 </tbody>
               </table>
+              <div class="card-body text-center" *ngIf="teams.length == 0" >
+                <div class="small">No teams added to this app.</div>
+              </div>
             </div>
           </div>
         </div>
