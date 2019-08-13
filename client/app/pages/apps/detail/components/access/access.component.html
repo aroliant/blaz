@@ -11,15 +11,15 @@
               <div>Collaborators
               </div>
               <div class="input-icon">
-                <span class="input-icon-addon">
-                  <i class="fe fe-user"></i>
-                </span>
-                <!-- <input type="text" [(ngModel)]="userSearchKeyword" class="form-control" placeholder="Search for users.." (input)="searchUsers()" > -->
-                <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
-                  bindLabel="username" (search)="searchUsers()" (add)="addUserToApp(userSearchKeyword)"
-                  placeholder="Search and add users..">
-                </ng-select>
-              </div>
+                  <span class="input-icon-addon">
+                    <i class="fe fe-user"></i>
+                  </span>
+                  <!-- <input type="text" [(ngModel)]="userSearchKeyword" class="form-control" placeholder="Search for users.." (input)="searchUsers()" > -->
+                  <ng-select [items]="userSearchResult" [(ngModel)]="userSearchKeyword" bindValue="userID"
+                    bindLabel="username" (search)="searchUsers($event)"
+                    (change)="addUserToApp($event)" placeholder="Search and add users..">
+                  </ng-select>
+                </div>
             </div>
             <!-- <div class="col-12 p-0">
               <div class="card">
@@ -96,8 +96,8 @@
                 </span>
                 <!-- <input type="text" [(ngModel)]="toSearchTeam" class="form-control" placeholder="Search for teams.." (input)="searchTeams()" > -->
                 <ng-select [items]="teamSearchResult" [(ngModel)]="teamSearchKeyword" bindValue="teamID"
-                  bindLabel="teamName" (search)="searchTeams()" (add)="addTeamToApp(teamSearchKeyword)"
-                  placeholder="Search and add teams..">
+                  bindLabel="teamName" (search)="searchTeams($event)"
+                  (change)="addTeamToApp($event)" placeholder="Search and add teams..">
                 </ng-select>
               </div>
             </div>

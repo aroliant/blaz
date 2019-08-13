@@ -31,16 +31,19 @@ export class AccessComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((data) => {
-      this.appID = data.id;
-    });
+    this.searchUsers('a');
+    this.searchTeams('a');
   }
 
   ngOnChanges() {
     this.showTab = this.activeTab === 'access' ? true : false;
   }
 
-  searchUsers() {
+  searchUsers(keyword) {
+    if (keyword instanceof Object) {
+      keyword = keyword.term;
+    }
+    this.userSearchKeyword = keyword;
     this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.userSearchResult = res.users;
@@ -56,7 +59,11 @@ export class AccessComponent implements OnInit, OnChanges {
     });
   }
 
-  searchTeams() {
+  searchTeams(keyword) {
+    if (keyword instanceof Object) {
+      keyword = keyword.term;
+    }
+    this.teamSearchKeyword = keyword;
     this.teamService.searchTeams(this.teamSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.teamSearchResult = res.teams;

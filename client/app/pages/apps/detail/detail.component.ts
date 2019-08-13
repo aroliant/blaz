@@ -19,12 +19,14 @@ export class AppDetailComponent implements OnInit {
     versions: []
   };
   activeTab = 'overview';
+  appID;
 
   constructor(private appService: AppService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
     this.route.params.subscribe((data) => {
+      this.appID = data.appID;
       this.appService.getApp(data.appID).subscribe((res: any) => {
         this.app = res.app;
       });

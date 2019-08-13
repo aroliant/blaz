@@ -40,9 +40,15 @@ export class ProjectEditComponent implements OnInit {
         }
       });
     });
+    this.searchUsers('a');
+    this.searchTeams('a');
   }
 
-  searchUsers() {
+  searchUsers(keyword) {
+    if (keyword instanceof Object) {
+      keyword = keyword.term;
+    }
+    this.userSearchKeyword = keyword;
     this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.userSearchResult = res.users;
@@ -50,7 +56,11 @@ export class ProjectEditComponent implements OnInit {
     });
   }
 
-  searchTeams() {
+  searchTeams(keyword) {
+    if (keyword instanceof Object) {
+      keyword = keyword.term;
+    }
+    this.teamSearchKeyword = keyword;
     this.teamService.searchTeams(this.teamSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.teamSearchResult = res.teams;
