@@ -35,12 +35,16 @@ export class EditComponent implements OnInit {
       });
     });
 
-    this.searchUsers();
+    this.searchUsers('a');
 
   }
 
 
-  searchUsers() {
+  searchUsers(keyword) {
+    if (keyword instanceof Object) {
+      keyword = keyword.term;
+    }
+    this.userSearchKeyword = keyword;
     this.userService.searchUsers(this.userSearchKeyword).subscribe((res: any) => {
       if (res.success) {
         this.userSearchResult = res.users;
