@@ -11,6 +11,10 @@ export class AppService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
+  getDashboard() {
+    return this.http.get(this.API_URL + '/dashboard');
+  }
+
   createApp(data) {
     return this.http.post(this.API_URL + '/apps/create', data);
   }
