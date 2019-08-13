@@ -27,11 +27,11 @@ export const ProjectsRoutes: Routes = [
         component: ProjectCreateComponent
       },
       {
-        path: ':id',
+        path: ':projectID',
         component: ProjectViewComponent
       },
       {
-        path: 'edit/:id',
+        path: 'edit/:projectID',
         component: ProjectEditComponent
       },
     ]

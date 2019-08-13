@@ -23,7 +23,7 @@ export class ProjectEditComponent implements OnInit {
     projectDescription: '',
     projectLabels: []
   };
-  id;
+  projectID;
   teamSearchResult: [];
   userSearchResult: [];
   teamSearchKeyword = '';
@@ -33,8 +33,8 @@ export class ProjectEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.id = data.id;
-      this.projectsService.getProject(data.id).subscribe((res: any) => {
+      this.projectID = data.projectID;
+      this.projectsService.getProject(this.projectID).subscribe((res: any) => {
         if (res.success) {
           this.project = res.project;
         }
@@ -59,7 +59,7 @@ export class ProjectEditComponent implements OnInit {
   }
 
   addTeamToProject(team) {
-    this.projectsService.addTeamToProject(this.id, team.teamID).subscribe((res: any) => {
+    this.projectsService.addTeamToProject(this.projectID, team.teamID).subscribe((res: any) => {
       if (res.success) {
         this.teams.push(team);
       }
@@ -67,7 +67,7 @@ export class ProjectEditComponent implements OnInit {
   }
 
   addUserToProject(user) {
-    this.projectsService.addUserToProject(this.id, user.userID).subscribe((res: any) => {
+    this.projectsService.addUserToProject(this.projectID, user.userID).subscribe((res: any) => {
       if (res.success) {
         this.users.push(user);
       }

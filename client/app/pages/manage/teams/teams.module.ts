@@ -24,7 +24,7 @@ export const TeamsRoutes: Routes = [
         component: CreateComponent
       },
       {
-        path: ':id',
+        path: ':teamID',
         component: EditComponent
       },
     ]

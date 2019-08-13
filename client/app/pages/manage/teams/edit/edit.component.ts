@@ -12,7 +12,7 @@ export class EditComponent implements OnInit {
 
   team: {};
   users = [];
-  id;
+  teamID;
 
   userSearchResult = [];
   userSearchKeyword = '';
@@ -26,8 +26,8 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.id = data.id;
-      this.teamsService.getTeam(data.id).subscribe((res: any) => {
+      this.teamID = data.userID;
+      this.teamsService.getTeam(this.teamID).subscribe((res: any) => {
         if (res.success) {
           this.team = res.team;
           this.users = res.users;
@@ -49,7 +49,7 @@ export class EditComponent implements OnInit {
   }
 
   addUserToTeam(user) {
-    this.teamsService.addUserToTeam(this.id, user.userID).subscribe((res: any) => {
+    this.teamsService.addUserToTeam(this.teamID, user.userID).subscribe((res: any) => {
       if (res.success) {
         this.users.push(user);
       }

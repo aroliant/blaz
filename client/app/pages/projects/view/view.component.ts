@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProjectViewComponent implements OnInit {
 
   project: {};
-  id: string;
+  projectID: string;
   apps: [];
 
   constructor(private projectsService: ProjectsService, private route: ActivatedRoute) { }
@@ -18,8 +18,8 @@ export class ProjectViewComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe((data) => {
-      this.id = data.id;
-      this.projectsService.getProject(data.id).subscribe((res: any) => {
+      this.projectID = data.projectID;
+      this.projectsService.getProject(this.projectID).subscribe((res: any) => {
         if (res.success) {
           this.project = res.project;
           this.apps = res.apps;

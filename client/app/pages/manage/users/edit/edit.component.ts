@@ -15,7 +15,7 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      this.usersService.getUser(data.id).subscribe((res: any) => {
+      this.usersService.getUser(data.userID).subscribe((res: any) => {
         if (res.success) {
           this.user = res.user;
         }
