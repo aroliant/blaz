@@ -10,6 +10,7 @@ export class DeploymentComponent implements OnInit, OnChanges {
 
   @Input() activeTab;
   @Input() app;
+  @Input() appDetails;
   showTab = false;
 
   fileUploadBtn = 'Upload & Deploy';
