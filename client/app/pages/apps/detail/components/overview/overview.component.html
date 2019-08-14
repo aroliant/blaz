@@ -5,9 +5,14 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">CPU Usage</h3>
+          <div class="liveStats">
+            <i class="fa fa-circle blink text-right" [class.text-danger]="!successStats"
+              [class.text-success]="successStats"></i>&nbsp;
+            {{ successStats ? 'LIVE' : 'STOPPED'}}
+          </div>
         </div>
         <div class="card-body">
-            <canvas id="chart-cpu" style="height: 16rem"></canvas>
+          <canvas id="chart-cpu" style="height: 16rem"></canvas>
         </div>
       </div>
     </div>
@@ -15,9 +20,14 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">RAM Usage</h3>
+          <div class="liveStats">
+            <i class="fa fa-circle blink text-right" [class.text-danger]="!successStats"
+              [class.text-success]="successStats"></i>&nbsp;
+            {{ successStats ? 'LIVE' : 'STOPPED'}}
+          </div>
         </div>
         <div class="card-body">
-            <canvas id="chart-ram" style="height: 16rem"></canvas>
+          <canvas id="chart-ram" style="height: 16rem"></canvas>
         </div>
       </div>
     </div>
@@ -25,9 +35,14 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Disk I / O</h3>
+          <div class="liveStats">
+            <i class="fa fa-circle blink text-right" [class.text-danger]="!successStats"
+              [class.text-success]="successStats"></i>&nbsp;
+            {{ successStats ? 'LIVE' : 'STOPPED'}}
+          </div>
         </div>
         <div class="card-body">
-            <canvas id="chart-disk" style="height: 16rem"></canvas>
+          <canvas id="chart-disk" style="height: 16rem"></canvas>
         </div>
       </div>
     </div>
@@ -35,9 +50,14 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Network Usage</h3>
+          <div class="liveStats">
+            <i class="fa fa-circle blink text-right" [class.text-danger]="!successStats"
+              [class.text-success]="successStats"></i>&nbsp;
+            {{ successStats ? 'LIVE' : 'STOPPED'}}
+          </div>
         </div>
         <div class="card-body">
-            <canvas id="chart-network" style="height: 16rem"></canvas>
+          <canvas id="chart-network" style="height: 16rem"></canvas>
         </div>
       </div>
     </div>

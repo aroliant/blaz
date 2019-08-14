@@ -11,6 +11,10 @@ export class AppService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
+  getDashboard() {
+    return this.http.get(this.API_URL + '/dashboard');
+  }
+
   createApp(data) {
     return this.http.post(this.API_URL + '/apps/create', data);
   }
@@ -42,6 +46,14 @@ export class AppService {
   getMetrics(serviceName) {
     return this.http.post(this.API_URL + '/metrics/containers', { serviceName }, {
       headers: { ignoreLoadingBar: '' },
+    });
+  }
+
+  deployDockerfile(dockerfile, appID) {
+    return this.http.post(this.API_URL + '/apps/upload', { dockerFileSource: dockerfile }, {
+      headers: {
+        'x-app-id': appID
+      },
     });
   }
 

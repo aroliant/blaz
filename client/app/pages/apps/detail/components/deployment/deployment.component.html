@@ -4,7 +4,7 @@
       <div>
         <span class="font-weight-bold">Version History</span>
       </div>
-      <div><a href="#">View All</a></div>
+      <!-- <div><a href="#">View All</a></div> -->
     </div>
     <div>
       <div class="table-responsive">
@@ -91,10 +91,10 @@
       <span class="font-weight-bold">Method 3: Deploy Plain Docker file</span>
     </div>
     <div>
-      <textarea class="border bg-light rounded p-2 w-100 text-left" rows="8"></textarea>
+      <textarea class="border bg-light rounded p-2 w-100 text-left" rows="8" [(ngModel)]="dockerFileSource"></textarea>
     </div>
     <div class="d-flex justify-content-end">
-      <button class="btn btn-primary btn-sm">Deploy Now</button>
+      <button class="btn btn-primary btn-sm" (click)="deployDockerFile()">Deploy Now</button>
     </div>
   </div>
 

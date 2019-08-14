@@ -1,0 +1,13 @@
+.blink {
+  animation: blinker 1.25s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+
+@keyframes blinker {  
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.liveStats{
+  position: absolute;
+  right: 20px;
+}

@@ -15,6 +15,7 @@ export class OverviewComponent implements OnInit, OnChanges, OnDestroy {
   showTab = false;
 
   timer = null;
+  successStats = true;
 
   datasetLengthToShow = 8;
 
@@ -201,17 +202,30 @@ export class OverviewComponent implements OnInit, OnChanges, OnDestroy {
     this.chartDisk.chart = new Chart(this.chartDisk.ctx, this.chartDisk.data);
     this.chartNetwork.chart = new Chart(this.chartNetwork.ctx, this.chartNetwork.data);
 
+    this.processMetrics();
+
     this.timer = setInterval(() => {
-      this.appService.getMetrics('blaz-blaz').subscribe((res: any) => {
+      this.processMetrics();
+    }, 2500);
+
+  }
+
+  processMetrics() {
+    const serviceName = 'service-' + this.app.appName.toLowerCase();
+    this.appService.getMetrics(serviceName).subscribe((res: any) => {
+
+      if (res.success) {
         const metrics = res.metrics;
         this.processCPUMetrics(metrics);
         this.processRAMMetrics(metrics);
         this.processDiskMetrics(metrics);
         this.processNetworkMetrics(metrics);
+        this.successStats = true;
+      } else {
+        this.successStats = false;
+      }
 
-      });
-    }, 2500);
-
+    });
   }
 
   ngOnDestroy() {
@@ -291,6 +305,10 @@ export class OverviewComponent implements OnInit, OnChanges, OnDestroy {
 
     const disk = metrics.blkio_stats.io_service_bytes_recursive;
 
+    if (!disk.length) {
+      return;
+    }
+
     const usageRead = disk[0].value / 1000000;
     const usageWrite = disk[1].value / 1000000;
 
@@ -340,10 +358,6 @@ export class OverviewComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnChanges() {
     this.showTab = this.activeTab === 'overview' ? true : false;
-  }
-
-  getStats() {
-
   }
 
 }

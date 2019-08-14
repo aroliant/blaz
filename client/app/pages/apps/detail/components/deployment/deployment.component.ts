@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { environment } from 'client/environments/environment';
+import { AppService } from 'client/app/services/app.service';
 
 @Component({
   selector: 'app-detail-deployment',
@@ -15,7 +16,9 @@ export class DeploymentComponent implements OnInit, OnChanges {
 
   fileUploadBtn = 'Upload & Deploy';
   fileUploadMessage = '';
-  constructor() { }
+  dockerFileSource = '';
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
 
@@ -65,6 +68,14 @@ export class DeploymentComponent implements OnInit, OnChanges {
   }
 
   deployDockerFile() {
+
+    this.appService.deployDockerfile(this.dockerFileSource, this.app.appID).subscribe((res: any) => {
+
+      if (res.success) {
+        alert('Dockerfile Deployed');
+      }
+
+    });
 
   }
 
