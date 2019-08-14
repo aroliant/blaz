@@ -8,16 +8,16 @@ import { UsersService } from 'client/app/services/users.service';
 })
 export class UserListComponent implements OnInit {
 
-  users : []
+  users = [];
 
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-    this.usersService.getUsers().subscribe((res:any)=>{
-      if(res.success){
+    this.usersService.getUsers().subscribe((res: any) => {
+      if (res.success) {
         this.users = res.users;
       }
-    })
+    });
   }
 
 }

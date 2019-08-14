@@ -9,7 +9,7 @@ export const HostsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: HostsComponent,
       },
     ]

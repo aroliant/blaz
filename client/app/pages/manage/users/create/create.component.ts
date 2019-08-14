@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'client/app/services/users.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -10,24 +11,24 @@ import { Router } from '@angular/router';
 export class UserCreateComponent implements OnInit {
 
   user = {
-    username: "",
-    userEmail: "",
-    password: ""
-  }
+    username: '',
+    userEmail: '',
+    password: ''
+  };
 
-  constructor(private usersService: UsersService,private router: Router) { }
+  constructor(private usersService: UsersService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
 
-  createUser(){
+  createUser() {
     console.log(this.user);
-    this.usersService.createUser(this.user).subscribe((res:any)=>{
-      if(res.success){
-        alert("User Created");
-        this.router.navigate(["/users"]);
+    this.usersService.createUser(this.user).subscribe((res: any) => {
+      if (res.success) {
+        this.toastr.success('User Created', 'Success!');
+        this.router.navigate(['/users']);
       }
-    })
+    });
   }
 
 }

@@ -8,7 +8,12 @@ import { AppService } from 'client/app/services/app.service';
 })
 export class AppsListComponent implements OnInit {
 
-  apps = []
+  apps = [];
+
+  url = {
+    protocol: 'http',
+    location: ''
+  };
 
   constructor(private appService: AppService) { }
 
@@ -16,9 +21,11 @@ export class AppsListComponent implements OnInit {
 
     this.appService.getApps().subscribe((result: any) => {
       if (result.success) {
-        this.apps = result.apps
+        this.apps = result.apps;
       }
-    })
+    });
+
+    this.url.location = String(location.hostname).replace('blaz.', '');
 
   }
 

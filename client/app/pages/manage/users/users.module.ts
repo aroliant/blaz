@@ -13,7 +13,7 @@ export const UsersRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: UserListComponent,
       },
       {
@@ -21,7 +21,7 @@ export const UsersRoutes: Routes = [
         component: UserCreateComponent
       },
       {
-        path: ':id',
+        path: ':userID',
         component: UserEditComponent
       },
     ]

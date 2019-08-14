@@ -13,24 +13,28 @@
                 <h3 class="m-0">List of Teams</h3>
               </div>
               <div *ngFor="let team of teams" class="d-flex flex-row flex-wrap">
-                <div class="d-flex flex-column justify-content-center align-items-center m-2 p-2 AvatarContainer" routerLink="/teams/{{team.teamID}}">
+                <div class="d-flex flex-column justify-content-center align-items-center m-2 p-2 AvatarContainer"
+                  routerLink="/teams/{{team.teamID}}">
                   <span class="avatar avatar-xxl avatar-color">AR</span>
                   <span>{{team.teamName}}</span>
                   <div class="item-action dropdown AvatarDropdown">
-                    <a  data-toggle="dropdown" class="icon"><i
-                        class="fe fe-more-vertical"></i></a>
+                    <a data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                     <div class="dropdown-menu dropdown-menu-right">
-                      <a  class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
+                      <a class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i>
                         Edit</a>
-                      <a  class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i>
+                      <a class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i>
                         Delete</a>
-                      <a  class="dropdown-item"><i
-                          class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                      <a class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else
+                        here</a>
                     </div>
                   </div>
                 </div>
 
               </div>
+            </div>
+            <div class="card text-center py-5" *ngIf="teams.length == 0" >
+              <div class="h4 m-0 text-dark">No teams found</div>
+              <div class="small">Create teams to manage projects more efficiently.</div>
             </div>
           </div>
         </div>

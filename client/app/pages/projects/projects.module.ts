@@ -8,6 +8,10 @@ import { ProjectEditComponent } from './edit/edit.component';
 import { ProjectViewComponent } from './view/view.component';
 
 import { ProjectsService } from './../../services/projects.service';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ToasterService } from 'client/app/components/toaster/toaster.service';
+import { UsersService } from 'client/app/services/users.service';
+import { TeamsService } from 'client/app/services/teams.service';
 
 
 export const ProjectsRoutes: Routes = [
@@ -15,19 +19,19 @@ export const ProjectsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: ProjectListComponent,
-      },
-      {
-        path: ':id',
-        component: ProjectViewComponent
       },
       {
         path: 'create',
         component: ProjectCreateComponent
       },
       {
-        path: 'edit/:id',
+        path: ':projectID',
+        component: ProjectViewComponent
+      },
+      {
+        path: 'edit/:projectID',
         component: ProjectEditComponent
       },
     ]
@@ -38,11 +42,15 @@ export const ProjectsRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    NgSelectModule,
     RouterModule.forChild(ProjectsRoutes)
   ],
   declarations: [ProjectListComponent, ProjectCreateComponent, ProjectEditComponent, ProjectViewComponent],
   providers: [
-    ProjectsService
+    ProjectsService,
+    ToasterService,
+    UsersService,
+    TeamsService,
   ]
 })
 export class ProjectsModule { }

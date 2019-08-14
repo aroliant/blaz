@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { AppService } from 'client/app/services/app.service';
 
 @Component({
@@ -6,20 +6,20 @@ import { AppService } from 'client/app/services/app.service';
   templateUrl: './app-configuration.component.html',
   styleUrls: ['./app-configuration.component.css']
 })
-export class AppConfigurationComponent implements OnInit {
+export class AppConfigurationComponent implements OnInit, OnChanges {
 
   @Input() activeTab;
   @Input() app;
-  showTab = false
+  showTab = false;
 
   constructor(private appService: AppService) { }
 
 
   ngOnInit() {
-    if (!this.app.environmentVars) {
+    if (!this.app.environmentVars || this.app.environmentVars.length === 0) {
       this.app.environmentVars = [{
         key: '', value: ''
-      }]
+      }];
     }
 
     if (!this.app.portMapping) {
@@ -28,27 +28,27 @@ export class AppConfigurationComponent implements OnInit {
           hostPort: 8080,
           containerPort: 80
         }
-      ]
+      ];
     }
 
   }
 
   ngOnChanges() {
-    this.showTab = this.activeTab == "app-configuration" ? true : false
+    this.showTab = this.activeTab === 'app-configuration' ? true : false;
   }
 
   saveAndUpdate() {
     this.appService.updateApp(this.app).subscribe((res: any) => {
 
-    })
+    });
   }
 
   enterEnvVars(e, index) {
-    if (e.keyCode == 13 && index == this.app.environmentVars.length - 1) {
+    if (e.keyCode === 13 && index === this.app.environmentVars.length - 1) {
       this.app.environmentVars.push({
         key: '',
         value: ''
-      })
+      });
     }
   }
 
@@ -56,7 +56,7 @@ export class AppConfigurationComponent implements OnInit {
     this.app.portMapping.push({
       hostPort: '',
       containerPort: ''
-    })
+    });
   }
 
 }

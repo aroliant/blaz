@@ -9,23 +9,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectViewComponent implements OnInit {
 
-  project : {}
-  id: String
-  apps : []
+  project = {
+    projectLabels: [],
+    projectName: '',
+    projectDescription: ''
+  };
+  projectID: string;
+  apps = [];
 
-  constructor(private projectsService: ProjectsService,private route: ActivatedRoute) { }
+  constructor(private projectsService: ProjectsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
     this.route.params.subscribe((data) => {
-      this.id = data.id
-      this.projectsService.getProject(data.id).subscribe((res:any) => {
-        if(res.success){
+      this.projectID = data.projectID;
+      this.projectsService.getProject(this.projectID).subscribe((res: any) => {
+        if (res.success) {
           this.project = res.project;
           this.apps = res.apps;
         }
-      })
-    })
+      });
+    });
 
   }
 

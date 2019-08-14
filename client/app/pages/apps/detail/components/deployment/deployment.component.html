@@ -11,27 +11,16 @@
         <table class="table">
           <thead>
             <tr>
-              <th>State</th>
               <th>Version</th>
-              <th>Deploy Time</th>
               <th>Image Name</th>
-              <th>git hash</th>
+              <th>Deployed at</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td>1</td>
-              <td>2/12/2019, 10:11:38 AM</td>
-              <td>mysql:5.7</td>
-              <td>n / a</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>1</td>
-              <td>2/12/2019, 10:11:38 AM</td>
-              <td>mysql:5.7</td>
-              <td>n / a</td>
+            <tr *ngFor="let version of appDetails.versions">
+              <td>{{version.versionName}}</td>
+              <td>{{version.imageName}}</td>
+              <td>{{version.createdAt | date: 'medium'}}</td>
             </tr>
           </tbody>
         </table>

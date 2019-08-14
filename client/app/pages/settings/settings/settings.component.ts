@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from 'client/app/services/settings.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-settings',
@@ -9,32 +10,31 @@ import { SettingsService } from 'client/app/services/settings.service';
 export class SettingsComponent implements OnInit {
 
   rootDomain = {
-    BLAZ_ROOT_DOMAIN: "",
+    BLAZ_ROOT_DOMAIN: '',
     BLAZ_ROOT_DOMAIN_FORCE_HTTPS: false,
     BLAZ_ROOT_DOMAIN_ENABLE_HTTPS: false
-  }
+  };
 
-  constructor(private settingService: SettingsService,) { }
+  constructor(private settingService: SettingsService, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.settingService.getRootDomain().subscribe((res:any) => {
-      if(res.success){
+    this.settingService.getRootDomain().subscribe((res: any) => {
+      if (res.success) {
         this.rootDomain = res.rootDomain;
-        console.log(this.rootDomain)
       }
-    })
+    });
   }
 
 
   updateRootDomain() {
-    this.settingService.updateRootDomain(this.rootDomain).subscribe((res:any)=>{
-      console.log(this.rootDomain)
-      if(res.success){
-        alert("Root Domain Updated");
-      }else{
-        alert("unable to Update Root Domain");
+    this.settingService.updateRootDomain(this.rootDomain).subscribe((res: any) => {
+
+      if (res.success) {
+        this.toastr.success('Root Domain Updated', 'Success!');
+      } else {
+        this.toastr.error('Unable to Update Root Domain', 'Try Again!');
       }
-    })
+    });
   }
 
 }

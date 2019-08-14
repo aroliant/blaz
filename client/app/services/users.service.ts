@@ -6,20 +6,24 @@ import { Router } from '@angular/router';
 @Injectable()
 export class UsersService {
 
-  API_URL = environment.API_URL
+  API_URL = environment.API_URL;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   getUsers() {
-    return this.http.get(this.API_URL + "/users")
+    return this.http.get(this.API_URL + '/users');
   }
 
   getUser(projectID) {
-    return this.http.get(this.API_URL + "/users/" + projectID)
+    return this.http.get(this.API_URL + '/users/' + projectID);
   }
 
   createUser(user) {
-    return this.http.post(this.API_URL + "/users",user);
+    return this.http.post(this.API_URL + '/users', user);
+  }
+
+  searchUsers(keyword) {
+    return this.http.get(this.API_URL + '/users/search/' + keyword);
   }
 
 }

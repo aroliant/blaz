@@ -3,7 +3,7 @@ import { AppService } from 'client/app/services/app.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'client/environments/environment';
 
-declare var $: any
+declare var $: any;
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -12,28 +12,37 @@ declare var $: any
 export class AppDetailComponent implements OnInit {
 
 
-  app
-  activeTab = "overview"
+  app;
+  appDetails = {
+    users: [],
+    teams: [],
+    versions: []
+  };
+  activeTab = 'overview';
+  appID;
 
   constructor(private appService: AppService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
     this.route.params.subscribe((data) => {
+      this.appID = data.appID;
       this.appService.getApp(data.appID).subscribe((res: any) => {
-        this.app = res.app
-        console.log(this.app)
-      })
-    })
+        this.app = res.app;
+      });
+
+      this.appService.getAppDetails(data.appID).subscribe((res: any) => {
+        this.appDetails = res;
+      });
+
+    });
 
   }
 
   changeTab(tab) {
-    this.activeTab = tab
-    console.log(this.activeTab)
+    this.activeTab = tab;
+    console.log(this.activeTab);
   }
 
-
-  
 
 }
