@@ -47,3 +47,6 @@ Thumbs.db
 app.bin
 server/env
 server/test.js
+
+#Local Dockerfiles
+Dockerfile.test
