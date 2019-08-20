@@ -1872,13 +1872,6 @@ babel-plugin-dynamic-import-node@^2.3.0:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-transform-runtime@^6.23.0:
-  version "6.23.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
-  integrity sha1-iEkNRGUC6puOfvsP4J7E2ZR5se4=
-  dependencies:
-    babel-runtime "^6.22.0"
-
 babel-polyfill@6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
@@ -9487,7 +9480,7 @@ ssh2-streams@~0.4.4:
     bcrypt-pbkdf "^1.0.2"
     streamsearch "~0.1.2"
 
-ssh2@^0.8.2:
+ssh2@^0.8.5:
   version "0.8.5"
   resolved "https://registry.yarnpkg.com/ssh2/-/ssh2-0.8.5.tgz#9144cdd6c104aa81b2b16ce647c109f4bd138b57"
   integrity sha512-TkvzxSYYUSQ8jb//HbHnJVui4fVEW7yu/zwBxwro/QaK2EGYtwB+8gdEChwHHuj142c5+250poMC74aJiwApPw==
