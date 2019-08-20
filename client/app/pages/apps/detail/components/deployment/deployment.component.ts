@@ -31,7 +31,10 @@ export class DeploymentComponent implements OnInit, OnChanges {
   uploadTarFile() {
     const fileKey = 'files';
     const file = document.getElementById('tarBallFile')[fileKey][0];
-
+    if (file === undefined || file.name === '') {
+      alert('Please Choose a File to Upload');
+      return;
+    }
     const formdata = new FormData();
     formdata.append('sourceFile', file);
 
