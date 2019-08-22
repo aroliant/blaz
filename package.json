@@ -19,7 +19,7 @@
     "server:pack": "pkg . -t node10.15.3-alpine-x64 --output app.bin",
     "server:pack:local": "pkg package.json --output app.bin",
     "server:start": "babel-node server/",
-    "server:start:dev:api": "nodemon --exec babel-node server/index.js --api-dev",
+    "server:start:api": "nodemon --exec babel-node server/index.js --api-dev",
     "server:start:dev": "nodemon --exec babel-node server/",
     "update:env": "sh dev-scripts/branch-to-env.sh"
   },
