@@ -10,7 +10,7 @@ RUN yarn install
 COPY ./ /usr/src/app
 
 # Build the Angular dashboard
-RUN yarn ng build --prod
+# RUN yarn ng build --prod
 
 # Babel JavaScript Transcompile
 RUN yarn server:build
